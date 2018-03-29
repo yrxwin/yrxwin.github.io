@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 猩猩的乐园
 subtitle:
-description:
-keywords:
-author: John Doe
-language:
+description: 技术面试问题详解
+keywords: Leetcode, 技术面试
+author: 猩猩管理员
+language: en
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://xingxingpark.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -54,7 +54,7 @@ index_generator:
   order_by: -date
 
 # Category & Tag
-default_category: uncategorized
+default_category: Leetcode
 category_map:
 tag_map:
 
@@ -78,4 +78,17 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:yrxwin/yrxwin.github.io.git
+  branch: master
+  message:
+
+# RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
