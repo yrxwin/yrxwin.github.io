@@ -30,3 +30,8 @@ branches:
 env:
  global:
    - GH_REF: github.com/yrxwin/yrxwin.github.io.git  #设置GH_REF，注意更改yourname
+
+notifications:
+  email:
+    on_success: always
+    on_failure: always
