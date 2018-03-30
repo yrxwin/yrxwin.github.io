@@ -15,7 +15,7 @@ after_script:
   - git config user.name "yrxwin"  #修改name
   - git config user.email "mikeyrxwin@gmail.com"  #修改email
   - git add .
-  - git commit -m "Site updated: $(date -u '+%Y-%m-%d-%H-%M-%S')"
+  - git commit -m \"Site updated: $(date -u '+%Y-%m-%d-%H-%M-%S')\"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master  #GH_TOKEN是在Travis中配置token的名称
 
 branches:
