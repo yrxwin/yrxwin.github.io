@@ -1,4 +1,7 @@
 ## 技术博客
+- local install:
+`npm install`
+
 - start local server:
 `npm start`
 
