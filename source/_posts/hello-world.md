@@ -1,7 +1,6 @@
 ---
 title: Hello World
 tags:
-- leetcode
 categories:
 - leetcode
 ---
