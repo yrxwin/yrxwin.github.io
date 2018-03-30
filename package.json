@@ -7,6 +7,7 @@
   },
   "scripts": {
     "start": "hexo server",
+    "new": "hexo new",
     "deploy": "hexo clean; hexo g; hexo deploy;"
   },
   "dependencies": {
