@@ -7,7 +7,19 @@ tags:
     - Google
     - Stack
     - Greedy
+author: 猩猩管理员, 中猩猩
+    
 ---
+#### 原题说明
+Given a string which contains only lowercase letters, remove duplicate letters so that every letter appear once and only once. You must make sure your result is the smallest in lexicographical order among all possible results.
+
+Example:
+Given `"bcabc"`
+Return `"abc"`
+
+Given `"cbacdcbc"`
+Return `"acdb"`
+
 #### 解题步骤
 1.  建立哈希表（或者数组)`mapping`来统计字符串中每一个字母出现的频率
 2.  建立哈希表（或者数组)`visited`来记录已经插入`ret` (**ret**urn string) 的字母
@@ -16,10 +28,6 @@ tags:
 	-	当前字符 `ch`  与  `ret`  字符串的末尾元素（栈顶）比较，若  `ch` 靠前，并且 `mapping` 中栈顶元素大于0 (即之后遍历中还会出现栈顶元素)，则 pop `ret`末尾元素，如此反复，直到  `ret`  末尾元素靠前，或者 `ret` 为空
 	-   在  `ret`  中插入当前字符 `ch`
 	-   插入与 pop 过程都不要忘记更新 `visited`
-
-#### 实例演算
-此处我们只贴出了前三步的过程 (图中m对应mapping)，后两步与此类似。
-{% asset_img sample.jpg 猩猩的演算板 %}
 
 #### 示例代码(CPP)
 
