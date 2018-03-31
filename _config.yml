@@ -6,16 +6,17 @@
 title: 猩猩的乐园
 subtitle:
 description: 技术面试问题详解
-keywords: Leetcode, 技术面试
+keywords: Leetcode, cpp, python, interview, solution, 面试, system design, 解答
 author: 猩猩管理员
 language: en
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://xingxingpark.com
+url: https://xingxingpark.com
 root: /
-permalink: :year/:month/:day/:title/
+# permalink: :year/:month/:day/:title/
+permalink: :category/:title/
 permalink_defaults:
 
 # Directory
@@ -92,3 +93,9 @@ feed:
   content:
   content_limit: 140
   content_limit_delim: ' '
+
+# search engine
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
