@@ -1,8 +1,6 @@
 ## 技术博客
 #### local installation
-`git clone --recursive <repo-name>` or 
-
-`git clone <repo-name>` then `git submodule update --recursive --init`
+`git clone <repo-name>` (not using submodule anymore for easy modification)
 
 `npm install`
 
