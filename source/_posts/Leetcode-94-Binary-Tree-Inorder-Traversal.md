@@ -90,18 +90,18 @@ public:
         if (!curr) {
 	    return;
 	}
-        if (curr->left != NULL) {
-            inorderHelper(curr->left,ret);
+        if (curr->left) {
+            inorderHelper(curr->left, ret);
         }
         ret.push_back(curr->val);
         if (curr->right) {
-            inorderHelper(curr->right,ret);
+            inorderHelper(curr->right, ret);
         }
         return;
     }
     vector<int> inorderTraversal(TreeNode* root) {
         vector<int> ret;
-        inorderHelper(root,ret);
+        inorderHelper(root, ret);
         return ret;
     }
 };
