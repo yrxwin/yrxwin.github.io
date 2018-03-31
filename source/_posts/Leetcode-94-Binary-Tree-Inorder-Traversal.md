@@ -64,10 +64,9 @@ class Solution:
         :rtype: List[int]
         """
         def inorderhelper(root,ans):
-            if root:
-                inorderhelper(root.left,ans)  
-            else:
-                return
+            if root is None:
+	        return
+            inorderhelper(root.left,ans)  
             ans.append(root.val)
             inorderhelper(root.right,ans)
         res = []
@@ -87,22 +86,23 @@ class Solution:
  
 class Solution {
 public:
-    void inorderHelper(TreeNode* curr, vector<int> &result) {
+    void inorderHelper(TreeNode* curr, vector<int> &ret) {
+        if (!curr) {
+	    return;
+	}
         if (curr->left != NULL) {
-            inorderHelper(curr->left,result);
+            inorderHelper(curr->left,ret);
         }
-        result.push_back(curr->val);
-        if (curr->right != NULL) {
-            inorderHelper(curr->right,result);
+        ret.push_back(curr->val);
+        if (curr->right) {
+            inorderHelper(curr->right,ret);
         }
         return;
     }
     vector<int> inorderTraversal(TreeNode* root) {
-        vector<int> result;
-        if (root != NULL) {
-            inorderHelper(root,result);
-        }
-        return result;
+        vector<int> ret;
+        inorderHelper(root,ret);
+        return ret;
     }
 };
 ```
@@ -147,20 +147,20 @@ class Solution:
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
-        vector<int> result;
+        vector<int> ret;
         TreeNode* curr = root;
         stack<TreeNode*> nodeStack;
-        while(curr != NULL || !nodeStack.empty()){
-            while(curr != NULL) {
+        while(curr || !nodeStack.empty()){
+            while(curr) {
                 nodeStack.push(curr);
                 curr = curr->left;
             }
             curr = nodeStack.top();
             nodeStack.pop();
-            result.push_back(curr->val);
+            ret.push_back(curr->val);
             curr = curr->right;
         }
-        return result;
+        return ret;
     }
 };
 ```
