@@ -428,7 +428,7 @@ gitment:
 # Warning: JiaThis does not support https.
 #jiathis:
   ##uid: Get this uid from http://www.jiathis.com/
-#add_this_id:
+add_this_id: ra-5abf10402a8b75d0
 
 # Share
 #duoshuo_share: true
@@ -452,14 +452,14 @@ needmoreshare2:
       iconStyle: box
       boxForm: horizontal
       position: bottomCenter
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook,GooglePlus
   float:
-    enable: false
+    enable: true
     options:
       iconStyle: box
       boxForm: horizontal
       position: middleRight
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook,GooglePlus
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
