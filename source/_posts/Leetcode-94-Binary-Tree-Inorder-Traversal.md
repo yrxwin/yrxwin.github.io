@@ -75,6 +75,38 @@ class Solution:
         return res
 ```
 
+#### 示例代码 （递归 cpp版）
+
+```cpp
+ struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ };
+ 
+class Solution {
+public:
+    void inorderHelper(TreeNode* curr, vector<int> &result) {
+        if (curr->left != NULL) {
+            inorderHelper(curr->left,result);
+        }
+        result.push_back(curr->val);
+        if (curr->right != NULL) {
+            inorderHelper(curr->right,result);
+        }
+        return;
+    }
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> result;
+        if (root != NULL) {
+            inorderHelper(root,result);
+        }
+        return result;
+    }
+};
+```
+
 #### 示例代码 （非递归 python版）
 
 ```python
@@ -102,6 +134,37 @@ class Solution:
                 cur = cur.right
         return ans
 ```
+#### 示例代码 （非递归 cpp版）
+
+```cpp
+ struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ };
+ 
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> result;
+        TreeNode* curr = root;
+        stack<TreeNode*> nodeStack;
+        while(curr != NULL || !nodeStack.empty()){
+            while(curr != NULL) {
+                nodeStack.push(curr);
+                curr = curr->left;
+            }
+            curr = nodeStack.top();
+            nodeStack.pop();
+            result.push_back(curr->val);
+            curr = curr->right;
+        }
+        return result;
+    }
+};
+```
+
 #### 复杂度分析
 无论递归还是非递归，它们的时间复杂度与空间复杂度都是一样的。每个节点都被访问一次，同时栈的深度为O(log n)。所以复杂度分析为：
 
