@@ -55,28 +55,26 @@ class TreeNode:
         self.right = None
 
 class Solution:
-    def __init__(self, ans = None):
-        if ans == None:
-            self.ans = []
-        else:
-            self.ans = ans
     def preorderTraversal(self, root):
         """
         :type root: TreeNode
         :rtype: List[int]
         """
-        if not root:
-            return []     
-        self.ans.append(root.val)
-        self.preorderTraversal(root.left)
-        self.preorderTraversal(root.right)
-        return self.ans
+        ans = []
+        self.preorderHelper(root, ans)
+        return ans
+    
+    def preorderHelper(self, root, ans):
+        if root:
+            ans.append(root.val)
+            self.preorderHelper(root.left, ans)
+            self.preorderHelper(root.right, ans)
 ```
 
 #### 示例代码 （非递归 python版）
 
-    ```python
-    class TreeNode:
+```python
+class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
