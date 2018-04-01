@@ -211,4 +211,14 @@ public:
 
 后序遍历的非递归实现相对前序遍历、中序遍历而言复杂一点，但只要逻辑上清晰，严格按照后序遍历的定义去做，也不难实现。
 
-之后我们会继续讨论和树相关的内容，并更新链接，尽请期待，又要种香蕉树去了：）
+
+相关的练习还有：
+
+[[LeetCode 144] Binary Tree Preorder Traversal 二叉树前序遍历](/Leetcode-144-Binary-Tree-Preorder-Traversal)
+
+[[LeetCode 94] Binary Tree Inorder Traversal 二叉树中序遍历](/Leetcode-94-Binary-Tree-Inorder-Traversal)
+
+[[LeetCode 102] Binary Tree Level Order Traversal 二叉树层序遍历](/Leetcode-102-Binary-Tree-Level-Order-Traversal)
+
+
+之后我们会继续讨论更多Tree相关的内容,并更新在 [Tree Tag](/tags/Tree)，尽请期待，种香蕉树去了：）

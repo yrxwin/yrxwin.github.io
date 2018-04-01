@@ -174,4 +174,13 @@ public:
 
 这里再介绍一个小知识点，当二叉树(`Binary Tree`)为二叉搜索树（`Binary Search Tree`）时，中序遍历会按照节点值从小到大排列。因此这也提供给我们一个判断二叉树(`Binary Tree`)是否是二叉搜索树（`Binary Search Tree`）的方法。
 
-之后我们会继续讨论和树相关的内容，并更新链接，尽请期待，继续种香蕉树去了：）
+相关的练习还有：
+
+[[LeetCode 144] Binary Tree Preorder Traversal 二叉树前序遍历](/Leetcode-144-Binary-Tree-Preorder-Traversal)
+
+[[LeetCode 145] Binary Tree Postorder Traversal 二叉树后序遍历](/leetcode-145-Binary-Tree-Postorder-Traversal)
+
+[[LeetCode 102] Binary Tree Level Order Traversal 二叉树层序遍历](/Leetcode-102-Binary-Tree-Level-Order-Traversal)
+
+
+之后我们会继续讨论更多Tree相关的内容,并更新在 [Tree Tag](/tags/Tree)，尽请期待，种香蕉树去了：）
