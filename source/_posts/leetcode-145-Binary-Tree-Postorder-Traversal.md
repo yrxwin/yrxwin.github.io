@@ -6,6 +6,8 @@ author: '大猩猩, 中猩猩'
 date: 2018-03-30 18:53:08
 tags: [Stack, Tree]
 ---
+
+#### 原题说明
 Given a binary tree, return the *postorder* traversal of its nodes' values.
 
 For example:
@@ -18,7 +20,7 @@ Given binary tree [1,null,2,3],
 	 /
     3
    
-return [3,2,1].
+return [3,2,1]. 
 
 **Note**: Recursive solution is trivial, could you do it iteratively?
 
