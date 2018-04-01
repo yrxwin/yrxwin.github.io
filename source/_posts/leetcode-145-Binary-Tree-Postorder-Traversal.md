@@ -87,6 +87,35 @@ class Solution:
         return ans
 ```
 
+#### 示例代码 （递归 c++版）
+
+```cpp
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+class Solution {
+public:
+    void postorderHelper(TreeNode* curr, vector<int>& ret) {
+        if (!curr) {
+            return;
+        }
+        postorderHelper(curr->left, ret);
+        postorderHelper(curr->right, ret);
+        ret.push_back(curr->val);
+        return;
+    }
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> ret;
+        postorderHelper(root, ret);
+        return ret;
+    }
+};
+```
+
 #### 示例代码 （非递归 python版）
 
 ```python
@@ -121,6 +150,55 @@ class Solution:
                     ans.append(cur.val)
                     cur = None
         return ans
+```
+
+#### 示例代码 （非递归 c++版）
+
+```cpp
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> ret;
+        stack<TreeNode*> nodeStack;
+        stack<bool> stackLR; // False for Only Visited Left, True for Visited Left and Right
+        bool lr = false;
+        TreeNode* curr = root;
+        while(curr || !stackLR.empty()){
+            if(curr) {
+                while(curr->left) {
+                    nodeStack.push(curr);
+                    stackLR.push(false);
+                    curr = curr->left;
+                }
+                nodeStack.push(curr);
+                stackLR.push(true);
+                curr = curr->right;
+                continue;
+            }
+            curr = nodeStack.top();
+            nodeStack.pop();
+            lr = stackLR.top();
+            stackLR.pop();
+            if (lr) {
+                ret.push_back(curr->val);
+                curr = NULL;
+                
+            } else {
+                nodeStack.push(curr);
+                stackLR.push(true);
+                curr = curr->right;
+            }
+        }
+        return ret;
+    }
+};
 ```
 #### 复杂度分析
 无论递归还是非递归，它们的时间复杂度与空间复杂度都是一样的。每个节点都被访问一次或者两次，同时栈的深度为O(log n)。所以复杂度分析为：
