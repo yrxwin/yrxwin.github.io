@@ -60,19 +60,19 @@ class TreeNode:
         self.right = None
 
 class Solution:
+    def inorderhelper(self, root, ans):
+        if root is None:
+	        return
+        self.inorderhelper(root.left, ans)  
+        ans.append(root.val)
+        self.inorderhelper(root.right, ans)
     def inorderTraversal(self, root):
         """
         :type root: TreeNode
         :rtype: List[int]
-        """
-        def inorderhelper(root,ans):
-            if root is None:
-	        return
-            inorderhelper(root.left,ans)  
-            ans.append(root.val)
-            inorderhelper(root.right,ans)
+        """ 
         res = []
-        inorderhelper(root,res)
+        self.inorderhelper(root, res)
         return res
 ```
 
@@ -92,13 +92,9 @@ public:
         if (!curr) {
 	    return;
 	}
-        if (curr->left) {
-            inorderHelper(curr->left, ret);
-        }
+        inorderHelper(curr->left, ret);
         ret.push_back(curr->val);
-        if (curr->right) {
-            inorderHelper(curr->right, ret);
-        }
+        inorderHelper(curr->right, ret);
         return;
     }
     vector<int> inorderTraversal(TreeNode* root) {
