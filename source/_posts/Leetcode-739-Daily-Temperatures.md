@@ -78,6 +78,6 @@ class Solution(object):
 运用[Stack](/tags/Stack)的题目很多，这类问题的做法是遍历输入数组，当前元素与栈顶元素比较，如果当前元素更优（不同题目条件不同，比如本题对应当前元素较大）则pop栈顶元素，直到栈顶元素更优为止，而后插入当前元素。
 
 类似的题目还有：
-[[LeetCode 316] Remove Duplicate Letters 移除重复字母](/2018/03/30/Leetcode-316-Remove-Duplicate-Letters)
+[[LeetCode 316] Remove Duplicate Letters 移除重复字母](/Leetcode-316-Remove-Duplicate-Letters)
 
 最近会总结更多这类题目更新在[Stack Tag](/tags/Stack)中，尽请期待，吃香蕉去了：）
