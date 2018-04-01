@@ -99,7 +99,7 @@ struct TreeNode {
 
 class Solution {
 public:
-    void postorderHelper(TreeNode* curr, vector<int> &ret) {
+    void postorderHelper(TreeNode* curr, vector<int>& ret) {
         if (!curr) {
             return;
         }
