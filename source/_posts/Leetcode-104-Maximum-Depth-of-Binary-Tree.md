@@ -1,5 +1,5 @@
 ---
-title: Leetcode-104-Maximum-Depth-of-Binary-Tree
+title: '[Leetcode 104] Maximum Depth of Binary Tree'
 categories:
   - leetcode
 author: '大猩猩, 中猩猩'
