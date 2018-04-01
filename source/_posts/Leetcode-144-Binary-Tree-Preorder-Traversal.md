@@ -7,6 +7,7 @@ tags: [Stack, Tree]
 author: 大猩猩
 
 ---
+#### 原题说明
 Given a binary tree, return the preorder traversal of its nodes' values.
 
 For example:
@@ -74,8 +75,8 @@ class Solution:
 
 #### 示例代码 （非递归 python版）
 
-```python
-class TreeNode:
+    ```python
+    class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
