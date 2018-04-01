@@ -107,4 +107,14 @@ class Solution:
 - 空间复杂度：`O(log n)`
 
 #### 总结归纳：
-树的遍历是对树的基本操作之一。今天我们讲了前序遍历。之后我们会继续讨论相关的内容，并更新链接，尽请期待，种香蕉树去了：）
+树的遍历是对树的基本操作之一。今天我们讲了前序遍历。
+相关的练习还有：
+
+[[LeetCode 94] Binary Tree Inorder Traversal 二叉树中序遍历](/Leetcode-94-Binary-Tree-Inorder-Traversal)
+
+[[LeetCode 145] Binary Tree Postorder Traversal 二叉树后序遍历](/leetcode-145-Binary-Tree-Postorder-Traversal)
+
+[[LeetCode 102] Binary Tree Level Order Traversal 二叉树层序遍历](/Leetcode-102-Binary-Tree-Level-Order-Traversal)
+
+
+之后我们会继续讨论更多Tree相关的内容,并更新在 [Tree Tag](/tags/Tree)，尽请期待，种香蕉树去了：）

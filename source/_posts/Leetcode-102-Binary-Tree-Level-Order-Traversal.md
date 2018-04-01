@@ -97,4 +97,12 @@ class Solution:
 
 层序遍历使用队列`queue`这一数据结构实现，这点和前序`preorder`、中序`inorder`、后序`postorder`遍历是不同的。同时，层序遍历的空间复杂度大于另外三种深度遍历的复杂度，这点也值得我们注意。
 
+相关的练习还有：
+
+[[LeetCode 144] Binary Tree Preorder Traversal 二叉树前序遍历](/Leetcode-144-Binary-Tree-Preorder-Traversal)
+
+[[LeetCode 94] Binary Tree Inorder Traversal 二叉树中序遍历](/Leetcode-94-Binary-Tree-Inorder-Traversal)
+
+[[LeetCode 145] Binary Tree Postorder Traversal 二叉树后序遍历](/leetcode-145-Binary-Tree-Postorder-Traversal)
+
 好了，今天就和大家讨论到这里，种香蕉树去了
