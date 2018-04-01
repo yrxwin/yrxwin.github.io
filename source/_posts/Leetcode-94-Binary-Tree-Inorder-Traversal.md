@@ -66,15 +66,47 @@ class Solution:
         :rtype: List[int]
         """
         def inorderhelper(root,ans):
-            if root:
-                inorderhelper(root.left,ans)  
-            else:
-                return
+            if root is None:
+	        return
+            inorderhelper(root.left,ans)  
             ans.append(root.val)
             inorderhelper(root.right,ans)
         res = []
         inorderhelper(root,res)
         return res
+```
+
+#### 示例代码 （递归 cpp版）
+
+```cpp
+ struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ };
+ 
+class Solution {
+public:
+    void inorderHelper(TreeNode* curr, vector<int> &ret) {
+        if (!curr) {
+	    return;
+	}
+        if (curr->left) {
+            inorderHelper(curr->left, ret);
+        }
+        ret.push_back(curr->val);
+        if (curr->right) {
+            inorderHelper(curr->right, ret);
+        }
+        return;
+    }
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> ret;
+        inorderHelper(root, ret);
+        return ret;
+    }
+};
 ```
 
 #### 示例代码 （非递归 python版）
@@ -104,6 +136,37 @@ class Solution:
                 cur = cur.right
         return ans
 ```
+#### 示例代码 （非递归 cpp版）
+
+```cpp
+ struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ };
+ 
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> ret;
+        TreeNode* curr = root;
+        stack<TreeNode*> nodeStack;
+        while(curr || !nodeStack.empty()){
+            while(curr) {
+                nodeStack.push(curr);
+                curr = curr->left;
+            }
+            curr = nodeStack.top();
+            nodeStack.pop();
+            ret.push_back(curr->val);
+            curr = curr->right;
+        }
+        return ret;
+    }
+};
+```
+
 #### 复杂度分析
 无论递归还是非递归，它们的时间复杂度与空间复杂度都是一样的。每个节点都被访问一次，同时栈的深度为O(log n)。所以复杂度分析为：
 
