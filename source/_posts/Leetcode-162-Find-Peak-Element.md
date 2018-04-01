@@ -32,7 +32,8 @@ Your solution should be in logarithmic complexity.
 
 有趣的是，如果存在若干个峰值，我们也不需要对以上算法进行改动。因为进过若干次的二分，在位置`low`和`high`之间终归会存在一个且仅有一个峰值。
 
-#### 示例代码 (python)
+#### 示例代码 (PYTHON)
+
 ```python
 class Solution:
     def findPeakElement(self, nums):
@@ -43,14 +44,16 @@ class Solution:
         low, high = 0, len(nums) - 1
         while low < high:
             mid = int(low + (high - low) / 2)
-            if nums[mid]>nums[mid+1]:
+            if nums[mid] > nums[mid + 1]:
                 high = mid
             else:
                 low = mid + 1
         return low
-``` 
-#### 示例代码 (c++)
-```c++
+```
+
+#### 示例代码 (CPP)
+
+```cpp
 class Solution {
 public:
     int findPeakElement(const vector<int>& nums) {
@@ -67,6 +70,7 @@ public:
     }
 };
 ```
+
 #### 复杂度分析
 典型的二分法算法，并且只需要 `low`, `high`, `mid` 3个变量，所以时间和空间复杂度分别为：
 
