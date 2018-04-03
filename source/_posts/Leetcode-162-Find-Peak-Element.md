@@ -32,8 +32,7 @@ Your solution should be in logarithmic complexity.
 
 有趣的是，如果存在若干个峰值，我们也不需要对以上算法进行改动。因为进过若干次的二分，在位置`low`和`high`之间终归会存在一个且仅有一个峰值。
 
-#### 示例代码 (PYTHON)
-
+#### 示例代码 (python)
 ```python
 class Solution:
     def findPeakElement(self, nums):
@@ -51,9 +50,9 @@ class Solution:
         return low
 ```
 
-#### 示例代码 (CPP)
+#### 示例代码 (c++)
 
-```cpp
+```c++
 class Solution {
 public:
     int findPeakElement(const vector<int>& nums) {
