@@ -43,13 +43,15 @@ class Solution:
         low, high = 0, len(nums) - 1
         while low < high:
             mid = int(low + (high - low) / 2)
-            if nums[mid]>nums[mid+1]:
+            if nums[mid] > nums[mid + 1]:
                 high = mid
             else:
                 low = mid + 1
         return low
-``` 
+```
+
 #### 示例代码 (c++)
+
 ```c++
 class Solution {
 public:
@@ -67,6 +69,7 @@ public:
     }
 };
 ```
+
 #### 复杂度分析
 典型的二分法算法，并且只需要 `low`, `high`, `mid` 3个变量，所以时间和空间复杂度分别为：
 
