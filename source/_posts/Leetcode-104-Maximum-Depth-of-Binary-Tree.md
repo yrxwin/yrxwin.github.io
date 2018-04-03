@@ -80,7 +80,7 @@ public:
         }
         left = depthHelper(curr->left, depth + 1);
         right = depthHelper(curr->right, depth + 1);
-        return left>right?left:right;
+        return left > right ? left : right;
     }
     int maxDepth(TreeNode* root) {
         return depthHelper(root, 0);
