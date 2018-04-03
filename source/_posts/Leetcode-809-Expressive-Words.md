@@ -41,7 +41,7 @@ Notes:
 - 如果`cntO == cntS`,说明是严格匹配,当然可以继续
 - 如果`cntO < cntS && cntS >= 3`, 说明`S`extend了当前的字符,也可以继续匹配
 
-需要注意的是,`"aa"`和`"aaa"`是可以匹配的, 但是`"aaaa"`和`"aaa"`就不可以了, 这一点原题没有说的特别清楚, 面试的时候需要和面试官clarify清楚.
+需要注意的是,`"baac"`(original word)和`"baaac"`(strechy word)是可以匹配的, 但是`"baaaac"`(original word)和`"baaac"`(stretchy word)就不可以了, 也就是说原字符串中相同连续字符(例子中的字符`'a'`)长度一定要小于Stretchy word中对应的相同连续字符(`'a'`)长度才可能匹配, 这一点原题没有说的特别清楚, 面试的时候需要和面试官clarify清楚.
 
 #### 示例代码 (cpp)
 ```cpp
@@ -85,7 +85,7 @@ public:
 ```
 
 #### 复杂度分析
-时间复杂度: `O(l * (m + n))` 其中`l`为`words.size()`, `m`为`S.size()`, `n`为`word`中字符串的平均长度
+时间复杂度: `O(len * (m + n))` 其中`len`为`words.size()`, `m`为`S.size()`, `n`为`word`中字符串的平均长度
 空间复杂度: `O(1)` 
 
 #### 归纳总结
