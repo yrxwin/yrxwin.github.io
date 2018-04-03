@@ -62,12 +62,12 @@ class Solution:
     def helpcheck(self, left, right):
         if not left and not right:
             return True
-        elif (left and not right) or (right and not left):
+        if not left or not right:
             return False
-        elif left.val != right.val:
+        if left.val != right.val:
             return False
-        else:
-            return self.helpcheck(left.left, right.right) and self.helpcheck(left.right, right.left)  
+        return self.helpcheck(left.left, right.right) and self.helpcheck(left.right, right.left)  
+
 ```
 #### 示例代码 （非递归 python）
 
