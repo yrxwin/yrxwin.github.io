@@ -17,7 +17,7 @@ For example:
 
 Given binary tree [3,9,20,null,null,15,7],
    
-      1   
+      3   
      / \
     9  20
 	   / \
@@ -59,12 +59,41 @@ class Solution(object):
         return ans
 ```
 
+#### 示例代码 （c++）
+
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    int depthHelper(TreeNode* curr, int depth) {
+        int left,right;
+        if(!curr) {
+            return depth;
+        }
+        left = depthHelper(curr->left, depth + 1);
+        right = depthHelper(curr->right, depth + 1);
+        return left > right ? left : right;
+    }
+    int maxDepth(TreeNode* root) {
+        return depthHelper(root, 0);
+    }
+};
+```
+
 #### 复杂度分析
-使用深度搜索`DFS`,每个节点被访问一次。并且递归过程中，栈的最大深度为O(log n)。
+使用深度搜索`DFS`,每个节点被访问一次。并且递归过程中，栈的最大深度为O(n)。考虑到本题并非平衡二叉树，最差将退化成链表，而大O代表复杂度的上阈值，因此为O(n)。
 所以复杂度分析为：
 
 - 时间复杂度：O(n)
-- 空间复杂度：O(1), &#160; 递归栈深度O(log n)
+- 空间复杂度：O(1), &#160; 递归栈深度O(n)
 
 #### 总结归纳：
 这题比较简单，想清楚树的深度的定义，找出递归的关系，就可以利用递归的方法解题。当然也可以使用非递归的方便遍历树来解决这一问题，有兴趣的朋友可以自己试试。
