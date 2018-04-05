@@ -1,5 +1,5 @@
 ---
-title: '[Leetcode 116] Populating Next Right Pointers in Each Node
+title: '[Leetcode 116] Populating Next Right Pointers in Each Node'
 categories:
   - leetcode
 author: '大猩猩, 中猩猩'
