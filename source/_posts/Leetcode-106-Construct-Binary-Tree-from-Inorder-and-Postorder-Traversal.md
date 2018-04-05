@@ -56,7 +56,7 @@ class Solution:
         :rtype: TreeNode
         """
         dicinorder = {}
-        for i,val in enumerate(inorder):
+        for i, val in enumerate(inorder):
             dicinorder[val] = i
         start, end = 0, len(inorder)
         return self.helper(start, end, postorder, dicinorder)
