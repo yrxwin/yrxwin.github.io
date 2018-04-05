@@ -55,7 +55,7 @@ After calling your function, the tree should look like:
 
 具体而言，我们用`cur`记录当前层第一个节点。在每个层间，用`pre`记录当前节点的前一个节点。如果`pre`非空，那么把`pre.next`连接到当前节点`root.left`,再更新`pre`。当一层遍历完，就更新到下一层。 具体参看代码实例。结合题中给的树的例子和给出的示例代码，能更清晰的理解其中逻辑。
 
-#### 示例代码
+#### 示例代码 (python)
 
 ```python
 # Definition for binary tree with next pointer.
