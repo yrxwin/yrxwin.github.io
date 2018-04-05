@@ -64,7 +64,7 @@ class Solution:
         :rtype: TreeNode
         """ 
         dicinorder = {} #用dictionary记录inoder中value和对应index的关系
-        for i,val in enumerate(inorder):
+        for i, val in enumerate(inorder):
             dicinorder[val] = i
         start, end = 0, len(inorder)
         return self.helper(start, end, preorder, dicinorder)
