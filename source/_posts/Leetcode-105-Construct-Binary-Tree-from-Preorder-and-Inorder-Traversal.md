@@ -31,7 +31,7 @@ Return the following binary tree:
 
 
 #### 解题思路
-题目给出二叉树的前序遍历与中序遍历数列，要求重新构建原二叉树，返回根节点。
+题目给出二叉树的前序遍历与中序遍历，要求重新构建原二叉树，返回根节点。
 
 首先我们需要明确：
 
@@ -39,7 +39,7 @@ Return the following binary tree:
 - 中序遍历的顺序：左、中、右
 
 
-因此，我们知道前序遍历序列的第一个元素是原二叉树的根节点，而此根节点将中序遍历序列分为了左子树的中序遍历序列与右子树的中序遍历序列。
+因此，我们知道前序遍历序列的第一个元素是原二叉树的根节点，而此根节点将中序遍历分为了左子树的中序遍历与右子树的中序遍历。
 
 根据以上思路，我们可以继续对左右子树的分别进行递归，直到序列为空，重构整个二叉树。
 
@@ -53,30 +53,38 @@ Return the following binary tree:
 #         self.right = None
 
 class Solution:
-    # @param preorder, a list of integers
     # @param inorder, a list of integers
+    # @param postorder, a list of integers
     # @return a tree node
-    def buildTree(self, inorder, postorder):
+    # 12:00
+    def buildTree(self, preorder, inorder):
         """
+        :type preorder: List[int]
         :type inorder: List[int]
-        :type postorder: List[int]
         :rtype: TreeNode
-        """
-        if not preorder or not inorder:
-            return None        
+        """ 
+        dicinorder = {} #用dictionary记录inoder中value和对应index的关系
+        for i,val in enumerate(inorder):
+            dicinorder[val] = i
+        start, end = 0, len(inorder)
+        return self.helper(start, end, preorder, dicinorder)
+    
+    def helper(self, start, end, preorder, dicinorder):
+        if start == end:
+            return None
         root = TreeNode(preorder.pop(0))
-        inorderIndex = inorder.index(root.val)
-        #先左后右，和前序遍历方向相同。可以对比使用中序与后序遍历时构建二叉树的不同
-        root.left = self.buildTree(preorder, inorder[:index])
-        root.right = self.buildTree(preorder, inorder[index+1:])
+        inorderIndex = dicinorder[root.val]
+        root.left = self.helper(start, inorderIndex, preorder, dicinorder)
+        root.right = self.helper(inorderIndex+1, end, preorder, dicinorder)
         return root
 ```
 
 #### 复杂度分析
-每个节点重构会被访问一次，同时查找index需要O(n)。同时这里并不需要额外空间。所以复杂度分析为
+我们使用一个字典记录`inorder`数组中value与对应index的关系，这样能快速查找每个value的index，每次查找时间复杂度为O(1)。
+每个节点重构会被访问一次，一共n个节点。同时字典需要空间`O(n)`。所以复杂度分析为
 
-- 时间复杂度: `O(n^2)`
-- 空间复杂度: `O(1)`
+- 时间复杂度: `O(n)`
+- 空间复杂度: `O(n)`
 
 #### 归纳总结
 此题要求重构二叉树，因此需要理解清楚中序遍历与后序遍历的定义。合理使用递归方法即可完成解题。
