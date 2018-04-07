@@ -87,7 +87,7 @@ public:
 #### 示例代码 (python)
 ```python
 class Solution(object):
-    def get_char_len_next_nondup_idx (self, word, curr_idx):
+    def get_char_len_next_nondup_idx(self, word, curr_idx):
         """
         Get current character, continous length of this charactor
         and next character index
@@ -105,9 +105,12 @@ class Solution(object):
         while(sid < len(S) and wid < len(word)):
             curr_s_char, curr_s_len, sid = self.get_char_len_next_nondup_idx(S, sid)
             curr_w_char, curr_w_len, wid = self.get_char_len_next_nondup_idx(word, wid)
-            if curr_s_char != curr_w_char: return 0
-            if curr_s_len < curr_w_len: return 0
-            if curr_s_len == 2 and curr_w_len == 1: return 0
+            if curr_s_char != curr_w_char:
+                return 0
+            if curr_s_len < curr_w_len:
+                return 0
+            if curr_s_len == 2 and curr_w_len == 1:
+                return 0
         if sid == len(S) and wid == len(word):
             return 1
         return 0
