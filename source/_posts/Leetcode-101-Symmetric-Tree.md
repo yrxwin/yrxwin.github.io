@@ -69,6 +69,37 @@ class Solution:
         return self.helpcheck(left.left, right.right) and self.helpcheck(left.right, right.left)  
 
 ```
+#### 示例代码 （递归 cpp）
+
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool checkHelper(TreeNode* left, TreeNode* right) {
+        if (!left && !right) {
+            return true;
+        }
+        if (!left || !right) {
+            return false;
+        }
+        if (left->val != right->val) {
+            return false;
+        }
+        return checkHelper(left->left, right->right) && checkHelper(left->right, right->left);
+    }
+    bool isSymmetric(TreeNode* root) {
+        return checkHelper(root, root);
+    }
+};
+```
 #### 示例代码 （非递归 python）
 
 ```python
@@ -104,6 +135,49 @@ class Solution:
             elif (tmpNode1.right and not tmpNode2.left) or (not tmpNode1.right and tmpNode2.left):
                 return False
         return True
+```
+#### 示例代码 （非递归 cpp）
+
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool isSymmetric(TreeNode* root) {
+        TreeNode* left = root;
+        TreeNode* right = root;
+        stack<TreeNode*> nodeStackL;
+        stack<TreeNode*> nodeStackR;
+        while(left || !nodeStackL.empty()) {
+            while(left) {
+                if (!right) return false;
+                if (left->val != right->val) return false;
+                nodeStackL.push(left);
+                nodeStackR.push(right);
+                left = left->left;
+                right = right->right;
+            }
+            if (right) return false;
+            if(!nodeStackL.empty()) {
+                left = nodeStackL.top();
+                right = nodeStackR.top();
+                nodeStackL.pop();
+                nodeStackR.pop();
+                left = left->right;
+                right = right->left;
+            }
+        }
+        if (right)  return false;
+        return true;
+    }
+};
 ```
 
 #### 复杂度分析
