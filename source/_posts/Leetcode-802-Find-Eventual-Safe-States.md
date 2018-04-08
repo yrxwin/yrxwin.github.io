@@ -31,7 +31,7 @@ The directed graph has `N` nodes with labels `0, 1, ..., N-1`, where `N` is the 
 - Each `graph[i]` will be a sorted list of different integers, chosen within the range `[0, graph.length - 1]`.
 
 #### 解题思路
-首先需要理解题意, 所谓"safe node"是指**所有**经过该node的路径都最后结束于"terminal node", 也就是说不会形成环. 
+首先需要理解题意, 所谓`safe node`是指**所有**经过该node的路径都最后结束于`terminal node`, 也就是说不会形成环. 
 所以我们可以给每个node三个状态,分别为:
 {% blockquote %}
 0: unvisited
