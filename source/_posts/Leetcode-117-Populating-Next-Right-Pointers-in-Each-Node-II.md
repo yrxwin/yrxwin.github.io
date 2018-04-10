@@ -56,7 +56,7 @@ class Solution:
     # @param root, a tree link node
     # @return nothing
     def connect(self, root):
-        prev = TreeLinkNode(0) #
+        prev = TreeLinkNode(0)
         cur = prev
         while root:
             prev.next = root.left
@@ -76,7 +76,7 @@ class Solution:
 广度搜索`BFS`遍历二叉树，每个节点被遍历一次，时间复杂度为O(n）。同时我们使用了`cur`，`pre`两个变量，空间复杂度为O(1)。因此复杂度分析为：
 
 - 时间复杂度： `O(n)`
-- 空间复杂度：`O(1）`
+- 空间复杂度： `O(1）`
 
 #### 总结归纳：
 这题是对[[LeetCode 116] Populating Next Right Pointers in Each Node](/Leetcode-116-Populating-Next-Right-Pointers-in-Each-Node)的进阶，要求更高。但总体解题的逻辑不变。因此此题的解法也完全适用于`Leetcode 166`。
