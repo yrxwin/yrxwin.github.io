@@ -51,8 +51,8 @@ If we choose the first two operations, A will become empty first. For the third 
 ```python
 class Solution(object): 
     def soupHelper(self, A, B, state):
-        if (A,B) in state:
-            return state[A,B]
+        if (A, B) in state:
+            return state[A, B]
         
         if A <=0 or B <= 0:
             if A <= 0 and B <= 0:
@@ -65,8 +65,8 @@ class Solution(object):
         prob += self.soupHelper(A - 75, B - 25, state)
         prob += self.soupHelper(A - 50, B - 50, state)
         prob += self.soupHelper(A - 25, B - 75, state)
-        state[A,B] = 0.25 * prob
-        return state[A,B]
+        state[A, B] = 0.25 * prob
+        return state[A, B]
         
     def soupServings(self, N):
         """
