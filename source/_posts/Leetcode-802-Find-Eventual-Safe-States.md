@@ -77,6 +77,32 @@ public:
     }
 };
 ```
+#### 示例代码 (python)
+```python
+class Solution(object):
+    def dfs(self, graph, state, curr_idx):
+        if state[curr_idx]:
+            return state[curr_idx]
+        state[curr_idx] = 1
+        for next_node_idx in graph[curr_idx]:
+            next_state = self.dfs(graph, state, next_node_idx)
+            if next_state == 1:
+                return state[curr_idx]
+        state[curr_idx] = 2
+        return state[curr_idx]
+    
+    def eventualSafeNodes(self, graph):
+        """
+        :type graph: List[List[int]]
+        :rtype: List[int]
+        """
+        ret = []
+        state = [0 for i in range(len(graph))]
+        for idx in range(len(graph)):
+            if self.dfs(graph, state, idx) == 2:
+                ret.append(idx)
+        return ret
+```
 
 #### 复杂度分析
 时间复杂度: `O(n)` 因为每个node经过一次
