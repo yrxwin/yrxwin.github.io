@@ -54,16 +54,16 @@ class Codec:
         """
         if not root:
             return "None"
-        stack, ans = collections.deque(), collections.deque()
-        stack.append(root)
-        while stack:
-            tmpNode = stack.popleft()
+        queue, ans = collections.deque(), collections.deque()
+        queue.append(root)
+        while queue:
+            tmpNode = queue.popleft()
             if tmpNode == None:
                 ans.append(tmpNode)
             else:
                 ans.append(tmpNode.val)
-                stack.extend([tmpNode.left,tmpNode.right])
-        return str(list(ans)) 
+                queue.extend([tmpNode.left,tmpNode.right])
+        return str(list(ans)) #序列返回的结构和题目例子中给出的是一致的
             
     def deserialize(self, data):
         """Decodes your encoded data to tree.
@@ -72,24 +72,25 @@ class Codec:
         :rtype: TreeNode
         """
         data = data[1:-1].split(",")
-        if not self.RepresentsInt(data[0]) or not data:
+        if not self.represents_int(data[0]) or not data:
             return None
         else:
             root = TreeNode(int(data[0]))
         idx = 1
-        stack = collections.deque()
-        stack.append(root)
+        queue = collections.deque()
+        queue.append(root)
         while idx != len(data):
-            tmpNode = stack.popleft()
-            if self.RepresentsInt(data[idx]):
+            tmpNode = queue.popleft()
+            if self.represents_int(data[idx]):
                 tmpNode.left = TreeNode(int(data[idx]))
-                stack.append(tmpNode.left)
-            if self.RepresentsInt(data[idx+1]):
+                queue.append(tmpNode.left)
+            if self.represents_int(data[idx+1]):
                 tmpNode.right = TreeNode(int(data[idx+1]))
-                stack.append(tmpNode.right)
+                queue.append(tmpNode.right)
             idx += 2
         return root
-    def RepresentsInt(self, num):
+
+    def represents_int(self, num):
         try: 
             int(num)
             return True
