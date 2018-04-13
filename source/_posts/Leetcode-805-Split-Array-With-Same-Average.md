@@ -48,16 +48,16 @@ class Solution:
         """
         visit = {} # map 记录搜索过得信息
         n, s = len(A), sum(A)
-        return any(self.find(A, s * k / n, k, 0, visit) for k in range(1, int(n /2) + 1) if s * k % n == 0)
+        return any(self.find(A, s * k / n, k, 0, visit) for k in range(1, int(n / 2) + 1) if s * k % n == 0)
     
     def find(self, A, target, k, i, visit):
-        if (target,k) in visit and visit[(target,k)] <= i:
+        if (target, k) in visit and visit[(target, k)] <= i:
             return False
         if k == 0:
             return target == 0
         if k + i > len(A):
             return False
-        ans = self.find(A, target - A[i], k - 1, i + 1, visit) or self.find(A, target, k, i+ 1, visit)
+        ans = self.find(A, target - A[i], k - 1, i + 1, visit) or self.find(A, target, k, i + 1, visit)
         if not ans:
             visit[(target, k)] = min(visit.get((target,k), len(A)), i)
         return ans
