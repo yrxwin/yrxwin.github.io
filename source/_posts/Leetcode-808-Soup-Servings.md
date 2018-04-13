@@ -47,6 +47,37 @@ If we choose the first two operations, A will become empty first. For the third 
 
 以上基本实现了本题的主体解法。然而这是一个两次方复杂度的解法，随着`N`的上升，需要指数的时间去计算。此时我们可以利用题目中提到的精度要求来做文章。让我们从概率的角度重新审题。四个操作对汤消耗的期望值为`A = 62.5, B = 37.5`。`A`的消耗速度远高于`B`。因此，当`N`变大时，`A`先倒完的概率趋向于1。我们尝试不断递增的`N`来运行程序后，可以发现当N>4800时，所得概率已经落在`1 - 10^-6`内。也就是说所有大于4800的输入，都可以直接输出1作为结果。
 
+#### 示例代码 (cpp)
+```cpp
+class Solution {
+    double recurse(int a, int b, unordered_map<int, unordered_map<int, double>>& memo) {
+        if (a <= 0 && b > 0) {
+            return 1;
+        }
+        if (a <= 0 && b <= 0) {
+            return 0.5;
+        }
+        if (b <= 0) {
+            return 0;
+        }
+        if (memo.count(a) && memo[a].count(b)) {
+            return memo[a][b];
+        }
+        double prob = (recurse(a - 100, b, memo) + recurse(a - 75, b - 25, memo) + recurse(a - 50, b - 50, memo) + recurse(a - 25, b - 75, memo)) / 4.0;
+        memo[a][b] = prob;
+        return prob;
+    }
+public:
+    double soupServings(int N) {
+        if (N >= 5000) {
+            return 1;
+        }
+        unordered_map<int, unordered_map<int, double>> memo;
+        return recurse(N, N, memo);
+    }
+};
+```
+
 #### 示例代码 (python)
 ```python
 class Solution(object): 
