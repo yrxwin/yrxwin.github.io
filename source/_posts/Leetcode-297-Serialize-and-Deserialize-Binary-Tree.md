@@ -35,7 +35,9 @@ as `"[1,2,3,null,null,4,5]"`, just the same as [how LeetCode OJ serializes a bin
 
 反序列化函数：用队列的数据结构，按层序读取序列，每次读取两个元素，对应当前节点的左右子节点。当序列元素非空时，将其设为当前节点对应的左节点或右节点，并加入队列内。直到读取完所有序列内元素，完成二叉树的重构。
 
-#### 示例代码 (python)
+另一种思路是用前序遍历。因为递归的实现比较trivial，这里用递推实现。同样，为了正确重构，我们仍然需要储存空节点。这里我们加入`writeAndReturnNode`这个辅助函数，让我们可以最大程度的复用原始的递推代码。需要额外注意不要使同一个节点被写一次以上。在解码时，由于在原代码push时不知道右子节点的情况，因此改为push本节点，并在pop时获取正确右子节点状态后，将`curr`改为右子节点。
+
+#### 示例代码 思路一 (python)
 ```python
 # Definition for a binary tree node.
 # class TreeNode(object):
@@ -104,8 +106,80 @@ class Codec:
 # codec.deserialize(codec.serialize(root))
 ```
 
+#### 示例代码 思路二 (cpp)
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Codec {
+public:
+    TreeNode* writeAndReturnNode(TreeNode* node, ostringstream& ret) {
+        if (node) {
+            ret << node->val << " ";
+        } else {
+            ret << "X ";
+        }
+        return node;
+    }
+    // Encodes a tree to a single string.
+    string serialize(TreeNode* root) {
+        ostringstream ret;
+        stack<TreeNode*> nodeStack;
+        while (writeAndReturnNode(root, ret) || !nodeStack.empty()) {
+            while(root) {
+                nodeStack.push(root->right);
+                root = writeAndReturnNode(root->left, ret);
+            }
+            if (!nodeStack.empty()) {
+                root = nodeStack.top();
+                nodeStack.pop();
+            }
+        }
+        return ret.str();
+    }
+
+    TreeNode* readAndReturnNode(istringstream& inStream) {
+        string nextVal;
+        inStream >> nextVal;
+        if (nextVal == "X") {
+            return NULL;
+        } else {
+            return new TreeNode(stoi(nextVal));
+        }
+    }
+    // Decodes your encoded data to tree.
+    TreeNode* deserialize(string data) {
+        TreeNode *root, *curr, *next;
+        stack<TreeNode*> nodeStack;
+        istringstream inStream(data);
+        root = readAndReturnNode(inStream);
+        curr = root;
+        while (curr || !nodeStack.empty()) {
+            while(curr) {
+                curr->left = readAndReturnNode(inStream);
+                nodeStack.push(curr);
+                curr = curr->left;
+            }
+            
+            if (!nodeStack.empty()) {
+                curr = nodeStack.top();
+                nodeStack.pop();
+                curr->right = readAndReturnNode(inStream);
+                curr = curr->right;
+            }
+        }
+        return root;
+    }
+};
+```
 #### 复杂度分析
-每个节点被访问一次，同时我们用两个队列来储存中间过程和答案，所以复杂度分析为
+每个节点被访问一次，同时我们用额外空间（队列/栈）来储存中间过程或答案，所以复杂度分析为
 时间复杂度: `O(n)`
 空间复杂度: `O(n)`
 
