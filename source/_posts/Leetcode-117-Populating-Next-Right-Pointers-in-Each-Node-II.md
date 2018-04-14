@@ -84,33 +84,32 @@ class Solution:
  */
 class Solution {
 public:
-    void connect(TreeLinkNode *root) {
-        TreeLinkNode *leftMost = NULL, *prev = NULL;
-        while(root) {
-            while(!root->left && !root->right) {
-                root = root->next;
-                if (!root) {
-                    return;
-                }
-            }
-            leftMost = root;
-            while(root) {
-                if(root->left) {
+    void connect(TreeLinkNode *root) {
+        TreeLinkNode *node = root;
+        while (node) {
+            TreeLinkNode *prev = NULL, *leftMost = NULL;
+            while (node) {
+                if (node->left) {
                     if (prev) {
-                        prev->next = root->left;
+                        prev->next = node->left;
                     }
-                    prev = root->left;
+                    prev = node->left;
+                    if (!leftMost) {
+                        leftMost = node->left;
+                    }
                 }
-                if (root->right) {
+                if (node->right) {
                     if (prev) {
-                        prev->next = root->right;
+                        prev->next = node->right;
                     }
-                    prev = root->right;
+                    prev = node->right;
+                    if (!leftMost) {
+                        leftMost = node->right;
+                    }
                 }
-                root = root->next;
+                node = node->next;
             }
-            root = leftMost->left ? leftMost->left : leftMost->right;
-            prev = NULL;
+            node = leftMost;
         }
     }
 };
