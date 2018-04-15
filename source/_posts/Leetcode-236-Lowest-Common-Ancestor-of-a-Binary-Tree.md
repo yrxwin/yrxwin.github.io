@@ -59,6 +59,34 @@ class Solution(object):
         return left if left else right
 ```
 
+#### 示例代码 (cpp)
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        TreeNode *left, *right;
+        if (!root || root == p || root == q) {
+            return root;
+        }
+        left = lowestCommonAncestor(root->left, p, q);
+        right = lowestCommonAncestor(root->right, p, q);
+        if (left && right) {
+            return root;
+        }
+        return left ? left : right;
+    }
+};
+```
+
 #### 复杂度分析
 最坏情况每个节点visit一次，因此时间复杂度为`O(n）`。
 时间复杂度: `O(n)`
