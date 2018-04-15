@@ -72,6 +72,49 @@ class Solution:
 
 ```
 
+#### 示例代码 (cpp)
+```cpp
+/**
+ * Definition for binary tree with next pointer.
+ * struct TreeLinkNode {
+ *  int val;
+ *  TreeLinkNode *left, *right, *next;
+ *  TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    void connect(TreeLinkNode *root) {
+        TreeLinkNode *node = root;
+        while (node) {
+            TreeLinkNode *prev = NULL, *leftMost = NULL;
+            while (node) {
+                if (node->left) {
+                    if (prev) {
+                        prev->next = node->left;
+                    }
+                    prev = node->left;
+                    if (!leftMost) {
+                        leftMost = node->left;
+                    }
+                }
+                if (node->right) {
+                    if (prev) {
+                        prev->next = node->right;
+                    }
+                    prev = node->right;
+                    if (!leftMost) {
+                        leftMost = node->right;
+                    }
+                }
+                node = node->next;
+            }
+            node = leftMost;
+        }
+    }
+};
+```
+
 #### 复杂度分析
 广度搜索`BFS`遍历二叉树，每个节点被遍历一次，时间复杂度为O(n）。同时我们使用了`cur`，`pre`两个变量，空间复杂度为O(1)。因此复杂度分析为：
 
