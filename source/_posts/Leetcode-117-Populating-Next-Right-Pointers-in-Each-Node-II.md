@@ -40,7 +40,7 @@ After calling your function, the tree should look like:
 
 总体的思路不变，需要记录每层的信息，保存前一个节点，遍历到下一个节点之后，让前一个结点的`next`链接到当前节点。由于不能保证上一层的父节点都有子节点，因此我们需要对上一层父节点是否存在子节点做出额外的判断，然后遍历当前层的非空节点。这点与之前完美二叉树是不同的。
 
-在示例代码中，`prev`可以看做一个存放当前遍历节点的前一个节点。而`cur`则指向当前层的第一个节点，遍历完整层后，利用`cur`更新下一层。如果对代码的逻辑理解不够清晰，建议用题目给出的二叉树做简单的验算，能有直观认识。
+在示例代码中，`prev`可以看做一个存放当前遍历节点的前一个节点。而`leftMost`则指向当前层的第一个节点，遍历完整层后，利用`leftMost`更新下一层。如果对代码的逻辑理解不够清晰，建议用题目给出的二叉树做简单的验算，能有直观认识。
 
 #### 示例代码 (python)
 ```python
@@ -56,19 +56,24 @@ class Solution:
     # @param root, a tree link node
     # @return nothing
     def connect(self, root):
-        prev = TreeLinkNode(0)
-        cur = prev
-        while root:
-            prev.next = root.left
-            if prev.next:
-                prev = prev.next
-            prev.next = root.right
-            if prev.next:
-                prev = prev.next
-            root = root.next
-            if not root:
-                prev = cur
-                root = cur.next
+        node = root
+        while node:
+            prev, leftMost = None, None
+            while node:
+                if node.left:
+                    if prev:
+                        prev.next = node.left
+                    prev = node.left
+                    if not leftMost:
+                        leftMost = node.left
+                if node.right:
+                    if prev:
+                        prev.next = node.right
+                    prev = node.right
+                    if not leftMost:
+                        leftMost = node.right
+                node = node.next
+            node = leftMost
 
 ```
 
