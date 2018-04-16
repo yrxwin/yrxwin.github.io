@@ -30,12 +30,12 @@ In a string composed of `'L'`, `'R'`, and `'X'` characters, like "RXXLRXRXL", a 
 #### 解题思路
 题目要求根据给定的规则，判断能否从 start string 变换到 end string 。
 
-给出了两种变换的规则，从“XL”到“LX”和从“RX”到“XR”。所以我们可以给出两点规律：
+给出了两种变换的规则，从“XL”到“LX”和从“RX”到“XR”。所以我们可以给出两条规律：
   
  - 如果start能变换到end，那么除去两个字符串中的`"X"`，剩余的字符串一定相同。因为任意`"R"`和`"L"`的相对顺序都不会发生变化，我们定义出去`"X"`的字符串为有效字符串
- - 根据上一点规律，如果 start 能变换到 end，那么对于相对位置的“L”和“R”（即在有效字符串中，它们在 start 和 end 中是同一个位置），如果我们用 index `i`和 `j` 来表示，必须满足：
-   1. start[i]>=end[j], 如果 start[i]==end[j]=="L"
-   2. start[i]<=end[j], 如果 start[i]==end[j]=="R"
+ - 根据变换的规则，`"L"`不能向右移，`“R”`不能向左移，所以 start 中`“L”`对应的 index `"i"` 一定不小于 end 中 `“L”`对应的index `"j"`；start 中`“R”`对应的 index `"i"` 一定不大于 end 中 `“R”`对应的index `"j"`；
+   1. i >= j, 如果 start[i]==end[j]=="L"
+   2. i <= j, 如果 start[i]==end[j]=="R"
 
 #### 示例代码 (python)
 ```python
@@ -46,6 +46,12 @@ class Solution:
         :type end: str
         :rtype: bool
         """
+        # 第一条规律
+        startRemove = "".join(start.split("X"))
+        endRemove = "".join(end.split("X"))
+        if startRemove != endRemove:
+            return False
+        # 第二条规律
         i, j, n = 0, 0, len(start)
         while(j < n and i < n):
             while(j < n and end[j] == 'X'):
@@ -56,9 +62,7 @@ class Solution:
                 break
             if(i == n or j == n or start[i] != end[j]):
                 return False
-            if(start[i] == 'R' and i > j):
-                return False
-            elif(start[i] == 'L' and i < j):
+            if(start[i] == 'R' and i > j) or (start[i] == 'L' and i < j):
                 return False
             i += 1
             j += 1
