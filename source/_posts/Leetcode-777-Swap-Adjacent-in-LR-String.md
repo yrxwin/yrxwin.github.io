@@ -60,8 +60,6 @@ class Solution:
                 i += 1
             if(i == n and j == n): 
                 break
-            if(i == n or j == n or start[i] != end[j]):
-                return False
             if(start[i] == 'R' and i > j) or (start[i] == 'L' and i < j):
                 return False
             i += 1
