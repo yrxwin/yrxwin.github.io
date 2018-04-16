@@ -4,7 +4,7 @@ categories:
   - leetcode
 author: '大猩猩, 中猩猩'
 date: 2018-04-15 12:18:48
-tags: [Brainteaser，Google]
+tags: [Brainteaser,Google]
 keywords:
 description:
 ---
