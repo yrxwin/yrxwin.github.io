@@ -4,7 +4,7 @@ categories:
   - leetcode
 author: '大猩猩, 中猩猩'
 date: 2018-04-17 13:01:07
-tags: [Array, Binary Search]
+tags: [Array, Binary Search, Heap, Google]
 keywords: [Array]
 description:
 ---
@@ -34,7 +34,7 @@ Given an integer array, return the k-th smallest distance among all the pairs. T
 #### 解题思路
 题目要求求出第 k 个最小 pair 的距离。对于长度为n的数组，一共有 `n*(n-1)`个pair。如果我们求出所有 pair 的距离，然后排序找出第k个最小的pair的距离，时间复杂度会是 `O(n^2log(n))`，同时空间复杂度会是 `O(n^2)`， 这显然不是最优解。
 
-可以对以上解法稍作优化，使用优先队列进行排序，这样时间复杂度会是`O(n^2log(k))`，空间复杂度会降低到 `O(log(k))`。
+可以对以上解法稍作优化，使用优先队列进行排序，这样时间复杂度会是`O(n^2log(k))`，空间复杂度会降低到 `O(k)`。
 
 这题更好的一个解法是使用 [Binary Search](\tags\Binary-Search)。对数组先进行排序，我们可以得到 pair 的最大距离`end`。因为题目讨论的都是整数，所以答案一定是在`0`到`end`的范围内的整数。我们在这个范围内使用 `Binary Search`，对于每一个搜索的值 `mid`，我们用一个函数`count`判断比`mid`小的 pair 的距离的个数。如果小于k，则让 start == mid ；反之，则让 end == mid。
 
@@ -62,7 +62,7 @@ class Solution:
     def count(self, nums, mid): #比mid小的pair数
         left, right, ans = 0, 0, 0
         while right != len(nums):
-            while nums[right]-nums[left] > mid:
+            while nums[right] - nums[left] > mid:
                 left += 1
             ans += right - left
             right += 1
