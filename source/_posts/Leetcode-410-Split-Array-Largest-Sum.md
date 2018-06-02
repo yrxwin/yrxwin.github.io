@@ -39,11 +39,11 @@ If n is the length of array, assume the following constraints are satisfied:
 
 因为子数组本身是连续的，我们可以想到用动态规划 [Dyanmic Programming](\tags\Dynamic-Programming) 来设计解法。定义`f[i][j]`为把数组 `nums[0,1,..,i]`分成`j`份后最大子数组和的最小值。显然，我们会有以下公式:
 `f[i][j] = max(f[k][j-1],nums[k+1]+...+nums[i) for all valid k`
-用动态规划，从`f[0][0]`出发，最后返回`f[n][m]` 即可。时间复杂度优惠为`O(n^2*m)`，并且空间复杂度为`O(n*m)`。
+用动态规划，从`f[0][0]`出发，最后返回`f[n][m]` 即可。时间复杂度为`O(n^2*m)`，并且空间复杂度为`O(n*m)`。
 
-这里，介绍一种更好的算法，运用 [Binary Search](\tags\Binary-Search) 。考虑到数组元素都是非负整数，所以答案也一定是整数。同时，答案一定存在于从 0 到 数组元素和`sum of array`之间。因此，我们只需能够判断，对于任意一个整数`mid`，是否存在一个分类使得`nums`能分成`m`份，并且最大子数组的和不超过`mid`。如果能，我们下调`Binary Search`，如果不能，我们上调`Binary Search`。
+这里，介绍一种更好的算法，运用 [Binary Search](\tags\Binary-Search) 。考虑到数组元素都是非负整数，所以答案也一定是整数。同时，答案一定存在于 0 到 数组元素和`sum of array`之间。因此，我们只需能够判断，对于任意一个整数`mid`，是否存在一个分类使得`nums`能分成`m`份，并且最大子数组的和不超过`mid`。如果能，我们下调`Binary Search`，如果不能，我们上调`Binary Search`。
 
-判断的算法也很简单，我们用贪心算法`Greedy`。用`tmpsum`记录当前子数组的和，用`count`记录当前的分类数。如果当前元数`num`加上`tmpsum`不超过`mid`，更新`tmpsum = tmpsum + num`；如果超过`mid`，更新`tmpsum = 0`并更新`count = count + 1`。遍历完数组`nums`， 当`count <= m`，返回 `Ture`，反之返回`False`。
+判断的算法也很简单，我们用贪心算法`Greedy`。用`tmpsum`记录当前子数组的和，用`count`记录当前的分类数。如果当前元素`num`加上`tmpsum`不超过`mid`，更新`tmpsum = tmpsum + num`；如果超过`mid`，更新`tmpsum = 0`并更新`count = count + 1`。遍历完数组`nums`， 当`count <= m`，返回 `True`，反之返回`False`。
 
 #### 示例代码 (python)
 ```python
@@ -56,7 +56,7 @@ class Solution:
         """
         low, high = 0, sum(nums)
         while low + 1 < high:
-            mid = int(low+ (high - low) /2)
+            mid = int(low + (high - low) /2)
             if self.determinTrue(mid, nums, m):
                 high = mid
             else:
