@@ -59,19 +59,9 @@ public:
 
 #### 示例代码 (python)
 ```python
-class Solution(object):
-    def flipAndInvertImage(self, A):
-        """
-        :type A: List[List[int]]
-        :rtype: List[List[int]]
-        """
-        for ridx in range(len(A)):
-            for cidx in range(len(A[0])//2):
-                A[ridx][cidx], A[ridx][len(A[0]) - 1 - cidx] = \
-                    A[ridx][len(A[0]) - 1 - cidx], A[ridx][cidx]
-        for ridx in range(len(A)):
-            for cidx in range(len(A[0])):
-                A[ridx][cidx] = 1 - A[ridx][cidx]
+for i in range(len(A)):
+            A[i] = A[i][::-1]
+            A[i] = [ele^1 for ele in A[i]]
         return A
 ```
 
