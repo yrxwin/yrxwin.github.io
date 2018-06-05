@@ -11,7 +11,7 @@ description:
 #### 原题说明
 You have a list of points in the plane. Return the area of the largest triangle that can be formed by any 3 of the points.
 
-{% asset_img sample.png %}
+{% asset_img sample.png 350 %}
 {% blockquote %}
 **Example**:
 **Input**: points = `[[0,0],[0,1],[1,0],[0,2],[2,0]]`
