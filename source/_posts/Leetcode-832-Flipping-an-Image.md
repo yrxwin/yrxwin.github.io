@@ -57,6 +57,26 @@ public:
 };
 ```
 
+#### 示例代码 (python)
+```python
+class Solution(object):
+    def flipAndInvertImage(self, A):
+        """
+        :type A: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        for ridx in range(len(A)):
+            for cidx in range(len(A[0])//2):
+                A[ridx][cidx], A[ridx][len(A[0]) - 1 - cidx] = \
+                    A[ridx][len(A[0]) - 1 - cidx], A[ridx][cidx]
+                A[ridx][cidx] = 1 - A[ridx][cidx]
+                A[ridx][len(A[0]) - 1 - cidx] = 1 - A[ridx][len(A[0]) - 1 - cidx]
+            if len(A[0]) % 2:
+                A[ridx][len(A[0])//2] = 1 - A[ridx][len(A[0])//2]
+        
+        return A
+```
+
 #### 复杂度分析
 时间复杂度: `O(n^2)` (n为A的边长)
 空间复杂度: `O(1)`
