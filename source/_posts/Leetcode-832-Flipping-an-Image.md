@@ -69,11 +69,9 @@ class Solution(object):
             for cidx in range(len(A[0])//2):
                 A[ridx][cidx], A[ridx][len(A[0]) - 1 - cidx] = \
                     A[ridx][len(A[0]) - 1 - cidx], A[ridx][cidx]
+        for ridx in range(len(A)):
+            for cidx in range(len(A[0])):
                 A[ridx][cidx] = 1 - A[ridx][cidx]
-                A[ridx][len(A[0]) - 1 - cidx] = 1 - A[ridx][len(A[0]) - 1 - cidx]
-            if len(A[0]) % 2:
-                A[ridx][len(A[0])//2] = 1 - A[ridx][len(A[0])//2]
-        
         return A
 ```
 
