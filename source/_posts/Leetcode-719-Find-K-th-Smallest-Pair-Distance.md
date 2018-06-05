@@ -68,6 +68,43 @@ class Solution:
             right += 1
         return ans
 ```
+#### 示例代码 (cpp)
+```cpp
+class Solution {
+public:
+    int countPairs(vector<int>& nums, int mid) {
+        int low = 0, high = 0, res = 0;
+        while(high < nums.size()) {
+            while(nums[high] - nums[low] > mid) {
+                low++;
+            }
+            res += high - low;
+            high++;
+        }
+        return res;
+    }
+    
+    int smallestDistancePair(vector<int>& nums, int k) {
+        sort(nums.begin(), nums.end());
+        int low = nums[1] - nums[0], high = nums[nums.size()-1] - nums[0], mid;
+        for(int i = 0; i < nums.size() - 1; i++) {
+            if (nums[i + 1] - nums[i] < low) {
+                low  = nums[i + 1] - nums[i];
+            }
+        }
+        
+        while(low < high) {
+            mid = (low + high) / 2;
+            if (countPairs(nums, mid) < k) {
+                low = mid + 1;
+            } else {
+                high = mid;
+            }
+        }
+        return low;
+    }
+};
+```
 
 #### 复杂度分析
 排序数组的时间复杂度为`O(n log(n))`， `Binary Search`的遍历次数为`O(log(n))`，每次遍历调用 count 函数，需要遍历一边数组，时间复杂度为`O(n)`， 所以总的时间复杂度是`O(n log(n))`。用 in-place 的方法排序，不需要额外的空间，总的空间复杂度为 `O(1)`
