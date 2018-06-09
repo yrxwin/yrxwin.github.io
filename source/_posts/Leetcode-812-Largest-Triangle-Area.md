@@ -27,7 +27,8 @@ The five points are show in the figure below. The red triangle is the largest.
 - Answers within 10^-6 of the true value will be accepted as correct.
 
 #### 解题思路
-这道题主要考察[叉乘计算面积](http://www.maths.usyd.edu.au/u/MOW/vectors/vectors-11/v-11-7.html), 也比较适合Google电话面试或者Intern面试的难度, 可能会用来考察简历有相关背景的面试者.
+这道题主要考察解析几何中三角形面积的计算(如[叉乘计算面积](http://www.maths.usyd.edu.au/u/MOW/vectors/vectors-11/v-11-7.html), [行列式计算面积
+](https://people.richland.edu/james/lecture/m116/matrices/applications.html)), 也比较适合Google电话面试或者Intern面试的难度, 可能会用来考察简历有相关背景的面试者.
 做法上比较暴力, 直接三重循环找到所有可能组成三角形的点计算最大面积即可, 还是要求快速形成思路, 代码清晰, 建议把叉乘部分单独写成一个Function, 这样做即使面试时叉乘公式不记得了, 但是整体思路清晰, 也可能会过面试. 
 
 #### 示例代码 (cpp)
@@ -56,6 +57,7 @@ public:
 ```python
 class Solution(object):
     def calArea(self, p1, p2, p3):
+        #Use Determinant to get triangle area
         return .5 * abs(p1[0] * p2[1] + p2[0] * p3[1] + p3[0] * p1[1] - p1[0] * p3[1] - p2[0] * p1[1] - p3[0] * p2[1])
     
     def largestTriangleArea(self, points):
