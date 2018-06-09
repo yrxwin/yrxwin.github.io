@@ -59,7 +59,13 @@ public:
 
 #### 示例代码 (python)
 ```python
-for i in range(len(A)):
+class Solution(object):
+    def flipAndInvertImage(self, A):
+        """
+        :type A: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        for i in range(len(A)):
             A[i] = A[i][::-1]
             A[i] = [ele^1 for ele in A[i]]
         return A
