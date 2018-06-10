@@ -57,6 +57,20 @@ public:
 };
 ```
 
+#### 示例代码 (python)
+```python
+class Solution(object):
+    def flipAndInvertImage(self, A):
+        """
+        :type A: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        for i in range(len(A)):
+            A[i] = A[i][::-1]
+            A[i] = [ele^1 for ele in A[i]]
+        return A
+```
+
 #### 复杂度分析
 时间复杂度: `O(n^2)` (n为A的边长)
 空间复杂度: `O(1)`
