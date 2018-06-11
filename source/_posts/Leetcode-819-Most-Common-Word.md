@@ -69,6 +69,40 @@ public:
     }
 };
 ```
+```python
+class Solution(object):
+    def mostCommonWord(self, paragraph, banned):
+        """
+        :type paragraph: str
+        :type banned: List[str]
+        :rtype: str
+        """
+        words_dict = dict()
+        top_word = None
+        top_freq = 0
+        punc = " !?',;."
+        head = 0
+        tail = 0
+        while head < len(paragraph):
+            if paragraph[head] not in punc:
+                tail = head + 1
+                while tail < len(paragraph) and paragraph[tail] not in punc:
+                    tail += 1
+                curr_word = paragraph[head:tail].lower()
+                if curr_word not in banned:
+                    if curr_word in words_dict:
+                        words_dict[curr_word] += 1
+                    else:
+                        words_dict[curr_word] = 1
+                    if words_dict[curr_word] > top_freq:
+                        top_word = curr_word
+                        top_freq = words_dict[curr_word]
+                head = tail + 1
+            else:
+                head += 1
+        
+        return top_word
+```
 
 #### 复杂度分析
 时间复杂度: `O(n)` (n为`paragraph`包含的单词数)
