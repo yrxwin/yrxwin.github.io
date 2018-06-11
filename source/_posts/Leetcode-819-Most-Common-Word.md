@@ -69,6 +69,8 @@ public:
     }
 };
 ```
+
+#### 示例代码 (python)
 ```python
 class Solution(object):
     def mostCommonWord(self, paragraph, banned):
