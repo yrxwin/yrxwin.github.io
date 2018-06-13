@@ -82,7 +82,7 @@ class Solution(object):
         words_dict = collections.Counter()
         top_word = None
         top_freq = 0
-        words = re.split("[ !?',;.]+",paragraph)
+        words = re.split("[ !?',;.]+", paragraph)
         for word in words:
             if word.lower() not in banned:
                 words_dict[word.lower()] += 1
