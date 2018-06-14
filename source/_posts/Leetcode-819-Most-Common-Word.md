@@ -70,6 +70,29 @@ public:
 };
 ```
 
+#### 示例代码 (python)
+```python
+class Solution(object):
+    def mostCommonWord(self, paragraph, banned):
+        """
+        :type paragraph: str
+        :type banned: List[str]
+        :rtype: str
+        """
+        words_dict = collections.Counter()
+        top_word = None
+        top_freq = 0
+        words = re.split("[ !?',;.]+", paragraph)
+        for word in words:
+            if word.lower() not in banned:
+                words_dict[word.lower()] += 1
+                if words_dict[word.lower()] > top_freq:
+                    top_word = word.lower()
+                    top_freq = words_dict[word.lower()]
+        
+        return top_word
+```
+
 #### 复杂度分析
 时间复杂度: `O(n)` (n为`paragraph`包含的单词数)
 空间复杂度: `O(m + n)` (m为`banned`长度)
