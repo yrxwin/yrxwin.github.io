@@ -45,7 +45,11 @@ When we erase the brick at (1, 0), the brick at (1, 1) has already disappeared d
 
 实际上, 用`DFS`一样可以给出清晰的解答. 在面试过程中, 除非利用`union find`可以明显简化问题, 否则不是很推荐使用. 曾经有人使用`union find`解答`number of islands I`, 就被面试官追问, `union find`如何删除一个节点, 如果不熟悉的话就会很被动.
 
-这里我们需要用`_id`来标记访问过的砖块, 每次落下一个砖块, 要从砖块的上下左右四个方向分别做`DFS`, 第一遍判断`DFS`经过的砖块是否会落下, 如果会, 第二遍则要标记砖块为落下. 注意每一次`DFS`都是一次新的遍历, 因此要更新`_id`的值.
+这里我们提供两种`DFS`的思路。
+
+方法1(c++): 每次落下一个砖块, 要从砖块的上下左右四个方向分别做`DFS`, 第一遍判断`DFS`经过的砖块是否与顶部砖块连通, 如果不连通, 则该砖块会落下, 并且所有与之相连的砖块都不与顶部砖块连通, 因此做第二遍`DFS`, 标记访问过的砖块为落下. 注意每一次`DFS`都是一次新的遍历, 因此我们使用`_id`的来标记第`_id`次`DFS`, 并且在新的一次遍历前更新`id`.
+
+方法2(python): 将所有击落的砖块，先行去除(在`Grid`矩阵中-1)，接着用`DFS`找出所有与顶部砖块连通的砖块，并用一个矩阵`connected`记录(既表示已经访问过，又表示与顶部连通)。然后，从最后一块被击落的砖块向前逐一恢复。每次恢复被击落砖块时，在`Grid`中+1，并且判断该位置是否原来有砖块存在，是否处于顶部或者四周有没有与顶部连通的砖块存在。若满足这些条件，说明该被击落的砖块可以恢复，并且以它为起点做`DFS`，所有与他连通的砖块都可以被恢复，恢复的数量即为该次击落后，落下砖块的数量。
 
 #### 示例代码 (cpp)
 ```cpp
@@ -103,10 +107,70 @@ public:
     }    
 };
 ```
+#### 示例代码 (python)
+```python
+class Solution(object):
+    def check_valid(self, r, c, grid):
+        if r < 0 or r >= len(grid) or c < 0  or c >= len(grid[0]) or grid[r][c] < 1:
+            return False
+        else:
+            return True
+        
+    def dfs_connect(self, grid, connected, r, c):
+        num_connected = 1
+        for rr, cc in [(r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)]:
+            if self.check_valid(rr, cc, grid) and not connected[rr][cc]:
+                connected[rr][cc] = 1
+                num_connected += self.dfs_connect(grid, connected, rr, cc)
+        return num_connected
+    
+    def build_connection(self, grid):
+        connected = [[0 for c in range(len(grid[0]))] for r in range(len(grid))]
+        for c in range(len(grid[0])):
+            if self.check_valid(0, c, grid):
+                connected[0][c] = 1
+                self.dfs_connect(grid, connected, 0, c)
+        return connected
+    
+    def check_new_block_connection(self, r, c, grid, connected):
+        if grid[r][c] < 1:
+            return False
+        if r == 0:
+            return True
+        for rr, cc in [(r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)]:
+            if self.check_valid(rr, cc, grid) and connected[rr][cc] == 1:
+                return True
+        return False
+    
+    def hitBricks(self, grid, hits):
+        """
+        :type grid: List[List[int]]
+        :type hits: List[List[int]]
+        :rtype: List[int]
+        """
+        ret = [0 for i in range(len(hits))]
+        for hit in hits:
+            grid[hit[0]][hit[1]] -= 1
+        connected = self.build_connection(grid)
+        for idx in range(len(hits)):
+            r, c = hits[-1 - idx]
+            grid[r][c] += 1
+            if self.check_new_block_connection(r, c, grid, connected):
+                connected[r][c] = 1
+                add_num = self.dfs_connect(grid, connected, r, c) - 1
+                ret[-1 - idx] = add_num
+                
+        return ret
+```
 
 #### 复杂度分析
+方法1：
 时间复杂度: `O(N * Q)` 其中`N`是砖块数量, `Q`是`hits`的长度
 空间复杂度: `O(1)`
+
+方法2：
+时间复杂度: `O(N + Q)` 其中`N`是砖块数量, `Q`是`hits`的长度
+空间复杂度: `O(N)`
 
 #### 归纳总结
 这是一道比较复杂的深度遍历问题, 如果同学一下子不会做也没有关系, 面试的时候不要紧张, 要和面试官讨论并且慢慢理清思路.
