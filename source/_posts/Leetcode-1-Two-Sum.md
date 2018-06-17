@@ -46,6 +46,22 @@ public:
 };
 ```
 
+#### 示例代码 (python)
+```python
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        numsIdxDict = dict()
+        for i in range(len(nums)):
+            if (target - nums[i]) in numsIdxDict:
+                return [i, numsIdxDict[(target - nums[i])]]
+            numsIdxDict[nums[i]] = i
+```
+
 #### 复杂度分析
 时间复杂度: `O(n)` `n`为`nums`数组长度
 空间复杂度: `O(n)`
