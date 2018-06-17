@@ -24,7 +24,7 @@ The answer must be a substring, `"pwke"` is a subsequence and not a substring.
 
 
 #### 解题思路
-这道题需要用一个`Hash Table`来记录上一次某个字母出现的`index`, 用一个变量`left`记录以当前字母结尾的符合题目条件的字符串的最左起始位置.
+这道题需要用一个`Hash Table`来记录当前字符上一次出现的`index`, 用一个变量`left`记录以当前字符结尾的符合题目条件的`substring`的左侧`index`. 注意`left`初始值为`-1`, 表示以当前字符结尾的符合题目条件的`substring`的起始位置等于`s`的起始位置 (`index`为`0`).
 
 #### 示例代码 (cpp)
 ```cpp
