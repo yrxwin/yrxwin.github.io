@@ -65,6 +65,28 @@ public:
 };
 ```
 
+#### 示例代码 (python)
+```python
+class Solution(object):         
+    def maxSlidingWindow(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        ret = []
+        queue = collections.deque()
+        for i in range(len(nums)):
+            while(len(queue) and (queue[0] <= i - k)):
+                queue.popleft()
+            while(len(queue) and (nums[queue[-1]] < nums[i])):
+                queue.pop()
+            queue.append(i)
+            if i >= k - 1:
+                ret.append(nums[queue[0]])
+        return ret
+```
+
 #### 复杂度分析
 时间复杂度: `O(n)` 其中`n`为`nums`长度
 空间复杂度: `O(k)`
