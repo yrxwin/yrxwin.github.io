@@ -49,10 +49,8 @@ class Solution {
         int i = min(m, k / 2), j = min(n, k / 2);
         if (nums1[i - 1] < nums2[i - 1]) {
             return findKth(vector<int>(nums1.begin() + i, nums1.end()), nums2, k - i);
-        } else {
-            return findKth(nums1, vector<int>(nums2.begin() + j, nums2.end()), k - j);
         }
-        return -1;
+        return findKth(nums1, vector<int>(nums2.begin() + j, nums2.end()), k - j);
     }
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
