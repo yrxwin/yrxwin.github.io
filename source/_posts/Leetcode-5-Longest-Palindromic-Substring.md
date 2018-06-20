@@ -44,10 +44,11 @@ public:
         int left = 0, maxLen = 1;
         int n = s.size();
         vector<vector<bool>> dp(n, vector<bool>(n, false));
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; ++i) { // i自左向右更新
             dp[i][i] = true;
-            for (int j = i - 1; j >= 0; --j) {
+            for (int j = i - 1; j >= 0; --j) { // j自右向左更新
                 dp[j][i] = (s[i] == s[j] && (i - j < 2 || dp[j + 1][i - 1]));
+                // 上面这行就是递推公式
                 if (dp[j][i]) {
                     if (maxLen < i - j + 1) {
                         maxLen = i - j + 1;
