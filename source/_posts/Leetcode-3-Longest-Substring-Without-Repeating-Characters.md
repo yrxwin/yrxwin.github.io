@@ -45,6 +45,26 @@ public:
 };
 ```
 
+#### 示例代码 (python)
+```python
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        iLeft = -1
+        ret = 0
+        charDict = dict()
+        for iRight in range(len(s)):
+            if s[iRight] in charDict and charDict[s[iRight]] >= iLeft:
+                iLeft = charDict[s[iRight]]
+            charDict[s[iRight]] = iRight
+            if iRight - iLeft > ret:
+                    ret = iRight - iLeft
+        return ret
+```
+
 #### 复杂度分析
 时间复杂度: `O(n)` 其中`n`为`s`的长度
 空间复杂度: `O(1)` 因为不同字符的数量有限(一般来说为256), 所以`mapping`的大小是恒定的
