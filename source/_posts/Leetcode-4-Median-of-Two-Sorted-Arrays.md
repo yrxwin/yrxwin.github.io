@@ -60,6 +60,35 @@ public:
 };
 ```
 
+#### 示例代码 (python)
+```python
+class Solution(object):
+    def findKth(self, nums1, nums2, k):
+        if len(nums1) > len(nums2):
+            nums1, nums2 = nums2, nums1
+        
+        if len(nums1) == 0:
+            return nums2[k - 1]
+        
+        if k == 1:
+            return min(nums1[0], nums2[0])
+        
+        k1 = min(len(nums1), k / 2)
+        k2 = min(len(nums2), k / 2)
+        if nums1[k1 - 1] < nums2[k1 - 1]:
+            return self.findKth(nums1[k1:], nums2, k - k1)
+        else:
+            return self.findKth(nums1, nums2[k2:], k - k2)
+    def findMedianSortedArrays(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: float
+        """
+        return (self.findKth(nums1, nums2, (len(nums1) + len(nums2) + 1) / 2) \
+                + self.findKth(nums1, nums2, (len(nums1) + len(nums2) + 2) / 2)) / 2.
+```
+
 #### 复杂度分析
 时间复杂度: `O(log(m+n))`
 空间复杂度: `O(1)`
