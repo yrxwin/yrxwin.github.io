@@ -62,6 +62,26 @@ public:
 };
 ```
 
+#### 示例代码 (python)
+```python
+class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        maxlen = 0
+        ret = None
+        dp = [[None for i in range(len(s))] for j in range(len(s))]
+        for right in range(len(s)):
+            for left in range(right, -1, -1):
+                dp[left][right] = s[left] == s[right] and (right - left < 3 or dp[left + 1][right - 1])
+                if dp[left][right] and (right - left + 1 > maxlen):
+                    maxlen = right - left + 1
+                    ret = s[left:right + 1]
+        return ret
+```
+
 #### 复杂度分析
 时间复杂度: `O(n^2)`, 其中`n`为`s`的长度
 空间复杂度: `O(n^2)`
