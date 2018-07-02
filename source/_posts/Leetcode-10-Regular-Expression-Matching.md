@@ -141,7 +141,7 @@ public:
                     }
                     dp[i][j] = dp[i][j - 2];
                     if (i > 0 && (p[j - 2] == '.' || p[j - 2] == s[i - 1])) {
-                        dp[i][j] = dp[i][j] | dp[i - 1][j];
+                        dp[i][j] = dp[i][j] || dp[i - 1][j];
                     }
                 }
             }
