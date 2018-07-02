@@ -3,7 +3,7 @@ title: '[Leetcode 10] Regular Expression Matching'
 categories:
   - leetcode
 date: 2018-06-25 17:44:41
-tags: [String, Dynamic Programming, Backtracking]
+tags: [Google, Facebook, Uber, Twitter, Airbnb, String, Dynamic Programming, Backtracking]
 author: 中猩猩
 
 ---
@@ -65,7 +65,9 @@ p = "mis\*is\*p\*."
 **Output:** false
 {% endblockquote %}
 
-#### 解题思路
+#### 解题思路 
+*以下解题思路以python版本为准, cpp版本则是简化的(无递归)动态规划解答, 读者任选其一即可*
+
 如果熟悉[Edit distance](https://en.wikipedia.org/wiki/Edit_distance)的话, 可以比较容易得想到用动态规划的办法求解.
 类似[Edit distance](https://en.wikipedia.org/wiki/Edit_distance)的解法, 我们可以构建一个`SxP`的矩阵来记录状态. 
 该矩阵中位于坐标`i, j`的值代表字符串`s[i:]`和Pattern`p[j:]`是否匹配(若为None, 则代表未知).
@@ -115,9 +117,43 @@ class Solution(object):
         return self.dfs(0, 0, s, p, dp)
 ```
 
+#### 示例代码 (cpp)
+```cpp
+class Solution {
+public:
+    bool isMatch(string s, string p) {
+        int m = s.size(), n = p.size();
+        vector<vector<bool>> dp(m + 1, vector<bool>(n + 1, false));
+        dp[0][0] = true;
+        for (int i = 0; i <= m; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                if (p[j - 1] != '*' && p[j - 1] != '.') {
+                    if (i > 0 && s[i - 1] == p[j - 1]) {
+                        dp[i][j] = dp[i - 1][j - 1];
+                    }
+                } else if (p[j - 1] == '.') {
+                    if (i > 0) {
+                        dp[i][j] = dp[i - 1][j - 1];
+                    }
+                } else {
+                    if (j == 1) {
+                        continue;
+                    }
+                    dp[i][j] = dp[i][j - 2];
+                    if (i > 0 && (p[j - 2] == '.' || p[j - 2] == s[i - 1])) {
+                        dp[i][j] = dp[i][j] || dp[i - 1][j];
+                    }
+                }
+            }
+        }
+        return dp[m][n];
+    }
+};
+```
+
 #### 复杂度分析
 时间复杂度: `O(SP)`, 其中`S`为`s`的长度, `P`为`p`的长度. 
 空间复杂度: `O(SP)`, 其中`S`为`s`的长度, `P`为`p`的长度
 
 #### 归纳总结
-这道题的思路还是比较容易想到用动态规划/递归来做的. 虽然这里使用了DFS，但因为记录了中间状态，本质上就是动态规划(如果读者细心比较，会发现时间空间复杂度也是一样的). 面试时, 还需要额外注意终结状态的判断和边界条件, 避免出现edge case或者访问了超出边界的矩阵坐标.
+这道题的思路还是比较容易想到用动态规划/递归来做的. 虽然这里python版本使用了DFS，但是因为记录了中间状态，本质上就是动态规划(如果读者细心比较，会发现时间空间复杂度也是一样的). 面试时, 还需要额外注意终结状态的判断和边界条件, 避免出现edge case或者访问了超出边界的矩阵坐标.
