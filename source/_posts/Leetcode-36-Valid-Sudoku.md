@@ -1,5 +1,5 @@
 ---
-title: Leetcode-36-Valid-Sudoku
+title: '[Leetcode 36] Valid Sudoku'
 categories:
   - leetcode
 author: '大猩猩, 中猩猩'
