@@ -10,11 +10,12 @@ description:
 ---
 #### 原题说明
 The string `"PAYPALISHIRING"` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
-{% blockquote %}  
-P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N  
-A&nbsp;&nbsp;P&nbsp;&nbsp;L&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;G  
-Y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
-{% endblockquote %}
+```
+P   A   H   N
+A P L S I I G  
+Y   I   R
+```
+
 And then read line by line: `"PAHNAPLSIIGYIR"`
 
 Write the code that will take a string and make this conversion given a number of rows:
@@ -23,22 +24,20 @@ string convert(string s, int numRows);
 {% endblockquote %}
 
 **Example 1:**
-{% blockquote %}
-**Input:** s = "PAYPALISHIRING", numRows = 3
-**Output:** "PAHNAPLSIIGYIR"
-{% endblockquote %}
-
+```
+Input: s = "PAYPALISHIRING", numRows = 3
+Output: "PAHNAPLSIIGYIR"
+```
 **Example 2:**
-{% blockquote %}
-**Input:** s = "PAYPALISHIRING", numRows = 4
-**Output:** "PINALSIGYAHRPI"
-**Explanation:**
-
+```
+Input: s = "PAYPALISHIRING", numRows = 4
+Output: "PINALSIGYAHRPI"
+Explanation:
 P     I    N
 A   L S  I G
 Y A   H R
 P     I
-{% endblockquote %}
+```
 
 #### 解题思路
 这道题需要把一个字符串变成ZigZag的排列后按行输出。所以我们只需要依次判断每个字符应该出现在ZigZag排列中的哪一行就可以了。
