@@ -10,10 +10,10 @@ description:
 ---
 #### 原题说明
 The string `"PAYPALISHIRING"` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
-{% blockquote %}
-P   A   H   N
-A P L S I I G
-Y   I   R
+{% blockquote %}  
+P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N  
+A&nbsp;&nbsp;P&nbsp;&nbsp;L&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;G  
+Y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
 {% endblockquote %}
 And then read line by line: `"PAHNAPLSIIGYIR"`
 
