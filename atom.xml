@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>XingXing Park</title>
+  
+  <subtitle>猩猩的乐园</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://xingxingpark.com/"/>
+  <updated>2018-08-05T04:56:43.686Z</updated>
+  <id>https://xingxingpark.com/</id>
+  
+  <author>
+    <name>猩猩管理员</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Leetcode 14] Longest Common Prefix</title>
+    <link href="https://xingxingpark.com/Leetcode-14-Longest-Common-Prefix/"/>
+    <id>https://xingxingpark.com/Leetcode-14-Longest-Common-Prefix/</id>
+    <published>2018-07-23T16:24:22.000Z</published>
+    <updated>2018-08-05T04:56:43.686Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Write a function to find the longest common prefix string
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="String" scheme="https://xingxingpark.com/tags/String/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 9] Palindrome Number</title>
+    <link href="https://xingxingpark.com/Leetcode-9-Palindrome-Number/"/>
+    <id>https://xingxingpark.com/Leetcode-9-Palindrome-Number/</id>
+    <published>2018-07-14T14:42:24.000Z</published>
+    <updated>2018-08-05T04:56:43.706Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Determine whether an integer is a palindrome. An integer is a
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Math" scheme="https://xingxingpark.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 7] Reverse Integer</title>
+    <link href="https://xingxingpark.com/Leetcode-7-Reverse-Integer/"/>
+    <id>https://xingxingpark.com/Leetcode-7-Reverse-Integer/</id>
+    <published>2018-07-06T15:09:14.000Z</published>
+    <updated>2018-08-05T04:56:43.702Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Given a 32-bit signed integer, reverse digits of an
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Math" scheme="https://xingxingpark.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 31] Next Permutation</title>
+    <link href="https://xingxingpark.com/Leetcode-31-Next-Permutation/"/>
+    <id>https://xingxingpark.com/Leetcode-31-Next-Permutation/</id>
+    <published>2018-07-03T23:08:40.000Z</published>
+    <updated>2018-08-05T04:56:43.686Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Implement &lt;strong&gt;next permutation&lt;/strong&gt;, which rearranges
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Array" scheme="https://xingxingpark.com/tags/Array/"/>
+    
+      <category term="Google" scheme="https://xingxingpark.com/tags/Google/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 6] ZigZag Conversion</title>
+    <link href="https://xingxingpark.com/Leetcode-6-ZigZag-Conversion/"/>
+    <id>https://xingxingpark.com/Leetcode-6-ZigZag-Conversion/</id>
+    <published>2018-07-01T16:23:17.000Z</published>
+    <updated>2018-08-05T04:56:43.702Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;The string &lt;code&gt;&amp;quot;PAYPALISHIRING&amp;quot;&lt;/code&gt; is written
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="String" scheme="https://xingxingpark.com/tags/String/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 36] Valid Sudoku</title>
+    <link href="https://xingxingpark.com/Leetcode-36-Valid-Sudoku/"/>
+    <id>https://xingxingpark.com/Leetcode-36-Valid-Sudoku/</id>
+    <published>2018-06-30T12:47:02.000Z</published>
+    <updated>2018-08-05T04:56:43.702Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Determine if a 9x9 Sudoku board is valid. Only the filled
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Uber" scheme="https://xingxingpark.com/tags/Uber/"/>
+    
+      <category term="Apple" scheme="https://xingxingpark.com/tags/Apple/"/>
+    
+      <category term="Hash Table" scheme="https://xingxingpark.com/tags/Hash-Table/"/>
+    
+      <category term="Snapchat" scheme="https://xingxingpark.com/tags/Snapchat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 10] Regular Expression Matching</title>
+    <link href="https://xingxingpark.com/Leetcode-10-Regular-Expression-Matching/"/>
+    <id>https://xingxingpark.com/Leetcode-10-Regular-Expression-Matching/</id>
+    <published>2018-06-25T17:44:41.000Z</published>
+    <updated>2018-08-05T04:56:43.686Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Given an input string (&lt;code&gt;s&lt;/code&gt;) and a pattern
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Facebook" scheme="https://xingxingpark.com/tags/Facebook/"/>
+    
+      <category term="Uber" scheme="https://xingxingpark.com/tags/Uber/"/>
+    
+      <category term="Airbnb" scheme="https://xingxingpark.com/tags/Airbnb/"/>
+    
+      <category term="Google" scheme="https://xingxingpark.com/tags/Google/"/>
+    
+      <category term="Twitter" scheme="https://xingxingpark.com/tags/Twitter/"/>
+    
+      <category term="String" scheme="https://xingxingpark.com/tags/String/"/>
+    
+      <category term="Dynamic Programming" scheme="https://xingxingpark.com/tags/Dynamic-Programming/"/>
+    
+      <category term="Backtracking" scheme="https://xingxingpark.com/tags/Backtracking/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 5] Longest Palindromic Substring</title>
+    <link href="https://xingxingpark.com/Leetcode-5-Longest-Palindromic-Substring/"/>
+    <id>https://xingxingpark.com/Leetcode-5-Longest-Palindromic-Substring/</id>
+    <published>2018-06-19T16:41:57.000Z</published>
+    <updated>2018-08-05T04:56:43.702Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Given a string &lt;code&gt;s&lt;/code&gt;, find the longest palindromic
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Microsoft" scheme="https://xingxingpark.com/tags/Microsoft/"/>
+    
+      <category term="Amazon" scheme="https://xingxingpark.com/tags/Amazon/"/>
+    
+      <category term="Bloomberg" scheme="https://xingxingpark.com/tags/Bloomberg/"/>
+    
+      <category term="String" scheme="https://xingxingpark.com/tags/String/"/>
+    
+      <category term="Dynamic Programming" scheme="https://xingxingpark.com/tags/Dynamic-Programming/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 4] Median of Two Sorted Arrays</title>
+    <link href="https://xingxingpark.com/Leetcode-4-Median-of-Two-Sorted-Arrays/"/>
+    <id>https://xingxingpark.com/Leetcode-4-Median-of-Two-Sorted-Arrays/</id>
+    <published>2018-06-17T17:19:04.000Z</published>
+    <updated>2018-08-05T04:56:43.702Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;There are two sorted arrays &lt;code&gt;nums1&lt;/code&gt; and
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Microsoft" scheme="https://xingxingpark.com/tags/Microsoft/"/>
+    
+      <category term="Apple" scheme="https://xingxingpark.com/tags/Apple/"/>
+    
+      <category term="Yahoo" scheme="https://xingxingpark.com/tags/Yahoo/"/>
+    
+      <category term="Adobe" scheme="https://xingxingpark.com/tags/Adobe/"/>
+    
+      <category term="Dropbox" scheme="https://xingxingpark.com/tags/Dropbox/"/>
+    
+      <category term="Array" scheme="https://xingxingpark.com/tags/Array/"/>
+    
+      <category term="Google" scheme="https://xingxingpark.com/tags/Google/"/>
+    
+      <category term="Binary Search" scheme="https://xingxingpark.com/tags/Binary-Search/"/>
+    
+      <category term="Zenefits" scheme="https://xingxingpark.com/tags/Zenefits/"/>
+    
+      <category term="Divide and Conquer" scheme="https://xingxingpark.com/tags/Divide-and-Conquer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 3] Longest Substring Without Repeating Characters</title>
+    <link href="https://xingxingpark.com/Leetcode-3-Longest-Substring-Without-Repeating-Characters/"/>
+    <id>https://xingxingpark.com/Leetcode-3-Longest-Substring-Without-Repeating-Characters/</id>
+    <published>2018-06-17T00:32:02.000Z</published>
+    <updated>2018-08-05T04:56:43.686Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Given a string, find the length of the &lt;strong&gt;longest
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Amazon" scheme="https://xingxingpark.com/tags/Amazon/"/>
+    
+      <category term="Bloomberg" scheme="https://xingxingpark.com/tags/Bloomberg/"/>
+    
+      <category term="Yelp" scheme="https://xingxingpark.com/tags/Yelp/"/>
+    
+      <category term="Adobe" scheme="https://xingxingpark.com/tags/Adobe/"/>
+    
+      <category term="Hash Table" scheme="https://xingxingpark.com/tags/Hash-Table/"/>
+    
+      <category term="String" scheme="https://xingxingpark.com/tags/String/"/>
+    
+      <category term="Two Pointers" scheme="https://xingxingpark.com/tags/Two-Pointers/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 2] Add Two Numbers</title>
+    <link href="https://xingxingpark.com/Leetcode-2-Add-Two-Numbers/"/>
+    <id>https://xingxingpark.com/Leetcode-2-Add-Two-Numbers/</id>
+    <published>2018-06-16T15:56:56.000Z</published>
+    <updated>2018-08-05T04:56:43.686Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;You are given two &lt;strong&gt;non-empty&lt;/strong&gt; linked lists
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Microsoft" scheme="https://xingxingpark.com/tags/Microsoft/"/>
+    
+      <category term="Amazon" scheme="https://xingxingpark.com/tags/Amazon/"/>
+    
+      <category term="Bloomberg" scheme="https://xingxingpark.com/tags/Bloomberg/"/>
+    
+      <category term="Airbnb" scheme="https://xingxingpark.com/tags/Airbnb/"/>
+    
+      <category term="Adobe" scheme="https://xingxingpark.com/tags/Adobe/"/>
+    
+      <category term="Linked List" scheme="https://xingxingpark.com/tags/Linked-List/"/>
+    
+      <category term="Math" scheme="https://xingxingpark.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 1] Two Sum</title>
+    <link href="https://xingxingpark.com/Leetcode-1-Two-Sum/"/>
+    <id>https://xingxingpark.com/Leetcode-1-Two-Sum/</id>
+    <published>2018-06-15T17:16:54.000Z</published>
+    <updated>2018-08-05T04:56:43.686Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Given an array of integers, return &lt;strong&gt;indices&lt;/strong&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Facebook" scheme="https://xingxingpark.com/tags/Facebook/"/>
+    
+      <category term="Microsoft" scheme="https://xingxingpark.com/tags/Microsoft/"/>
+    
+      <category term="Amazon" scheme="https://xingxingpark.com/tags/Amazon/"/>
+    
+      <category term="Bloomberg" scheme="https://xingxingpark.com/tags/Bloomberg/"/>
+    
+      <category term="Uber" scheme="https://xingxingpark.com/tags/Uber/"/>
+    
+      <category term="Linkedin" scheme="https://xingxingpark.com/tags/Linkedin/"/>
+    
+      <category term="Apple" scheme="https://xingxingpark.com/tags/Apple/"/>
+    
+      <category term="Airbnb" scheme="https://xingxingpark.com/tags/Airbnb/"/>
+    
+      <category term="Yelp" scheme="https://xingxingpark.com/tags/Yelp/"/>
+    
+      <category term="Yahoo" scheme="https://xingxingpark.com/tags/Yahoo/"/>
+    
+      <category term="Adobe" scheme="https://xingxingpark.com/tags/Adobe/"/>
+    
+      <category term="Dropbox" scheme="https://xingxingpark.com/tags/Dropbox/"/>
+    
+      <category term="Array" scheme="https://xingxingpark.com/tags/Array/"/>
+    
+      <category term="Hash Table" scheme="https://xingxingpark.com/tags/Hash-Table/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 239] Sliding Window Maximum</title>
+    <link href="https://xingxingpark.com/Leetcode-239-Sliding-Window-Maximum/"/>
+    <id>https://xingxingpark.com/Leetcode-239-Sliding-Window-Maximum/</id>
+    <published>2018-06-14T15:37:45.000Z</published>
+    <updated>2018-08-05T04:56:43.686Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Given an array &lt;code&gt;nums&lt;/code&gt;, there is a sliding window
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Amazon" scheme="https://xingxingpark.com/tags/Amazon/"/>
+    
+      <category term="Google" scheme="https://xingxingpark.com/tags/Google/"/>
+    
+      <category term="Zenefits" scheme="https://xingxingpark.com/tags/Zenefits/"/>
+    
+      <category term="Heap" scheme="https://xingxingpark.com/tags/Heap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 803] Bricks Falling When Hit</title>
+    <link href="https://xingxingpark.com/Leetcode-803-Bricks-Falling-When-Hit/"/>
+    <id>https://xingxingpark.com/Leetcode-803-Bricks-Falling-When-Hit/</id>
+    <published>2018-06-05T16:15:34.000Z</published>
+    <updated>2018-08-05T04:56:43.706Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;We have a grid of 1s and 0s; the 1s in a cell represent
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Google" scheme="https://xingxingpark.com/tags/Google/"/>
+    
+      <category term="Union Find" scheme="https://xingxingpark.com/tags/Union-Find/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 819] Most Common Word</title>
+    <link href="https://xingxingpark.com/Leetcode-819-Most-Common-Word/"/>
+    <id>https://xingxingpark.com/Leetcode-819-Most-Common-Word/</id>
+    <published>2018-06-04T22:10:38.000Z</published>
+    <updated>2018-08-05T04:56:43.706Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Given a paragraph and a list of banned words, return the most
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Amazon" scheme="https://xingxingpark.com/tags/Amazon/"/>
+    
+      <category term="String" scheme="https://xingxingpark.com/tags/String/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 812] Largest Triangle Area</title>
+    <link href="https://xingxingpark.com/Leetcode-812-Largest-Triangle-Area/"/>
+    <id>https://xingxingpark.com/Leetcode-812-Largest-Triangle-Area/</id>
+    <published>2018-06-04T16:20:55.000Z</published>
+    <updated>2018-08-05T04:56:43.706Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;You have a list of points in the plane. Return the area of
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Google" scheme="https://xingxingpark.com/tags/Google/"/>
+    
+      <category term="Math" scheme="https://xingxingpark.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 832] Flipping an Image</title>
+    <link href="https://xingxingpark.com/Leetcode-832-Flipping-an-Image/"/>
+    <id>https://xingxingpark.com/Leetcode-832-Flipping-an-Image/</id>
+    <published>2018-06-03T00:49:43.000Z</published>
+    <updated>2018-08-05T04:56:43.706Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Given a binary matrix A, we want to flip the image
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Array" scheme="https://xingxingpark.com/tags/Array/"/>
+    
+      <category term="Google" scheme="https://xingxingpark.com/tags/Google/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 410] Split Array Largest Sum</title>
+    <link href="https://xingxingpark.com/Leetcode-410-Split-Array-Largest-Sum/"/>
+    <id>https://xingxingpark.com/Leetcode-410-Split-Array-Largest-Sum/</id>
+    <published>2018-04-22T19:35:29.000Z</published>
+    <updated>2018-08-05T04:56:43.702Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Given an array which consists of non-negative integers and an
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Facebook" scheme="https://xingxingpark.com/tags/Facebook/"/>
+    
+      <category term="Dynamic Programming" scheme="https://xingxingpark.com/tags/Dynamic-Programming/"/>
+    
+      <category term="Binary Search" scheme="https://xingxingpark.com/tags/Binary-Search/"/>
+    
+      <category term="Baidu" scheme="https://xingxingpark.com/tags/Baidu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 719] Find K-th Smallest Pair Distance</title>
+    <link href="https://xingxingpark.com/Leetcode-719-Find-K-th-Smallest-Pair-Distance/"/>
+    <id>https://xingxingpark.com/Leetcode-719-Find-K-th-Smallest-Pair-Distance/</id>
+    <published>2018-04-17T13:01:07.000Z</published>
+    <updated>2018-08-05T04:56:43.702Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;Given an integer array, return the k-th smallest distance
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Array" scheme="https://xingxingpark.com/tags/Array/"/>
+    
+      <category term="Google" scheme="https://xingxingpark.com/tags/Google/"/>
+    
+      <category term="Binary Search" scheme="https://xingxingpark.com/tags/Binary-Search/"/>
+    
+      <category term="Heap" scheme="https://xingxingpark.com/tags/Heap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Leetcode 777] Swap Adjacent in LR String</title>
+    <link href="https://xingxingpark.com/Leetcode-777-Swap-Adjacent-in-LR-String/"/>
+    <id>https://xingxingpark.com/Leetcode-777-Swap-Adjacent-in-LR-String/</id>
+    <published>2018-04-15T12:18:48.000Z</published>
+    <updated>2018-08-05T04:56:43.706Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;原题说明&quot;&gt;&lt;a href=&quot;#原题说明&quot; class=&quot;headerlink&quot; title=&quot;原题说明&quot;&gt;&lt;/a&gt;原题说明&lt;/h4&gt;&lt;p&gt;In a string composed of &lt;code&gt;&amp;#39;L&amp;#39;&lt;/code&gt;,
+        
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://xingxingpark.com/categories/leetcode/"/>
+    
+    
+      <category term="Google" scheme="https://xingxingpark.com/tags/Google/"/>
+    
+      <category term="Brainteaser" scheme="https://xingxingpark.com/tags/Brainteaser/"/>
+    
+  </entry>
+  
+</feed>

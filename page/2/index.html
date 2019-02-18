@@ -1,0 +1,2659 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/xiaopang_128.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/xiaopang_32.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/xiaopang_16.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="XingXing Park" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="技术面试问题详解">
+<meta name="keywords" content="Leetcode, cpp, python, xingxingpark, interview, solution, 面试, system design, 解答">
+<meta property="og:type" content="website">
+<meta property="og:title" content="XingXing Park">
+<meta property="og:url" content="https://xingxingpark.com/page/2/index.html">
+<meta property="og:site_name" content="XingXing Park">
+<meta property="og:description" content="技术面试问题详解">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XingXing Park">
+<meta name="twitter:description" content="技术面试问题详解">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xingxingpark.com/page/2/"/>
+
+
+
+
+
+  <title>XingXing Park</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-116515754-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XingXing Park</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">猩猩的乐园</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xingxingpark.com/Leetcode-2-Add-Two-Numbers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="猩猩管理员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingXing Park">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Leetcode-2-Add-Two-Numbers/" itemprop="url">[Leetcode 2] Add Two Numbers</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-16T15:56:56+00:00">
+                2018-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Leetcode-2-Add-Two-Numbers/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Leetcode-2-Add-Two-Numbers/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="原题说明"><a href="#原题说明" class="headerlink" title="原题说明"></a>原题说明</h4><p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in <strong>reverse order</strong> and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+<p><strong>Example</strong>:<br><blockquote><p>Input: <code>(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</code><br>Output: <code>7 -&gt; 0 -&gt; 8</code><br>Explanation: <code>342 + 465 = 807</code>.</p>
+</blockquote></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题考察对链表的熟练使用, 以及对边界条件的处理能力. 实际上Leetcode上有很多类似的题目, 同学们可以总结一套自己的模板, 这样面试中比较容易和面试官说清楚思路, 也可以避免出错. </p>
+<p>本文的模板(c++)主要有以下几个需要注意的地方:</p>
+<ul>
+<li>用一个<code>dummy node</code>来指向返回节点</li>
+<li>用一个变量<code>carry</code>来记住进位</li>
+<li><code>while</code>循环有三个, 第一个是两个链表都没有走完的情况, 另两个是其中一个没有走完的情况</li>
+<li>最后要记得判断一下<code>carry</code>不为零的情况, 这样还要再加一个节点</li>
+</ul>
+<p>该模板思路清晰, 但代码量稍多. 在python版中, 提供了另一种解法. 这种解法以<code>l1 || l2 || carry</code> 为终止条件, 写法上更为简洁.</p>
+<h4 id="示例代码-cpp"><a href="#示例代码-cpp" class="headerlink" title="示例代码 (cpp)"></a>示例代码 (cpp)</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        ListNode* dummy = <span class="keyword">new</span> ListNode(<span class="number">-1</span>);</span><br><span class="line">        ListNode* node = dummy;</span><br><span class="line">        <span class="keyword">while</span> (l1 &amp;&amp; l2) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = l1-&gt;val + l2-&gt;val + carry;</span><br><span class="line">            <span class="keyword">int</span> val = tmp % <span class="number">10</span>;</span><br><span class="line">            carry = tmp / <span class="number">10</span>;</span><br><span class="line">            node-&gt;next = <span class="keyword">new</span> ListNode(val);</span><br><span class="line">            node = node-&gt;next;</span><br><span class="line">            l1 = l1-&gt;next;</span><br><span class="line">            l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (l1) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = l1-&gt;val + carry;</span><br><span class="line">            <span class="keyword">int</span> val = tmp % <span class="number">10</span>;</span><br><span class="line">            carry = tmp / <span class="number">10</span>;</span><br><span class="line">            node-&gt;next = <span class="keyword">new</span> ListNode(val);</span><br><span class="line">            node = node-&gt;next;</span><br><span class="line">            l1 = l1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (l2) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = l2-&gt;val + carry;</span><br><span class="line">            <span class="keyword">int</span> val = tmp % <span class="number">10</span>;</span><br><span class="line">            carry = tmp / <span class="number">10</span>;</span><br><span class="line">            node-&gt;next = <span class="keyword">new</span> ListNode(val);</span><br><span class="line">            node = node-&gt;next;</span><br><span class="line">            l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (carry) &#123;</span><br><span class="line">            node-&gt;next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="示例代码-python"><a href="#示例代码-python" class="headerlink" title="示例代码 (python)"></a>示例代码 (python)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addTwoNumbers</span><span class="params">(self, l1, l2)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type l1: ListNode</span></span><br><span class="line"><span class="string">        :type l2: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        dummy = ListNode(<span class="number">0</span>)</span><br><span class="line">        curr = dummy</span><br><span class="line">        carry = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span>(l1 <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">or</span> l2 <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">or</span> carry):</span><br><span class="line">            curr_val = <span class="number">0</span></span><br><span class="line">            curr_val += l1.val <span class="keyword">if</span> l1 <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            curr_val += l2.val <span class="keyword">if</span> l2 <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            l1 = l1.next <span class="keyword">if</span> l1 <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">else</span> <span class="keyword">None</span></span><br><span class="line">            l2 = l2.next <span class="keyword">if</span> l2 <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">else</span> <span class="keyword">None</span></span><br><span class="line">            curr_val += carry</span><br><span class="line">            carry = curr_val &gt; <span class="number">9</span></span><br><span class="line">            curr.next = ListNode(curr_val - carry * <span class="number">10</span>)</span><br><span class="line">            curr = curr.next</span><br><span class="line">        <span class="keyword">return</span> dummy.next</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>时间复杂度: <code>O(max(m, n))</code>, <code>m</code>和<code>n</code>分别是链表<code>l1</code>和<code>l2</code>的长度<br>空间复杂度: <code>O(max(m, n))</code></p>
+<h4 id="归纳总结"><a href="#归纳总结" class="headerlink" title="归纳总结"></a>归纳总结</h4><p>面试中遇到这道题, 写完一定要用特殊例子检查一下. 因为本题思路很直接, 但是边界条件较多, 如果有边界条件没有考虑到会减分.</p>
+<p>本文提供了两个模板, 同学们选择比较顺手的作为模板即可, 没有必要来回切换.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xingxingpark.com/Leetcode-1-Two-Sum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="猩猩管理员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingXing Park">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Leetcode-1-Two-Sum/" itemprop="url">[Leetcode 1] Two Sum</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-15T17:16:54+00:00">
+                2018-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Leetcode-1-Two-Sum/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Leetcode-1-Two-Sum/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="原题说明"><a href="#原题说明" class="headerlink" title="原题说明"></a>原题说明</h4><p>Given an array of integers, return <strong>indices</strong> of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have <strong>exactly</strong> one solution, and you may not use the same element twice.</p>
+<p><strong>Example</strong>:<br><blockquote><p>Given <code>nums = [2, 7, 11, 15]</code>, <code>target = 9</code>,</p>
+<p>Because <code>nums[0] + nums[1] = 2 + 7 = 9</code>,<br>return <code>[0, 1]</code>.</p>
+</blockquote></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>这是一道非常经典的面试题. 由于被面的太多, 现在一般会考察这道题的变种, 但是原题也还是经常出现在电话面试中, 或者被当做热身题.</p>
+<p>这道题的<code>O(n)</code>解法是利用<code>hash table</code>来存储遍历过的元素, 对于当前的元素<code>nums[i]</code>, 我们只需要判断<code>target - nums[i]</code>是否在哈希表中即可.</p>
+<p>这道题可能会有follow up问能否不用额外空间, 那么就需要牺牲时间复杂度: 可以先排序, 然后用双指针两头扫遍历一遍即可, 这个方法此处不做赘述, 在<code>Three Sum</code>中会详细介绍.</p>
+<h4 id="示例代码-cpp"><a href="#示例代码-cpp" class="headerlink" title="示例代码 (cpp)"></a>示例代码 (cpp)</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapping;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mapping.count(target - nums[i])) &#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;mapping[target - nums[i]], i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            mapping[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="number">-1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="示例代码-python"><a href="#示例代码-python" class="headerlink" title="示例代码 (python)"></a>示例代码 (python)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        numsIdxDict = dict()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span> (target - nums[i]) <span class="keyword">in</span> numsIdxDict:</span><br><span class="line">                <span class="keyword">return</span> [i, numsIdxDict[(target - nums[i])]]</span><br><span class="line">            numsIdxDict[nums[i]] = i</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>时间复杂度: <code>O(n)</code> <code>n</code>为<code>nums</code>数组长度<br>空间复杂度: <code>O(n)</code></p>
+<h4 id="归纳总结"><a href="#归纳总结" class="headerlink" title="归纳总结"></a>归纳总结</h4><p>面试中如果遇到这道题, 也不要太高兴直接开始写答案, 还是要好好分析思路, 问清楚要求, 比如是不是一定有解, 可能有多少解, 能不能用额外空间等等.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xingxingpark.com/Leetcode-239-Sliding-Window-Maximum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="猩猩管理员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingXing Park">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Leetcode-239-Sliding-Window-Maximum/" itemprop="url">[Leetcode 239] Sliding Window Maximum</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-14T15:37:45+00:00">
+                2018-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Leetcode-239-Sliding-Window-Maximum/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Leetcode-239-Sliding-Window-Maximum/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="原题说明"><a href="#原题说明" class="headerlink" title="原题说明"></a>原题说明</h4><p>Given an array <code>nums</code>, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the <code>k</code> numbers in the window. Each time the sliding window moves right by one position. Return the max sliding window.</p>
+<p><strong>Example</strong>:<br><strong>Input</strong>: <code>nums = [1,3,-1,-3,5,3,6,7]</code>, and <code>k = 3</code><br><strong>Output</strong>: <code>[3,3,5,5,6,7]</code><br><strong>Explanation</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Window position                Max</span><br><span class="line">---------------               -----</span><br><span class="line">[1  3  -1] -3  5  3  6  7       3</span><br><span class="line"> 1 [3  -1  -3] 5  3  6  7       3</span><br><span class="line"> 1  3 [-1  -3  5] 3  6  7       5</span><br><span class="line"> 1  3  -1 [-3  5  3] 6  7       5</span><br><span class="line"> 1  3  -1  -3 [5  3  6] 7       6</span><br><span class="line"> 1  3  -1  -3  5 [3  6  7]      7</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note</strong>:<br>You may assume k is always valid, 1 ≤ k ≤ input array’s size for non-empty array.</p>
+<p><strong>Follow up</strong>:<br>Could you solve it in linear time?</p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>这是一道比较好的面试题, 因为用priority queue的方法是容易想到的, 但是在实现的过程中也需要考虑一些边界条件, 比如刚开始扫的时候队列中少于<code>k</code>个数怎么处理, 什么时候结束等等. 这样方便面试官考察基本的coding能力.</p>
+<p>对于followup, 相对来说要难一些, 用了双向队列(<code>deque</code>)结构来存储当前sliding window, 类似的问题有<a href="/Leetcode-316-Remove-Duplicate-Letters">[LeetCode 316] Remove Duplicate Letters 移除重复字母</a><br>, <a href="/Leetcode-739-Daily-Temperatures">[Leetcode 739] Daily Temperatures</a>. 如果面试中能够想到的话, 就很接近Strong Hire了.</p>
+<p>为了方便更新sliding window以及取出当前最大元素, 我们用的数据结构是<code>deque</code>. <code>deque</code>存储的是<code>nums</code>中对应元素的<code>index</code>. 主要思路是使得<code>deque</code>中的元素由老到新, 由大到小排列, 并且只存储之后可能会成为最大值的元素. 具体的方法是: 首先将超出窗口范围的老元素从队列头移出, 每次新扫到的元素与队列尾元素比较, 如果新的元素大, 则<code>pop</code>当前队尾元素(因为被<code>pop</code>的元素在窗口内必然小于新元素, 所以之后任意一步都不会成为最大值), 不然则直接插入新元素. 这样每走一步, 当前的<code>deque</code>头元素即为窗口中的最大值.</p>
+<h4 id="示例代码-cpp"><a href="#示例代码-cpp" class="headerlink" title="示例代码 (cpp)"></a>示例代码 (cpp)</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; maxSlidingWindow(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; dq;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rets;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &gt;= k) &#123;</span><br><span class="line">                <span class="keyword">if</span> (dq.front() == i - k) &#123;</span><br><span class="line">                    dq.pop_front();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (!dq.empty() &amp;&amp; nums[i] &gt; nums[dq.back()]) &#123;</span><br><span class="line">                dq.pop_back();</span><br><span class="line">            &#125;</span><br><span class="line">            dq.push_back(i);</span><br><span class="line">            <span class="keyword">if</span> (i &gt;= k - <span class="number">1</span>) &#123;</span><br><span class="line">                rets.push_back(nums[dq.front()]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rets;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="示例代码-python"><a href="#示例代码-python" class="headerlink" title="示例代码 (python)"></a>示例代码 (python)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span>         </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSlidingWindow</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        ret = []</span><br><span class="line">        queue = collections.deque()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">while</span>(len(queue) <span class="keyword">and</span> (queue[<span class="number">0</span>] &lt;= i - k)):</span><br><span class="line">                queue.popleft()</span><br><span class="line">            <span class="keyword">while</span>(len(queue) <span class="keyword">and</span> (nums[queue[<span class="number">-1</span>]] &lt; nums[i])):</span><br><span class="line">                queue.pop()</span><br><span class="line">            queue.append(i)</span><br><span class="line">            <span class="keyword">if</span> i &gt;= k - <span class="number">1</span>:</span><br><span class="line">                ret.append(nums[queue[<span class="number">0</span>]])</span><br><span class="line">        <span class="keyword">return</span> ret</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>时间复杂度: <code>O(n)</code> 其中<code>n</code>为<code>nums</code>长度<br>空间复杂度: <code>O(k)</code></p>
+<h4 id="归纳总结"><a href="#归纳总结" class="headerlink" title="归纳总结"></a>归纳总结</h4><p>同学们可以将解题思路中总结的类似题目一起做一遍, 这样对于处理这类问题会有更好的理解.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xingxingpark.com/Leetcode-803-Bricks-Falling-When-Hit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="猩猩管理员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingXing Park">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Leetcode-803-Bricks-Falling-When-Hit/" itemprop="url">[Leetcode 803] Bricks Falling When Hit</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-05T16:15:34+00:00">
+                2018-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Leetcode-803-Bricks-Falling-When-Hit/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Leetcode-803-Bricks-Falling-When-Hit/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="原题说明"><a href="#原题说明" class="headerlink" title="原题说明"></a>原题说明</h4><p>We have a grid of 1s and 0s; the 1s in a cell represent bricks.  A brick will not drop if and only if it is directly connected to the top of the grid, or at least one of its (4-way) adjacent bricks will not drop.</p>
+<p>We will do some erasures sequentially. Each time we want to do the erasure at the location (i, j), the brick (if it exists) on that location will disappear, and then some other bricks may drop because of that erasure.</p>
+<p>Return an array representing the number of bricks that will drop after each erasure in sequence.</p>
+<blockquote><p><strong>Example 1</strong>:<br><strong>Input</strong>:<br>grid = <code>[[1,0,0,0],[1,1,1,0]]</code><br>hits = <code>[[1,0]]</code><br><strong>Output</strong>: <code>[2]</code><br><strong>Explanation</strong>:<br>If we erase the brick at (1, 0), the brick at (1, 1) and (1, 2) will drop. So we should return 2.</p>
+</blockquote>
+<blockquote><p><strong>Example 2</strong>:<br><strong>Input</strong>:<br>grid = <code>[[1,0,0,0],[1,1,0,0]]</code><br>hits = <code>[[1,1],[1,0]]</code><br><strong>Output</strong>: <code>[0,0]</code><br><strong>Explanation</strong>:<br>When we erase the brick at (1, 0), the brick at (1, 1) has already disappeared due to the last move. So each erasure will cause no bricks dropping.  Note that the erased brick (1, 0) will not be counted as a dropped brick.</p>
+</blockquote>
+<p><strong>Note</strong>:</p>
+<ul>
+<li>The number of rows and columns in the grid will be in the range <code>[1, 200]</code>.</li>
+<li>The number of erasures will not exceed the area of the grid.</li>
+<li>It is guaranteed that each erasure will be different from any other erasure, and located inside the grid.</li>
+<li>An erasure may refer to a location with no brick - if it does, no bricks drop.</li>
+</ul>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题tag里有<code>union find</code>的方法, 解题思路可以参考官方解答.</p>
+<p>实际上, 用<code>DFS</code>一样可以给出清晰的解答. 在面试过程中, 除非利用<code>union find</code>可以明显简化问题, 否则不是很推荐使用. 曾经有人使用<code>union find</code>解答<code>number of islands I</code>, 就被面试官追问, <code>union find</code>如何删除一个节点, 如果不熟悉的话就会很被动.</p>
+<p>这里我们提供两种<code>DFS</code>的思路。</p>
+<p>方法1(c++): 每次落下一个砖块, 要从砖块的上下左右四个方向分别做<code>DFS</code>, 第一遍判断<code>DFS</code>经过的砖块是否与顶部砖块连通, 如果不连通, 则该砖块会落下, 并且所有与之相连的砖块都不与顶部砖块连通, 因此做第二遍<code>DFS</code>, 标记访问过的砖块为落下. 注意每一次<code>DFS</code>都是一次新的遍历, 因此我们使用<code>_id</code>的来标记第<code>_id</code>次<code>DFS</code>, 并且在新的一次遍历前更新<code>id</code>.</p>
+<p>方法2(python): 将所有击落的砖块，先行去除(在<code>Grid</code>矩阵中-1)，接着用<code>DFS</code>找出所有与顶部砖块连通的砖块，并用一个矩阵<code>connected</code>记录(既表示已经访问过，又表示与顶部连通)。然后，从最后一块被击落的砖块向前逐一恢复。每次恢复被击落砖块时，在<code>Grid</code>中+1，并且判断该位置是否原来有砖块存在，是否处于顶部或者四周有没有与顶部连通的砖块存在。若满足这些条件，说明该被击落的砖块可以恢复，并且以它为起点做<code>DFS</code>，所有与他连通的砖块都可以被恢复，恢复的数量即为该次击落后，落下砖块的数量。</p>
+<h4 id="示例代码-cpp"><a href="#示例代码-cpp" class="headerlink" title="示例代码 (cpp)"></a>示例代码 (cpp)</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; _g; <span class="comment">// 用一个私有变量 _g 可以减少 fall 函数的参数数量</span></span><br><span class="line">    <span class="keyword">int</span> _m, _n;</span><br><span class="line">    <span class="keyword">int</span> _id = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dx = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>&#125;;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dy = &#123;<span class="number">0</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">fall</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">bool</span> isClear, <span class="keyword">int</span>&amp; cnt)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span> || x &gt;= _m || y &lt; <span class="number">0</span> || y &gt;= _n) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (_g[x][y] == _id || _g[x][y] == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        _g[x][y] = isClear ? <span class="number">0</span> : _id;</span><br><span class="line">        ++cnt;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> xx = x + dx[i], yy = y + dy[i];</span><br><span class="line">            <span class="keyword">if</span> (!fall(xx, yy, isClear, cnt)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; hitBricks(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; hits) &#123;</span><br><span class="line">        _m = grid.size();</span><br><span class="line">        _n = grid[<span class="number">0</span>].size();</span><br><span class="line">        _g.swap(grid);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rets;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; hit : hits) &#123;</span><br><span class="line">            <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> x = hit[<span class="number">0</span>], y = hit[<span class="number">1</span>];</span><br><span class="line">            _g[x][y] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i) &#123;</span><br><span class="line">                ++_id;</span><br><span class="line">                <span class="keyword">int</span> xx = x + dx[i];</span><br><span class="line">                <span class="keyword">int</span> yy = y + dy[i];</span><br><span class="line">                <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span> (!fall(xx, yy, <span class="literal">false</span>, cnt)) &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                ++_id;</span><br><span class="line">                ret += cnt;</span><br><span class="line">                fall(xx, yy, <span class="literal">true</span>, cnt);</span><br><span class="line">            &#125;</span><br><span class="line">            rets.push_back(ret);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rets;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="示例代码-python"><a href="#示例代码-python" class="headerlink" title="示例代码 (python)"></a>示例代码 (python)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">check_valid</span><span class="params">(self, r, c, grid)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> r &lt; <span class="number">0</span> <span class="keyword">or</span> r &gt;= len(grid) <span class="keyword">or</span> c &lt; <span class="number">0</span>  <span class="keyword">or</span> c &gt;= len(grid[<span class="number">0</span>]) <span class="keyword">or</span> grid[r][c] &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dfs_connect</span><span class="params">(self, grid, connected, r, c)</span>:</span></span><br><span class="line">        num_connected = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> rr, cc <span class="keyword">in</span> [(r - <span class="number">1</span>, c), (r + <span class="number">1</span>, c), (r, c - <span class="number">1</span>), (r, c + <span class="number">1</span>)]:</span><br><span class="line">            <span class="keyword">if</span> self.check_valid(rr, cc, grid) <span class="keyword">and</span> <span class="keyword">not</span> connected[rr][cc]:</span><br><span class="line">                connected[rr][cc] = <span class="number">1</span></span><br><span class="line">                num_connected += self.dfs_connect(grid, connected, rr, cc)</span><br><span class="line">        <span class="keyword">return</span> num_connected</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">build_connection</span><span class="params">(self, grid)</span>:</span></span><br><span class="line">        connected = [[<span class="number">0</span> <span class="keyword">for</span> c <span class="keyword">in</span> range(len(grid[<span class="number">0</span>]))] <span class="keyword">for</span> r <span class="keyword">in</span> range(len(grid))]</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> range(len(grid[<span class="number">0</span>])):</span><br><span class="line">            <span class="keyword">if</span> self.check_valid(<span class="number">0</span>, c, grid):</span><br><span class="line">                connected[<span class="number">0</span>][c] = <span class="number">1</span></span><br><span class="line">                self.dfs_connect(grid, connected, <span class="number">0</span>, c)</span><br><span class="line">        <span class="keyword">return</span> connected</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">check_new_block_connection</span><span class="params">(self, r, c, grid, connected)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> grid[r][c] &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">if</span> r == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">for</span> rr, cc <span class="keyword">in</span> [(r - <span class="number">1</span>, c), (r + <span class="number">1</span>, c), (r, c - <span class="number">1</span>), (r, c + <span class="number">1</span>)]:</span><br><span class="line">            <span class="keyword">if</span> self.check_valid(rr, cc, grid) <span class="keyword">and</span> connected[rr][cc] == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hitBricks</span><span class="params">(self, grid, hits)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type grid: List[List[int]]</span></span><br><span class="line"><span class="string">        :type hits: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        ret = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(len(hits))]</span><br><span class="line">        <span class="keyword">for</span> hit <span class="keyword">in</span> hits:</span><br><span class="line">            grid[hit[<span class="number">0</span>]][hit[<span class="number">1</span>]] -= <span class="number">1</span></span><br><span class="line">        connected = self.build_connection(grid)</span><br><span class="line">        <span class="keyword">for</span> idx <span class="keyword">in</span> range(len(hits)):</span><br><span class="line">            r, c = hits[<span class="number">-1</span> - idx]</span><br><span class="line">            grid[r][c] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> self.check_new_block_connection(r, c, grid, connected):</span><br><span class="line">                connected[r][c] = <span class="number">1</span></span><br><span class="line">                add_num = self.dfs_connect(grid, connected, r, c) - <span class="number">1</span></span><br><span class="line">                ret[<span class="number">-1</span> - idx] = add_num</span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> ret</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>方法1：<br>时间复杂度: <code>O(N * Q)</code> 其中<code>N</code>是砖块数量, <code>Q</code>是<code>hits</code>的长度<br>空间复杂度: <code>O(1)</code></p>
+<p>方法2：<br>时间复杂度: <code>O(N + Q)</code> 其中<code>N</code>是砖块数量, <code>Q</code>是<code>hits</code>的长度<br>空间复杂度: <code>O(N)</code></p>
+<h4 id="归纳总结"><a href="#归纳总结" class="headerlink" title="归纳总结"></a>归纳总结</h4><p>这是一道比较复杂的深度遍历问题, 如果同学一下子不会做也没有关系, 面试的时候不要紧张, 要和面试官讨论并且慢慢理清思路.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xingxingpark.com/Leetcode-819-Most-Common-Word/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="猩猩管理员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingXing Park">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Leetcode-819-Most-Common-Word/" itemprop="url">[Leetcode 819] Most Common Word</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-04T22:10:38+00:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Leetcode-819-Most-Common-Word/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Leetcode-819-Most-Common-Word/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="原题说明"><a href="#原题说明" class="headerlink" title="原题说明"></a>原题说明</h4><p>Given a paragraph and a list of banned words, return the most frequent word that is not in the list of banned words.  It is guaranteed there is at least one word that isn’t banned, and that the answer is unique.</p>
+<p>Words in the list of banned words are given in lowercase, and free of punctuation.  Words in the paragraph are not case sensitive.  The answer is in lowercase.</p>
+<blockquote><p><strong>Example</strong>:<br><strong>Input</strong>:<br>paragraph = “Bob hit a ball, the hit BALL flew far after it was hit.”<br>banned = [“hit”]<br><strong>Output</strong>: “ball”<br><strong>Explanation</strong>:<br>“hit” occurs 3 times, but it is a banned word.<br>“ball” occurs twice (and no other word does), so it is the most frequent non-banned word in the paragraph.<br>Note that words in the paragraph are not case sensitive,<br>that punctuation is ignored (even if adjacent to words, such as “ball,”),<br>and that “hit” isn’t the answer even though it occurs more because it is banned.</p>
+</blockquote>
+<p>Note:</p>
+<ul>
+<li><code>1 &lt;= paragraph.length &lt;= 1000</code>.</li>
+<li><code>1 &lt;= banned.length &lt;= 100</code>.</li>
+<li><code>1 &lt;= banned[i].length &lt;= 10</code>.</li>
+<li>The answer is unique, and written in lowercase (even if its occurrences in paragraph may have uppercase symbols, and even if it is a proper noun.)</li>
+<li><code>paragraph</code> only consists of letters, spaces, or the punctuation symbols !?’,;.</li>
+<li>Different words in <code>paragraph</code> are always separated by a space.</li>
+<li>There are no hyphens or hyphenated words.</li>
+<li>Words only consist of letters, never apostrophes or other punctuation symbols.</li>
+</ul>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题可以通过<code>hash table</code>来建立每个单词与其出现频率的对应关系, 在遍历<code>paragraph</code>的时候统计单词出现的频率, 并更新当前的最高频单词.<br>由于题目相对简单, 面试的时候需要在较短的时间内想到建立怎样的对应关系, 存储结构应该如何设计 (比如用<code>map</code>还是<code>unordered_map</code>, <code>key</code>和<code>value</code>分别是什么, 两者能不能倒过来等等)<br>另外对于使用<code>cpp</code>的同学来说, 熟练掌握<code>istringstream</code>和<code>getline</code>这些基础的I/O interface还是比较加分的.</p>
+<h4 id="示例代码-cpp"><a href="#示例代码-cpp" class="headerlink" title="示例代码 (cpp)"></a>示例代码 (cpp)</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">mostCommonWord</span><span class="params">(<span class="built_in">string</span> paragraph, <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; banned)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">istringstream</span> <span class="title">iss</span><span class="params">(paragraph)</span></span>;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="built_in">string</span>&gt; banSet(banned.begin(), banned.end());</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; mapping;</span><br><span class="line">        <span class="built_in">string</span> cur, ret;</span><br><span class="line">        <span class="keyword">int</span> curMax = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (getline(iss, cur, <span class="string">' '</span>)) &#123;</span><br><span class="line">            <span class="built_in">string</span> formatStr;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cur.size(); ++i) &#123;</span><br><span class="line">                <span class="keyword">char</span> ch = <span class="built_in">tolower</span>(cur[i]);</span><br><span class="line">                <span class="keyword">if</span> (ch &gt;= <span class="string">'a'</span> &amp;&amp; ch &lt;= <span class="string">'z'</span>) &#123;</span><br><span class="line">                    formatStr += ch;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            mapping[formatStr]++;</span><br><span class="line">            <span class="keyword">if</span> (mapping[formatStr] &gt; curMax &amp;&amp; !banSet.count(formatStr)) &#123;</span><br><span class="line">                curMax = mapping[formatStr];</span><br><span class="line">                ret = formatStr;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="示例代码-python"><a href="#示例代码-python" class="headerlink" title="示例代码 (python)"></a>示例代码 (python)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mostCommonWord</span><span class="params">(self, paragraph, banned)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type paragraph: str</span></span><br><span class="line"><span class="string">        :type banned: List[str]</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        words_dict = collections.Counter()</span><br><span class="line">        top_word = <span class="keyword">None</span></span><br><span class="line">        top_freq = <span class="number">0</span></span><br><span class="line">        words = re.split(<span class="string">"[ !?',;.]+"</span>, paragraph)</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            <span class="keyword">if</span> word.lower() <span class="keyword">not</span> <span class="keyword">in</span> banned:</span><br><span class="line">                words_dict[word.lower()] += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> words_dict[word.lower()] &gt; top_freq:</span><br><span class="line">                    top_word = word.lower()</span><br><span class="line">                    top_freq = words_dict[word.lower()]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> top_word</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>时间复杂度: <code>O(n)</code> (n为<code>paragraph</code>包含的单词数)<br>空间复杂度: <code>O(m + n)</code> (m为<code>banned</code>长度)</p>
+<h4 id="归纳总结"><a href="#归纳总结" class="headerlink" title="归纳总结"></a>归纳总结</h4><p>像这样一道比较基础的算法设计题, 如果真正面试的时候遇到, 尽量不要一上来就写答案, 可以在白板上列举一下可能的数据结构及做法, 说明为什么最后选择这样做(比如只有这样才行得通或者效率更高). 通过这样的分析可以让面试官看到真实清晰的思路.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xingxingpark.com/Leetcode-812-Largest-Triangle-Area/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="猩猩管理员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingXing Park">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Leetcode-812-Largest-Triangle-Area/" itemprop="url">[Leetcode 812] Largest Triangle Area</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-04T16:20:55+00:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Leetcode-812-Largest-Triangle-Area/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Leetcode-812-Largest-Triangle-Area/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="原题说明"><a href="#原题说明" class="headerlink" title="原题说明"></a>原题说明</h4><p>You have a list of points in the plane. Return the area of the largest triangle that can be formed by any 3 of the points.</p>
+<img src="/Leetcode-812-Largest-Triangle-Area/sample.png" width="350">
+<blockquote><p><strong>Example</strong>:<br><strong>Input</strong>: points = <code>[[0,0],[0,1],[1,0],[0,2],[2,0]]</code><br><strong>Output</strong>: 2<br><strong>Explanation</strong>:<br>The five points are show in the figure below. The red triangle is the largest.</p>
+</blockquote>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li><code>3 &lt;= points.length &lt;= 50</code>.</li>
+<li>No points will be duplicated.</li>
+<li><code>-50 &lt;= points[i][j] &lt;= 50</code>.</li>
+<li>Answers within 10^-6 of the true value will be accepted as correct.</li>
+</ul>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题主要考察解析几何中三角形面积的计算(如<a href="http://www.maths.usyd.edu.au/u/MOW/vectors/vectors-11/v-11-7.html" target="_blank" rel="noopener">叉乘计算面积</a>, <a href="https://people.richland.edu/james/lecture/m116/matrices/applications.html" target="_blank" rel="noopener">行列式计算面积
+</a>), 也比较适合Google电话面试或者Intern面试的难度, 可能会用来考察简历有相关背景的面试者.<br>做法上比较暴力, 直接三重循环找到所有可能组成三角形的点计算最大面积即可, 还是要求快速形成思路, 代码清晰, 建议把叉乘部分单独写成一个Function, 这样做即使面试时叉乘公式不记得了, 但是整体思路清晰, 也可能会过面试. </p>
+<h4 id="示例代码-cpp"><a href="#示例代码-cpp" class="headerlink" title="示例代码 (cpp)"></a>示例代码 (cpp)</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">multiply</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.5</span> * <span class="built_in">abs</span>(v1[<span class="number">0</span>] * v2[<span class="number">1</span>] - v2[<span class="number">0</span>] * v1[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">largestTriangleArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; points)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = points.size();</span><br><span class="line">        <span class="keyword">double</span> ret = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; ++j) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = j + <span class="number">1</span>; k &lt; n; ++k) &#123;</span><br><span class="line">                    ret = max(ret, multiply(&#123;points[k][<span class="number">0</span>] - points[i][<span class="number">0</span>], points[k][<span class="number">1</span>] - points[i][<span class="number">1</span>]&#125;, &#123;points[k][<span class="number">0</span>] - points[j][<span class="number">0</span>], points[k][<span class="number">1</span>] - points[j][<span class="number">1</span>]&#125;));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="示例代码-python"><a href="#示例代码-python" class="headerlink" title="示例代码 (python)"></a>示例代码 (python)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calArea</span><span class="params">(self, p1, p2, p3)</span>:</span></span><br><span class="line">        <span class="comment">#Use Determinant to get triangle area</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">.5</span> * abs(p1[<span class="number">0</span>] * p2[<span class="number">1</span>] + p2[<span class="number">0</span>] * p3[<span class="number">1</span>] + p3[<span class="number">0</span>] * p1[<span class="number">1</span>] - p1[<span class="number">0</span>] * p3[<span class="number">1</span>] - p2[<span class="number">0</span>] * p1[<span class="number">1</span>] - p3[<span class="number">0</span>] * p2[<span class="number">1</span>])</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestTriangleArea</span><span class="params">(self, points)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type points: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        maxS = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(points) - <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, len(points) - <span class="number">1</span>):</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(j + <span class="number">1</span>, len(points)):</span><br><span class="line">                    S = self.calArea(points[i], points[j], points[k])</span><br><span class="line">                    <span class="keyword">if</span> S &gt; maxS:</span><br><span class="line">                        maxS = S</span><br><span class="line">        <span class="keyword">return</span> maxS</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>时间复杂度: <code>O(N^3)</code><br>空间复杂度: <code>O(1)</code></p>
+<h4 id="归纳总结"><a href="#归纳总结" class="headerlink" title="归纳总结"></a>归纳总结</h4><p>谷歌有时候会考察矩阵叉乘, 点乘相关的知识点, 面试的时候即使不记得也可以问面试官要提示, 当然如果自己能够记得肯定是加分的. 之后会整理相关的考题.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xingxingpark.com/Leetcode-832-Flipping-an-Image/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="猩猩管理员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingXing Park">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Leetcode-832-Flipping-an-Image/" itemprop="url">[Leetcode 832] Flipping an Image</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-03T00:49:43+00:00">
+                2018-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Leetcode-832-Flipping-an-Image/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Leetcode-832-Flipping-an-Image/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="原题说明"><a href="#原题说明" class="headerlink" title="原题说明"></a>原题说明</h4><p>Given a binary matrix A, we want to flip the image horizontally, then invert it, and return the resulting image.</p>
+<p>To flip an image horizontally means that each row of the image is reversed.  For example, flipping <code>[1, 1, 0]</code> horizontally results in <code>[0, 1, 1]</code>.</p>
+<p>To invert an image means that each 0 is replaced by 1, and each 1 is replaced by 0. For example, inverting <code>[0, 1, 1]</code> results in <code>[1, 0, 0]</code>.</p>
+<p>Example 1:<br><blockquote><p>Input: <code>[[1,1,0],[1,0,1],[0,0,0]]</code><br>Output: <code>[[1,0,0],[0,1,0],[1,1,1]]</code><br>Explanation: First reverse each row: <code>[[0,1,1],[1,0,1],[0,0,0]]</code>.<br>Then, invert the image: <code>[[1,0,0],[0,1,0],[1,1,1]]</code></p>
+</blockquote><br>Example 2:<br><blockquote><p>Input: <code>[[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]]</code><br>Output: <code>[[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]</code><br>Explanation: First reverse each row: <code>[[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]]</code>.<br>Then invert the image: <code>[[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]</code></p>
+</blockquote><br>Notes:</p>
+<ul>
+<li><code>1 &lt;= A.length = A[0].length &lt;= 20</code></li>
+<li><code>0 &lt;= A[i][j] &lt;= 1</code></li>
+</ul>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题并不难, 属于谷歌面试中的热身题或者是Intern电话面试的难度. 关键是要在短时间内形成清晰的思路, 并且形成代码, 为之后的题或者followup争取到足够的时间.<br>这里介绍的思路是逐行进行<code>swap</code>, 然后每个元素异或, 虽然这样每个元素会扫面两遍, 但是思路足够清晰.</p>
+<h4 id="示例代码-cpp"><a href="#示例代码-cpp" class="headerlink" title="示例代码 (cpp)"></a>示例代码 (cpp)</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; flipAndInvertImage(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; A) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;row : A) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row.size() / <span class="number">2</span>; ++i) &#123;</span><br><span class="line">                swap(row[i], row[row.size() - <span class="number">1</span> - i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;ele : row) &#123;</span><br><span class="line">                ele ^= <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="示例代码-python"><a href="#示例代码-python" class="headerlink" title="示例代码 (python)"></a>示例代码 (python)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">flipAndInvertImage</span><span class="params">(self, A)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type A: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(A)):</span><br><span class="line">            A[i] = A[i][::<span class="number">-1</span>]</span><br><span class="line">            A[i] = [ele^<span class="number">1</span> <span class="keyword">for</span> ele <span class="keyword">in</span> A[i]]</span><br><span class="line">        <span class="keyword">return</span> A</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>时间复杂度: <code>O(n^2)</code> (n为A的边长)<br>空间复杂度: <code>O(1)</code></p>
+<h4 id="归纳总结"><a href="#归纳总结" class="headerlink" title="归纳总结"></a>归纳总结</h4><p>需要训练在白板上10分钟之内搞定.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xingxingpark.com/Leetcode-410-Split-Array-Largest-Sum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="猩猩管理员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingXing Park">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Leetcode-410-Split-Array-Largest-Sum/" itemprop="url">[Leetcode 410] Split Array Largest Sum</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-22T19:35:29+00:00">
+                2018-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Leetcode-410-Split-Array-Largest-Sum/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Leetcode-410-Split-Array-Largest-Sum/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="原题说明"><a href="#原题说明" class="headerlink" title="原题说明"></a>原题说明</h4><p>Given an array which consists of non-negative integers and an integer m, you can split the array into m non-empty continuous subarrays. Write an algorithm to minimize the largest sum among these m subarrays.</p>
+<p><strong>Note</strong>:</p>
+<p>If n is the length of array, assume the following constraints are satisfied:</p>
+<ul>
+<li>1 ≤ n ≤ 1000</li>
+<li>1 ≤ m ≤ min(50, n)</li>
+</ul>
+<p><strong>Examples</strong>:</p>
+<pre><code>Input:    
+nums = [7,2,5,10,8]
+m = 2
+
+Output:
+18
+
+Explanation:
+There are four ways to split nums into two subarrays. 
+The best way is to split it into [7,2,5] and [10,8], where the largest sum among the two subarrays is only 18.
+</code></pre><h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>本题给出一个数组<code>nums</code>和一个整数<code>m</code>,要求把数组<code>nums</code>分成连续的<code>m</code>份，找到所有分类中，子数组最大和的最小值。</p>
+<p>显然，最简单的方法是可以使用<code>DFS</code>做暴力搜索，但是这样时间复杂度相当于从<code>n-1</code>个元素中抽取<code>m-1</code>个元素，为<code>O(n^m)</code>，会 TLE。</p>
+<p>因为子数组本身是连续的，我们可以想到用动态规划 <a href="\tags\Dynamic-Programming">Dyanmic Programming</a> 来设计解法。定义<code>f[i][j]</code>为把数组 <code>nums[0,1,..,i]</code>分成<code>j</code>份后最大子数组和的最小值。显然，我们会有以下公式:<br><code>f[i][j] = max(f[k][j-1],nums[k+1]+...+nums[i) for all valid k</code><br>用动态规划，从<code>f[0][0]</code>出发，最后返回<code>f[n][m]</code> 即可。时间复杂度为<code>O(n^2*m)</code>，并且空间复杂度为<code>O(n*m)</code>。</p>
+<p>这里，介绍一种更好的算法，运用 <a href="\tags\Binary-Search">Binary Search</a> 。考虑到数组元素都是非负整数，所以答案也一定是整数。同时，答案一定存在于 0 到 数组元素和<code>sum of array</code>之间。因此，我们只需能够判断，对于任意一个整数<code>mid</code>，是否存在一个分类使得<code>nums</code>能分成<code>m</code>份，并且最大子数组的和不超过<code>mid</code>。如果能，我们下调<code>Binary Search</code>，如果不能，我们上调<code>Binary Search</code>。</p>
+<p>判断的算法也很简单，我们用贪心算法<code>Greedy</code>。用<code>tmpsum</code>记录当前子数组的和，用<code>count</code>记录当前的分类数。如果当前元素<code>num</code>加上<code>tmpsum</code>不超过<code>mid</code>，更新<code>tmpsum = tmpsum + num</code>；如果超过<code>mid</code>，更新<code>tmpsum = 0</code>并更新<code>count = count + 1</code>。遍历完数组<code>nums</code>， 当<code>count &lt;= m</code>，返回 <code>True</code>，反之返回<code>False</code>。</p>
+<h4 id="示例代码-python"><a href="#示例代码-python" class="headerlink" title="示例代码 (python)"></a>示例代码 (python)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">splitArray</span><span class="params">(self, nums, m)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type m: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        low, high = <span class="number">0</span>, sum(nums)</span><br><span class="line">        <span class="keyword">while</span> low + <span class="number">1</span> &lt; high:</span><br><span class="line">            mid = int(low + (high - low) /<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">if</span> self.determinTrue(mid, nums, m):</span><br><span class="line">                high = mid</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                low = mid</span><br><span class="line">        <span class="keyword">return</span> i <span class="keyword">if</span> self.determinTrue(low, nums, m) <span class="keyword">else</span> high</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">determinTrue</span><span class="params">(self, target, nums, m)</span>:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        tmpsum, count = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> num &gt; target:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            <span class="keyword">if</span> tmpsum + num &lt;= target:</span><br><span class="line">                tmpsum += num</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                tmpsum = num</span><br><span class="line">                count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count &lt;= m</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>每次贪心算法时间复杂度为<code>O(n)</code>，同时<code>Binary Search</code>需要的时间复杂度是<code>O(log(sum of array))</code>。因此总的时间复杂度为<code>O(n*(log(sum of array)))</code>。而空间复杂度为<code>O(n)</code>。</p>
+<ul>
+<li>时间复杂度: <code>O(n*(log(sum of array)))</code></li>
+<li>空间复杂度: <code>O(n)</code></li>
+</ul>
+<h4 id="归纳总结"><a href="#归纳总结" class="headerlink" title="归纳总结"></a>归纳总结</h4><p>当数组的和不过分大时，一般情况下，<a href="\tags\Binary-Search">Binary Search</a> 的时间复杂度都会优于<a href="\tags\Dynamic-Programming">Dyanmic Programming</a>。当然，这里能使用 <code>Binary Search</code>的前提是数组元素都是非负整数而<code>Dynamic Programming</code>则没有这个限制 。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xingxingpark.com/Leetcode-719-Find-K-th-Smallest-Pair-Distance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="猩猩管理员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingXing Park">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Leetcode-719-Find-K-th-Smallest-Pair-Distance/" itemprop="url">[Leetcode 719] Find K-th Smallest Pair Distance</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T13:01:07+00:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Leetcode-719-Find-K-th-Smallest-Pair-Distance/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Leetcode-719-Find-K-th-Smallest-Pair-Distance/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="原题说明"><a href="#原题说明" class="headerlink" title="原题说明"></a>原题说明</h4><p>Given an integer array, return the k-th smallest distance among all the pairs. The distance of a pair (A, B) is defined as the absolute difference between A and B.</p>
+<pre><code>**Example 1**:
+Input:
+nums = [1,3,1]
+k = 1
+Output: 0 
+Explanation:
+Here are all the pairs:
+(1,3) -&gt; 2
+(1,1) -&gt; 0
+(3,1) -&gt; 2
+Then the 1st smallest distance pair is (1,1), and its distance is 0.
+</code></pre><p><strong>Note</strong>:</p>
+<ol>
+<li><code>2 &lt;= len(nums) &lt;= 10000.</code></li>
+<li><code>0 &lt;= nums[i] &lt; 1000000.</code></li>
+<li><code>1 &lt;= k &lt;= len(nums) * (len(nums) - 1) / 2.</code></li>
+</ol>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>题目要求求出第 k 个最小 pair 的距离。对于长度为n的数组，一共有 <code>n*(n-1)</code>个pair。如果我们求出所有 pair 的距离，然后排序找出第k个最小的pair的距离，时间复杂度会是 <code>O(n^2log(n))</code>，同时空间复杂度会是 <code>O(n^2)</code>， 这显然不是最优解。</p>
+<p>可以对以上解法稍作优化，使用优先队列进行排序，这样时间复杂度会是<code>O(n^2log(k))</code>，空间复杂度会降低到 <code>O(k)</code>。</p>
+<p>这题更好的一个解法是使用 <a href="\tags\Binary-Search">Binary Search</a>。对数组先进行排序，我们可以得到 pair 的最大距离<code>end</code>。因为题目讨论的都是整数，所以答案一定是在<code>0</code>到<code>end</code>的范围内的整数。我们在这个范围内使用 <code>Binary Search</code>，对于每一个搜索的值 <code>mid</code>，我们用一个函数<code>count</code>判断比<code>mid</code>小的 pair 的距离的个数。如果小于k，则让 start == mid ；反之，则让 end == mid。</p>
+<p>因为我们对数组事先进行了排序，所以每一次调用count函数，用<code>window sliding</code>的方法，只需要遍历一边数组就可以。</p>
+<h4 id="示例代码-python"><a href="#示例代码-python" class="headerlink" title="示例代码 (python)"></a>示例代码 (python)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">smallestDistancePair</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        start, end = <span class="number">0</span>, nums[<span class="number">-1</span>] - nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">while</span> start + <span class="number">1</span> &lt; end:</span><br><span class="line">            mid = int(start + (end - start)/<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">if</span> self.count(nums, mid) &lt; k:</span><br><span class="line">                start = mid</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end = mid</span><br><span class="line">        <span class="keyword">return</span> start <span class="keyword">if</span> self.count(nums,start) &gt;= k <span class="keyword">else</span> end</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">count</span><span class="params">(self, nums, mid)</span>:</span> <span class="comment">#比mid小的pair数</span></span><br><span class="line">        left, right, ans = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> right != len(nums):</span><br><span class="line">            <span class="keyword">while</span> nums[right] - nums[left] &gt; mid:</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            ans += right - left</span><br><span class="line">            right += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<h4 id="示例代码-cpp"><a href="#示例代码-cpp" class="headerlink" title="示例代码 (cpp)"></a>示例代码 (cpp)</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countPairs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> mid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>, high = <span class="number">0</span>, res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(high &lt; nums.size()) &#123;</span><br><span class="line">            <span class="keyword">while</span>(nums[high] - nums[low] &gt; mid) &#123;</span><br><span class="line">                low++;</span><br><span class="line">            &#125;</span><br><span class="line">            res += high - low;</span><br><span class="line">            high++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">smallestDistancePair</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        <span class="keyword">int</span> low = nums[<span class="number">1</span>] - nums[<span class="number">0</span>], high = nums[nums.size()<span class="number">-1</span>] - nums[<span class="number">0</span>], mid;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i + <span class="number">1</span>] - nums[i] &lt; low) &#123;</span><br><span class="line">                low  = nums[i + <span class="number">1</span>] - nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(low &lt; high) &#123;</span><br><span class="line">            mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (countPairs(nums, mid) &lt; k) &#123;</span><br><span class="line">                low = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                high = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> low;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>排序数组的时间复杂度为<code>O(n log(n))</code>， <code>Binary Search</code>的遍历次数为<code>O(log(n))</code>，每次遍历调用 count 函数，需要遍历一边数组，时间复杂度为<code>O(n)</code>， 所以总的时间复杂度是<code>O(n log(n))</code>。用 in-place 的方法排序，不需要额外的空间，总的空间复杂度为 <code>O(1)</code></p>
+<ul>
+<li>时间复杂度: <code>O(n log(n))</code> </li>
+<li>空间复杂度: <code>O(1)</code></li>
+</ul>
+<h4 id="归纳总结"><a href="#归纳总结" class="headerlink" title="归纳总结"></a>归纳总结</h4><p>在有有效精度或者整数等条件给出的前提下，用 <a href="\tags\Binary-Search">Binary Search</a> 往往能有效的优化一些算法。之后我们会再多讨论这类题型。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xingxingpark.com/Leetcode-777-Swap-Adjacent-in-LR-String/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="猩猩管理员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingXing Park">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Leetcode-777-Swap-Adjacent-in-LR-String/" itemprop="url">[Leetcode 777] Swap Adjacent in LR String</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-15T12:18:48+00:00">
+                2018-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Leetcode-777-Swap-Adjacent-in-LR-String/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Leetcode-777-Swap-Adjacent-in-LR-String/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="原题说明"><a href="#原题说明" class="headerlink" title="原题说明"></a>原题说明</h4><p>In a string composed of <code>&#39;L&#39;</code>, <code>&#39;R&#39;</code>, and <code>&#39;X&#39;</code> characters, like “RXXLRXRXL”, a move consists of either replacing one occurrence of <code>&quot;XL&quot;</code> with <code>&quot;LX&quot;</code>, or replacing one occurrence of <code>&quot;RX&quot;</code> with <code>&quot;XR&quot;</code>. Given the starting string start and the ending string end, return True if and only if there exists a sequence of moves to transform one string to the other.</p>
+<pre><code>Example:
+Input: start = &quot;RXXLRXRXL&quot;, end = &quot;XRLXXRRLX&quot;
+Output: True
+Explanation:
+We can transform start to end following these steps:
+RXXLRXRXL -&gt;
+XRXLRXRXL -&gt;
+XRLXRXRXL -&gt;
+XRLXXRRXL -&gt;
+XRLXXRRLX
+</code></pre><p><strong>Note</strong>:</p>
+<ol>
+<li>1 &lt;= len(start) = len(end) &lt;= 10000.</li>
+<li>Both start and end will only consist of characters in <code>{&#39;L&#39;, &#39;R&#39;, &#39;X&#39;}</code>.</li>
+</ol>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>题目要求根据给定的规则，判断能否从 start string 变换到 end string 。</p>
+<p>给出了两种变换的规则，从“XL”到“LX”和从“RX”到“XR”。所以我们可以给出两条规律：</p>
+<ul>
+<li>如果start能变换到end，那么除去两个字符串中的<code>&quot;X&quot;</code>，剩余的字符串一定相同。因为任意<code>&quot;R&quot;</code>和<code>&quot;L&quot;</code>的相对顺序都不会发生变化，我们定义出去<code>&quot;X&quot;</code>的字符串为有效字符串</li>
+<li>根据变换的规则，<code>&quot;L&quot;</code>不能向右移，<code>“R”</code>不能向左移，所以 start 中<code>“L”</code>对应的 index <code>&quot;i&quot;</code> 一定不小于 end 中 <code>“L”</code>对应的index <code>&quot;j&quot;</code>；start 中<code>“R”</code>对应的 index <code>&quot;i&quot;</code> 一定不大于 end 中 <code>“R”</code>对应的index <code>&quot;j&quot;</code>；<ol>
+<li>i &gt;= j, 如果 start[i]==end[j]==”L”</li>
+<li>i &lt;= j, 如果 start[i]==end[j]==”R”</li>
+</ol>
+</li>
+</ul>
+<h4 id="示例代码-python"><a href="#示例代码-python" class="headerlink" title="示例代码 (python)"></a>示例代码 (python)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canTransform</span><span class="params">(self, start, end)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type start: str</span></span><br><span class="line"><span class="string">        :type end: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># 第一条规律</span></span><br><span class="line">        startRemove = <span class="string">""</span>.join(start.split(<span class="string">"X"</span>))</span><br><span class="line">        endRemove = <span class="string">""</span>.join(end.split(<span class="string">"X"</span>))</span><br><span class="line">        <span class="keyword">if</span> startRemove != endRemove:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="comment"># 第二条规律</span></span><br><span class="line">        i, j, n = <span class="number">0</span>, <span class="number">0</span>, len(start)</span><br><span class="line">        <span class="keyword">while</span>(j &lt; n <span class="keyword">and</span> i &lt; n):</span><br><span class="line">            <span class="keyword">while</span>(j &lt; n <span class="keyword">and</span> end[j] == <span class="string">'X'</span>):</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span>(i &lt; n <span class="keyword">and</span> start[i] == <span class="string">'X'</span>):</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span>(i == n <span class="keyword">and</span> j == n): </span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span>(start[i] == <span class="string">'R'</span> <span class="keyword">and</span> i &gt; j) <span class="keyword">or</span> (start[i] == <span class="string">'L'</span> <span class="keyword">and</span> i &lt; j):</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>每个字符串遍历一边，时间复杂度为<code>O(n)</code>。没有用额外空间，时间复杂度为<code>O(1)</code><br>时间复杂度: <code>O(n)</code><br>空间复杂度: <code>O(1)</code></p>
+<h4 id="归纳总结"><a href="#归纳总结" class="headerlink" title="归纳总结"></a>归纳总结</h4><p>本题需要对变换的规律做出总结，找出不变量，从而做出进一步判断。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">猩猩管理员</p>
+              <p class="site-description motion-element" itemprop="description">技术面试问题详解</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">猩猩管理员</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xingxingpark.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
