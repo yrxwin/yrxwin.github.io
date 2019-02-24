@@ -1,5 +1,5 @@
 ---
-title: [Leetcode 993] Cousins in Binary Tree
+title: '[Leetcode 993] Cousins in Binary Tree'
 categories:
   - leetcode
 author: '猩猩管理员'
