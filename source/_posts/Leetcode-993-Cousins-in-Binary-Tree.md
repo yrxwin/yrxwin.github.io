@@ -25,13 +25,13 @@ Return true if and only if the nodes corresponding to the values x and y are cou
 {% endblockquote %}
 
 **Example 2:**
-{% asset_img example1.png 250 %}{% blockquote %}
+{% asset_img example2.png 250 %}{% blockquote %}
 **Input:** `root = [1,2,3,null,4,null,5], x = 5, y = 4`
 **Output:** `true`
 {% endblockquote %}
 
 **Example 3:**
-{% asset_img example1.png 250 %}{% blockquote %}
+{% asset_img example3.png 250 %}{% blockquote %}
 **Input:** `root = [1,2,3,null,4], x = 2, y = 3`
 **Output:** `false`
 {% endblockquote %}
