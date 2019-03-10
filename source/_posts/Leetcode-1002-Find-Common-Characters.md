@@ -36,7 +36,7 @@ You may return the answer in any order.
 
 **核心思想**:
 1. 用第一个字符串初始化`ansMap`
-2. 遍历剩余字符串，每次便利签，先清空`midMap`，再遍历当前字符串，更新`midMap`；
+2. 遍历剩余字符串，每次遍历前，先清空`midMap`，再遍历当前字符串，更新`midMap`；
    将`ansMap`中的`key`与`midMap`做比较：
    - 如果不在`midMap`中，直接在`ansMap`中删除这个`key`； 
    - 否则更新`ansMap`中`key`对应的`value`，取为`midMap`和`ansMap`中值较小的那个
@@ -86,7 +86,7 @@ public:
 
 #### 复杂度分析
 时间复杂度: `O(n)`
-空间复杂度: `O(26*3) = O(1)`
+空间复杂度: `O(1)`
 
 #### 归纳总结
 我们在**Youtube**上更新了[视频讲解](https://youtu.be/ldnAFjkS22k)，欢迎关注！
