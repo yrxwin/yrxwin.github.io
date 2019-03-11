@@ -114,3 +114,14 @@ search:
   field: post
   format: html
   limit: 10000
+
+# hexo-related-popular-posts Specify option to use popular articles
+# Add account information of Google Anakytics API
+popularPosts:
+  googleAnalyticsAPI:
+    clientId:    112818765216157412274         # google analytics API Service account acquired with
+    serviceEmail:  firebase-adminsdk-oq836@yrxwin.iam.gserviceaccount.com      # E-mail address obtained with the google analytics API
+    key:  /ga.pem    # With the google analytics API Path of acquired pem file
+    viewId:  172387417                                       # View ID tied with google analytics
+    dateRange:  30                                          # (Optional) Time period (days) to count PV number Default is 30
+    expiresDate:  10                                        # (Option) Cache file expiration date Days) Default is 10
