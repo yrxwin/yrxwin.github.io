@@ -14,6 +14,29 @@
 # Useful if you don't want to inherit the theme _config.yml configurations.
 override: false
 
+# Allow to cache content generation. Introduced in NexT v6.0.0.
+cache:
+  enable: true
+
+  # Redefine custom file paths. Introduced in NexT v6.0.2.
+  # If commented, will be used default custom file paths.
+
+  # For example, you want to put your custom styles file
+  # outside theme directory in root `source/_data`, set
+  # `styles: source/_data/styles.styl`
+  #custom_file_path:
+  # Default paths: layout/_custom/*
+  #head: source/_data/head.swig
+  #header: source/_data/header.swig
+  #sidebar: source/_data/sidebar.swig
+
+  # Default path: source/css/_variables/custom.styl
+  #variables: source/_data/variables.styl
+  # Default path: source/css/_mixins/custom.styl
+  #mixins: source/_data/mixins.styl
+  # Default path: source/css/_custom/custom.styl
+  #styles: source/_data/styles.styl
+
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
@@ -48,13 +71,23 @@ footer:
   since: 2018
 
   # Icon between year and copyright info.
-  icon: user
+  icon:
+    # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons/
+    # `heart` is recommended with animation in red (#ff0000).
+    name: user
+    # If you want to animate the icon, set it to true.
+    animated: false
+    # Change the color of icon, using Hex Code.
+    color: "#808080"
 
-  # If not defined, will be used `author` from Hexo main config.
+  # If not defined, `author` from Hexo main config will be used.
   copyright:
   # -------------------------------------------------------------
-  # Hexo link (Powered by Hexo).
-  powered: false
+  powered:
+    # Hexo link (Powered by Hexo).
+    enable: false
+    # Version info of Hexo after Hexo link (vX.X.X).
+    version: false
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
@@ -62,8 +95,33 @@ footer:
     # Version info of NexT after scheme info (vX.X.X).
     version: false
   # -------------------------------------------------------------
+  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
+  # http://www.miitbeian.gov.cn
+  beian:
+    enable: false
+    icp:
+
+  # -------------------------------------------------------------
   # Any custom text can be defined here.
-  #custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
+  #custom_text: Hosted by <a href="https://pages.coding.me" class="theme-link" rel="noopener" target="_blank">Coding Pages</a>
+
+# Creative Commons 4.0 International License.
+# See: https://creativecommons.org/share-your-work/licensing-types-examples
+# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+# You can set a language value if you prefer a translated version of CC license.
+# CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
+# Valid values of language: deed.zh, deed.fr, deed.de , etc.
+creative_commons:
+  license: by-nc-sa
+  sidebar: false
+  post: true
+  language:
+
+# Follow me on GitHub banner in right-top corner.
+github_banner:
+  enable: false
+  permalink: https://github.com/yourname
+  title: Follow me on GitHub
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -71,15 +129,18 @@ footer:
 
 # Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
-# Tips: Before you open this tag, remember set up your URL in hexo _config.yml ( ex. url: http://yourdomain.com )
+# Tips: Before you open this tag, remember set up your URL in hexo _config.yml (e.g. url: http://yourdomain.com)
 canonical: true
 
-# Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+# Change headers hierarchy on site-subtitle (will be main site description) and on all post / page titles for better SEO-optimization.
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
 index_with_subtitle: false
+
+# Automatically add external URL with BASE64 encrypt & decrypt.
+exturl: false
 
 
 # ---------------------------------------------------------------
@@ -243,16 +304,34 @@ post_wordcount:
   #description: ex. subscribe to my blog by scanning my public wechat account
 
 # Reward
-reward_comment: 可爱的猩猩需要更多🍌
-wechatpay: /images/wechat_reward.jpg
-#alipay: /images/alipay.jpg
-#bitcoin: /images/bitcoin.png
+# If true, reward would be displayed in every article by default.
+# You can show or hide reward in a specific article throuth `reward: true | false` in Front Matter.
+reward:
+  enable: false
+  comment: 可爱的猩猩需要更多🍌
+  wechatpay: /images/wechat_reward.jpg
+  #alipay: /images/alipay.jpg
+  #bitcoin: /images/bitcoin.png
 
-# Declare license on posts
-post_copyright:
+# Related popular posts
+# Dependencies: https://github.com/tea3/hexo-related-popular-posts
+related_posts:
   enable: true
-  license: CC BY-NC-SA 3.0
-  license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
+  title: # custom header, leave empty to use the default one
+  display_in_home: false
+  params:
+    maxCount: 5
+    #PPMixingRate: 0.0
+    #isDate: false
+    #isImage: false
+    #isExcerpt: false
+
+# Post edit
+# Dependencies: https://github.com/hexojs/hexo-deployer-git
+post_edit:
+  enable: false
+  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source.
+  #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit.
 
 
 # ---------------------------------------------------------------
@@ -617,11 +696,6 @@ local_search:
 # Tags Settings
 # ---------------------------------------------------------------
 
-# External URL with BASE64 encrypt & decrypt.
-# Usage: {% exturl text url "title" %}
-# Alias: {% extlink text url "title" %}
-exturl: false
-
 # Note tag (bs-callout).
 note:
   # Note tag style values:
@@ -655,7 +729,7 @@ tabs:
 
 # Use velocity to animate everything.
 motion:
-  enable: true
+  enable: false
   async: false
   transition:
     # Transition variants:
