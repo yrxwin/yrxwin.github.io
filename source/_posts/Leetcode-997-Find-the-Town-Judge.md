@@ -56,16 +56,33 @@ If the town judge exists and can be identified, return the label of the town jud
 4. `trust[i][0] != trust[i][1]`
 5. `1 <= trust[i][0], trust[i][1] <= N`
 
-
 #### 解题思路
-
+这是一道单向图的题，实际上我们要寻找图中入度为`N-1`,出度为`0`的点。
+因为每个点的入度最大即为`N-1`（即村上所有其他人都`trust`他）,所以`入度 - 出度 = N - 1`是入度为`N-1`,出度为`0`的充分必要条件，所以本题用一个`counts`数组统计每个点入度和出度之差，遍历`trust`来更新`counts`数组，之后再遍历`counts`数组寻找值为`N-1`的点，返回坐标即可，如果在`counts`中不存在值为`N-1`的点，说明不存在judge，返回`-1`。
 
 #### 示例代码 (cpp)
-
+```cpp
+class Solution {
+public:
+    int findJudge(int N, vector<vector<int>>& trust) {
+        vector<int> counts(N + 1, 0);
+        for (const auto& relation : trust) {
+            counts[relation[0]]--;
+            counts[relation[1]]++;
+        }
+        for (int i = 1; i <= N; ++i) {
+            if (counts[i] == N - 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
+};
+```
 
 #### 复杂度分析
-时间复杂度:
-空间复杂度:
+时间复杂度: `O(T + N)`, `T`为`trust`数组的长度
+空间复杂度: `O(N)`
 
 #### 归纳总结
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/GSc-F_jlYWk)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://youtu.be/clkmS3_AP2w)，欢迎关注！
