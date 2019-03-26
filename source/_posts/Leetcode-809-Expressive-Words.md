@@ -32,6 +32,7 @@ Notes:
 - `0 <= len(words) <= 100`.
 - `0 <= len(words[i]) <= 100`.
 - `S` and all `words` in words consist only of lowercase letters
+<!-- more -->
 
 #### 解题思路
 这道题主要需要建立`isMatch()`方法判断`original word` (`o`)是否能够表述成`stretchy word` (`s`)

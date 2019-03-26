@@ -39,6 +39,7 @@ Return true if and only if the nodes corresponding to the values x and y are cou
 **Note:**
 1. The number of nodes in the tree will be between 2 and 100.
 2. Each node has a unique integer value from 1 to 100.
+<!-- more -->
 
 #### 解题思路
 因为要判断两个节点是否同层，想到用BFS逐层扫描.

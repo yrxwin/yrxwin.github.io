@@ -67,6 +67,7 @@ The rook can capture the pawns at positions `b5`, `d6` and `f5`.
 1. `board.length == board[i].length == 8`
 2. `board[i][j]` is either `'R'`, `'.'`, `'B'`, or `'p'`
 3. There is exactly one cell with `board[i][j] == 'R'`
+<!-- more -->
 
 #### 解题思路
 题目问从`'R'`点开始上下左右直走，碰到`'B'`，`'p'`，或者边界则停止，可能遇到多少个`'p'`.

@@ -50,6 +50,7 @@ The total cost was 25, and this is the minimum possible.
 - `1 <= stones.length <= 30`
 - `2 <= K <= 30`
 - `1 <= stones[i] <= 100`
+<!-- more -->
 
 #### 解题思路
 **动态规划：**

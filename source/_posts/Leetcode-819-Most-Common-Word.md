@@ -35,6 +35,7 @@ Note:
 - Different words in `paragraph` are always separated by a space.
 - There are no hyphens or hyphenated words.
 - Words only consist of letters, never apostrophes or other punctuation symbols.
+<!-- more -->
 
 #### 解题思路
 这道题可以通过`hash table`来建立每个单词与其出现频率的对应关系, 在遍历`paragraph`的时候统计单词出现的频率, 并更新当前的最高频单词.

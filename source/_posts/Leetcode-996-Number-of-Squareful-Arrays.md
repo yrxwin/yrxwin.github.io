@@ -30,6 +30,7 @@ Return the number of permutations of A that are squareful.  Two permutations A1 
 **Note:** 
 1. `1 <= A.length <= 12`
 2. `0 <= A[i] <= 1e9`
+<!-- more -->
 
 #### 解题思路
 经典的backtracking回溯算法:

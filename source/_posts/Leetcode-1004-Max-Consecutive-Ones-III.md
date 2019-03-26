@@ -36,6 +36,8 @@ Bolded numbers were flipped from 0 to 1.  The longest subarray is underlined.
 - `0 <= K <= A.length`
 - `A[i] is 0 or 1`
 
+<!-- more -->
+
 #### 解题思路
 使用双指针解题：
 - `zeros`用来记录我们考察的子序列中将`0`变为`1`的次数。

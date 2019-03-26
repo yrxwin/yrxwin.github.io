@@ -49,6 +49,7 @@ Before performing the second query we have only the lamp `[4, 4]` on.  Now the q
 2. `0 <= lamps.length <= 20000`
 3. `0 <= queries.length <= 20000`
 4. `lamps[i].length == queries[i].length == 2`
+<!-- more -->
 
 #### 解题思路
 每个点对于横向(`x`)、纵向(`y`)、斜向(`x - y`)和反斜向(`x + y`)，都有各自对应的位置变量，一共4个

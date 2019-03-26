@@ -51,6 +51,7 @@ Then we can insert `"abc"` before the last letter, resulting in `"abcabcab" + "a
 1. `1 <= S.length <= 20000`
 2. `S[i]` is `'a'`, `'b'`, or `'c'`
 
+<!-- more -->
 
 #### 解题思路
 这道题和括号相关的题很像

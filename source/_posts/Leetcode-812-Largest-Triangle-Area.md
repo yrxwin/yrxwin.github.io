@@ -25,6 +25,7 @@ The five points are show in the figure below. The red triangle is the largest.
 - No points will be duplicated.
 - `-50 <= points[i][j] <= 50`.
 - Answers within 10^-6 of the true value will be accepted as correct.
+<!-- more -->
 
 #### 解题思路
 这道题主要考察解析几何中三角形面积的计算(如[叉乘计算面积](http://www.maths.usyd.edu.au/u/MOW/vectors/vectors-11/v-11-7.html), [行列式计算面积

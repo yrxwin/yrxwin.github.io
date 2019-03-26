@@ -37,6 +37,8 @@ Return the largest possible sum of the array after modifying it in this way.
 2. `1 <= K <= 10000`
 3. `-100 <= A[i] <= 100`
 
+<!-- more -->
+
 #### 解题思路
 我们首先排序数组`A`，然后按顺序从小到大遍历数组，将负的元素变为正数，每改变一个元素，需要`--K`来记录翻转的个数，停止的条件有三个：
  1）如果数组遍历完毕
