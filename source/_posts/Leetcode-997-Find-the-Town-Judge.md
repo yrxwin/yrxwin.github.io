@@ -55,6 +55,7 @@ If the town judge exists and can be identified, return the label of the town jud
 3. `trust[i]` are all different
 4. `trust[i][0] != trust[i][1]`
 5. `1 <= trust[i][0], trust[i][1] <= N`
+<!-- more -->
 
 #### 解题思路
 这是一道单向图的题，实际上我们要寻找图中入度为`N-1`,出度为`0`的点。

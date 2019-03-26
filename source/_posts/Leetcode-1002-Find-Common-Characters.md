@@ -29,6 +29,7 @@ You may return the answer in any order.
 - `1 <= A.length <= 100`
 - `1 <= A[i].length <= 100`
 - `A[i][j]` is a lowercase letter
+<!-- more -->
 
 #### 解题思路
 用哈希表`ansMap`记录当前可能字符以及其出现次数，也就是把字符作为`key`，频率作为`value`

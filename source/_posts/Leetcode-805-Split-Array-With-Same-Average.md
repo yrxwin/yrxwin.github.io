@@ -24,6 +24,7 @@ Return true if and only if after such a move, it is possible that the average va
 
  - The length of A will be in the range [1, 30].
  - A[i] will be in the range of [0, 10000].
+<!-- more -->
 
 #### 解题思路
 给定一个数组，题目要求判断能否把数组分成两个数组，是它们的平均值相同。

@@ -32,6 +32,7 @@ If we choose the first two operations, A will become empty first. For the third 
 **Notes:**
 - 0 <= N <= 10^9. 
 - Answers within 10^-6 of the true value will be accepted as correct.
+<!-- more -->
 
 #### 解题思路
 虽然题目乍一看比较复杂，好像让你去算概率，难道是概率题，不是编程题？

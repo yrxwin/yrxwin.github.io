@@ -43,6 +43,7 @@ Return the minimum number of minutes that must elapse until no cell has a fresh 
 1. `1 <= grid.length <= 10`
 2. `1 <= grid[0].length <= 10`
 3. `grid[i][j] is only 0, 1, or 2`.
+<!-- more -->
 
 #### 解题思路
 这类问题问需要多少时间遍历整个二维数组，并且每次遍历一次，自然想到要用广度优先搜索（BFS）来做：
