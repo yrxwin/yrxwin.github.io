@@ -1,5 +1,5 @@
 ---
-title: Leetcode-1010-Pairs-of-Songs-With-Total-Durations-Divisible-by-60
+title: '[Leetcode 1010] Pairs of Songs With Total Durations Divisible by 60'
 categories:
   - leetcode
 author: '大猩猩'
