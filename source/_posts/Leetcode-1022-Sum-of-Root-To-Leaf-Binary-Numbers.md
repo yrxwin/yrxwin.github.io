@@ -72,4 +72,4 @@ public:
 空间复杂度: O(1)
 
 #### 归纳总结
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/GSc-F_jlYWk)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://youtu.be/bnvE2hfjbdo)，欢迎关注！
