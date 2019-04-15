@@ -2,10 +2,10 @@
 title: '[Leetcode 1014] Best Sightseeing Pair'
 categories:
   - leetcode
-author: '大猩猩'
+author: '大猩猩，猩猩管理员'
 date: 2019-04-10 21:37:40
-tags:
-keywords:
+tags: ['wayfair', 'Array']
+keywords: ['wayfair', 'Array']
 description:
 ---
 
@@ -28,33 +28,60 @@ Return the maximum score of a pair of sightseeing spots.
 1. `2 <= A.length <= 50000`
 2. `1 <= A[i] <= 1000`
 
+<!-- more -->
+
 #### 解题思路
-这道题的题意概括，就是对于数组中的两个下标i, j，求A[i] + A[j] + i - j最大值.
-最直接的思路就是暴力解法，但是时间复杂度是O(n^2), 显然不可取。
-    
-为了给出更优的解法，我们首先变换目标公式从 `A[i] + A[j] + i - j` 变为 `A[i] + i + A[j] - j`。这样，我们可以在每个位置j，记录下其对应的比 `i < j` 时， `A[i] + i`的最大值。这样遍历 `A`，求出每个位置`j`对应的 `A[i] + A[j] + i - j`的最大值。
+遍历数组`A`，我们用`max_score`来记录当前最大的分数，用`pre_max`来记录当前元素之前最高的分数
+每遍历一个元素`a`，我们首先更新`max_score`: `max_score = max(max_score, a + pre_max)`
+然后更新`pre_max`: `pre_max = max(pre_max, a) - 1`
+这里`-1`是因为每往后一个元素，距离会增加`1`
 
 #### 示例代码 (cpp)
 ```cpp
 class Solution {
 public:
     int maxScoreSightseeingPair(vector<int>& A) {
-        int pre = 0; // 比j小的index
-        int res = -INT_MAX;
-        for (auto i = 1; i < A.size(); i++) {
-            res = max(A[i] - i + A[pre] + pre, res);
-            if (A[i] + i > A[pre] + pre) {
-                pre = i;
-            }
+        int max_score = 0, pre_max = 0;
+        for (auto a : A) {
+            max_score = max(max_score, a + pre_max);
+            pre_max = max(pre_max, a) - 1;
+        }
+        return max_score;
+    }
+};
+```
+
+#### 示例代码（java）
+```java
+class Solution {
+    public int maxScoreSightseeingPair(int[] A) {
+        int res = 0, cur = 0;
+        for (int a: A) {
+            res = Math.max(res, cur + a);
+            cur = Math.max(cur, a) - 1;
         }
         return res;
     }
 };
 ```
+#### 示例代码（python）
+```python
+class Solution(object):
+    def maxScoreSightseeingPair(self, A):
+        """
+        :type A: List[int]
+        :rtype: int
+        """
+        cur = res = 0
+        for a in A:
+            res = max(res, cur + a)
+            cur = max(cur, a) - 1
+        return res
+```
 
 #### 复杂度分析
-时间复杂度: O(n)
-空间复杂度: O(1)
+时间复杂度: `O(n)`
+空间复杂度: `O(1)`
 
 #### 归纳总结
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/GSc-F_jlYWk)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://youtu.be/CoyAaGEhmFY)，欢迎关注！
