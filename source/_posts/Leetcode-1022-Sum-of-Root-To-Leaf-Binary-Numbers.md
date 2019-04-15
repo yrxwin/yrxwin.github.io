@@ -30,6 +30,7 @@ Return the sum of these numbers.
 2. node.val is `0` or `1`.
 3. The answer will not exceed `2^31 - 1`.
 
+<!--more-->
 
 #### 解题思路
 这题比较简单，通过dfs先序遍历二叉树，分别计算每一条从root到leaf的二进制数，累加即可。

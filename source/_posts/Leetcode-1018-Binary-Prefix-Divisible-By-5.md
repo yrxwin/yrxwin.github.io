@@ -40,6 +40,8 @@ Return a list of booleans `answer`, where `answer[i]` is true if and only if `N_
 1. `1 <= A.length <= 30000`
 2. `A[i] is 0 or 1`
 
+<!--more-->
+
 #### 解题思路
 题目要求检查从`A[0]` 到 `A[i]` `(0 <= i < A.size())`的字符串，对应的二进制数是否能被5整除。
 

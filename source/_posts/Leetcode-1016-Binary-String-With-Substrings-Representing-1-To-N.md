@@ -30,6 +30,8 @@ Given a binary string `S` (a string consisting only of `'0'` and `'1'`s) and a p
 1. `1 <= S.length <= 1000`
 2. `1 <= N <= 10^9`
 
+<!--more-->
+
 #### 解题思路
 这道题最重要的是估计`N`的上限，超过上限全都是`false`了。
 由于题目中给了`S.length`最大为`1000`，我们考虑11位二进制数（也就是1024 - 2047）总共有 > 1000个
