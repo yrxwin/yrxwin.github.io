@@ -2,10 +2,10 @@
 title: '[Leetcode 1025] Divisor Game'
 categories:
   - leetcode
-author: '大猩猩, 中猩猩'
+author: '猩猩管理员'
 date: 2019-04-21 19:52:18
-tags:
-keywords:
+tags: ['Visa', 'Math']
+keywords: ['Visa', 'Math']
 description:
 ---
 #### 原题说明
