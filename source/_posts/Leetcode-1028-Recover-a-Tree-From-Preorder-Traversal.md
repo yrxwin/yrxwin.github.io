@@ -85,13 +85,81 @@ public:
 };
 ```
 
-<!-- #### 示例代码 (java)
+#### 示例代码 (java)
 ```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode recoverFromPreorder(String S) {
+        int level, val;
+        Stack<TreeNode> stack = new Stack<>();
+        for (int i = 0; i < S.length();) {
+            for (level = 0; S.charAt(i) == '-'; i++) {
+                level++;
+            }
+            for (val = 0; i < S.length() && S.charAt(i) != '-'; i++) {
+                val = val * 10 + (S.charAt(i) - '0');
+            }
+            while (stack.size() > level) {
+                stack.pop();
+            }
+            TreeNode node = new TreeNode(val);
+            if (!stack.isEmpty()) {
+                if (stack.peek().left == null) {
+                    stack.peek().left = node;
+                } else {
+                    stack.peek().right = node;
+                }
+            }
+            stack.add(node);
+        }
+        while (stack.size() > 1) {
+            stack.pop();
+        }
+        return stack.pop();
+    }
+}
 ```
 
 #### 示例代码 (python)
 ```python
-``` -->
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def recoverFromPreorder(self, S):
+        """
+        :type S: str
+        :rtype: TreeNode
+        """
+        stack, i = [], 0
+        while i < len(S):
+            level, val = 0, ""
+            while i < len(S) and S[i] == '-':
+                level, i = level + 1, i + 1
+            while i < len(S) and S[i] != '-':
+                val, i = val + S[i], i + 1
+            while len(stack) > level:
+                stack.pop()
+            node = TreeNode(val)
+            if stack and stack[-1].left is None:
+                stack[-1].left = node
+            elif stack:
+                stack[-1].right = node
+            stack.append(node)
+        return stack[0]
+```
 
 #### 复杂度分析
 时间复杂度: O(n)
