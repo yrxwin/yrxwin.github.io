@@ -62,12 +62,35 @@ private:
 };
 ```
 
-<!-- #### 示例代码 (java)
-```java
-```
-
 #### 示例代码 (python)
 ```python
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def __init__(self):
+        self.v_max = 0
+    def maxAncestorDiff(self, root, imax = 0, imin = 5001):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if root == None:
+            return 0
+        imax = max(imax, root.val)
+        imin = min(imin, root.val)
+        self.v_max = max(self.v_max, abs(imax - imin))
+        self.maxAncestorDiff(root.left, imax, imin)
+        self.maxAncestorDiff(root.right, imax, imin)
+        return self.v_max
+```
+
+<!-- #### 示例代码 (java)
+```java
 ``` -->
 
 #### 复杂度分析
