@@ -90,6 +90,18 @@ class Solution {
 }
 ```
 
+#### 示例代码 (python)
+```python
+class Solution(object):
+    def allCellsDistOrder(self, R, C, r0, c0):
+        ans, dist = [], []
+        for r in range(R):
+            for c in range(C):
+                dist += [abs(r - r0) + abs(c - c0)]
+                ans += [[r, c]]
+        dist, ans = zip(*sorted(zip(dist, ans)))
+        return ans
+```
 
 
 #### 复杂度分析
