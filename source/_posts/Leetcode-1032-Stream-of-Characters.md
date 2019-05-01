@@ -171,14 +171,61 @@ class StreamChecker {
 }
 ```
 
-
-<!-- #### 示例代码 (java)
-```java
-``` -->
-
-<!-- #### 示例代码 (python)
+#### 示例代码 (python)
 ```python
-``` -->
+from collections import deque
+class StreamChecker(object):
+
+    def __init__(self, words):
+        """
+        :type words: List[str]
+        """
+        self.n = 0
+        self.root = self.createTrie(words)
+        self.window = deque()
+        
+    def createTrie(self, words):
+        root = {}
+        for word in words:
+            if len(word) > self.n:
+                self.n = len(word)
+            node = root
+            for char in word[::-1]:
+                if char not in node:
+                    node[char] = {}
+                node = node[char]
+            node['#'] = True
+        return root
+
+    def search(self):
+        
+        word = self.window
+        root = self.root
+        for i in range(len(word)-1, -1, -1):
+            if '#' in root:
+                return True
+            if word[i] in root:
+                root = root[word[i]]
+            else:
+                return False
+        
+        return True if '#' in root else False 
+        
+    
+    def query(self, letter):
+        """
+        :type letter: str
+        :rtype: bool
+        """
+        self.window.append(letter)
+        if len(self.window) > self.n:
+            self.window.popleft()
+        return self.search()
+
+# Your StreamChecker object will be instantiated and called as such:
+# obj = StreamChecker(words)
+# param_1 = obj.query(letter)
+```
 
 #### 复杂度分析
 时间复杂度: O(d \* (# of query))
