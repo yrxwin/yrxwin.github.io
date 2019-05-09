@@ -1,4 +1,4 @@
----
+ ftvrg5 bv---
 title: '[Leetcode 1036] Escape a Large Maze'
 categories:
   - leetcode
@@ -48,7 +48,7 @@ Return `true` if and only if it is possible to reach the target square through a
 
 我们可以将问题抽象成这样一个数学问题，在一个`1000000 \* 1000000`的矩形中，用一条长`200`的线，最多能围出多大的面积？这个问题可以用泛函的知识求解，这里不多做说明。但其实我们利用对称性可以知道，在任意一个角，围出一个弧长`200`的`1/4`圆就是最大的面积，也就是`4/pi \* 10000`。
 
-知道了这个面积，我们只需要对`source`和`target`分别做两次`BFS`。每次BFS，我们设定所搜的次数不超过我们求出的这个最大面积。如果在这些点钟找到了`target`或`source`,那自然说明有这样一条通路。否则：
+知道了这个面积，我们只需要对`source`和`target`分别做两次`BFS`。每次BFS，我们设定所搜的次数不超过我们求出的这个最大面积。如果在这些点中找到了`target`或`source`,那自然说明有这样一条通路。否则：
 1. 如果我们发现`BFS`在我们设定的搜索次数内，已经完成，那么说明`source`或者`target`处于被`blocked`点和迷宫边界构成的一个封闭区间内，不存在通路。 
 2. 如果`BFS`在设定的搜索次数内没有完成，说明并没有这样一个封闭区间能包裹住`source`或者`target`,那它们两个点一定是能够连通的。
 
@@ -168,4 +168,4 @@ class Solution(object):
 空间复杂度: O(len(blocked))
 
 #### 归纳总结
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/GSc-F_jlYWk)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://youtu.be/rvHYB6HOmxw)，欢迎关注！
