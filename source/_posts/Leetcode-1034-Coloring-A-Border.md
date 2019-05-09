@@ -130,4 +130,4 @@ class Solution(object):
 空间复杂度: O(1)
 `N`, `M`分别是`grid`的长和宽。
 #### 归纳总结
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/GSc-F_jlYWk)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://youtu.be/zcbFn8DH0PU)，欢迎关注！
