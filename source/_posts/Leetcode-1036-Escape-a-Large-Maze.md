@@ -1,4 +1,4 @@
- ftvrg5 bv---
+---
 title: '[Leetcode 1036] Escape a Large Maze'
 categories:
   - leetcode
@@ -168,4 +168,4 @@ class Solution(object):
 空间复杂度: O(len(blocked))
 
 #### 归纳总结
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/rvHYB6HOmxw)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://www.youtube.com/watch?v=rvHYB6HOmxw&feature=youtu.be)，欢迎关注！
