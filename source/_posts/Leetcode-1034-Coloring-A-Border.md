@@ -21,9 +21,9 @@ Given a square at location `(r0, c0)` in the grid and a `color`, color the borde
 #### 解题思路
 题目给我们一个坐标，要求将这个坐标表示的点所属的`component`的边界用给定的颜色标记出来。
 
-我们用`DFS`的方法解决这道题。从给定的起点`A`开始，我们可以方便的遍历`A`所在的`component`的所有点。为了不开辟额空间，我们直接将`A`原来的颜色`origincolor`翻转为`-origincolor`。
+我们用`DFS`的方法解决这道题。从给定的起点`A`开始，我们可以方便的遍历`A`所在的`component`的所有点。为了不开辟额空间，我们直接将`A`原来的颜色`originColor`翻转为`-originColor`。
 
-那如何在找出边界呢？我们只需要在完成一个点上下左右四个方向的遍历之后，检查这个点是不是在`component`内部，在的话我们再次翻转`-origincolor`,把它复原为`origincolor`。经过这样的步骤之后，地图上所有标记为`-origincolor`的点就是我们需要的边界了。我们将这些点重新标记为题目要求的`color`即可。
+那如何在找出边界呢？我们只需要在完成一个点上下左右四个方向的遍历之后，检查这个点是不是在`component`内部，在的话我们再次翻转`-originColor`,把它复原为`originColor`。经过这样的步骤之后，地图上所有标记为`-originColor`的点就是我们需要的边界了。我们将这些点重新标记为题目要求的`color`即可。
 
 同学们可以看下图给出的例子有个具体认识（图片引自*Discuss*中*votrubac*的发帖）。
 
@@ -35,7 +35,6 @@ private:
     vector<vector<int>> dirs = {{1,0},{0,1},{-1,0},{0,-1}};
 public:
     vector<vector<int>> colorBorder(vector<vector<int>>& grid, int r0, int c0, int color) {
-        vector<vector<bool>> visit(grid.size(),vector<bool>(grid[0].size(),false));
         dfs(grid, r0, c0, grid[r0][c0]);
         for (int i = 0; i < grid.size(); ++i) {
             for (int j = 0; j < grid[0].size(); ++j) {
