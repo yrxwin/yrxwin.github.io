@@ -1,5 +1,5 @@
 ---
-title: Leetcode-1040-Moving-Stones-Until-Consecutive-II
+title: '[Leetcode 1040] Moving Stones Until Consecutive II'
 categories:
   - leetcode
 author: '大猩猩'
