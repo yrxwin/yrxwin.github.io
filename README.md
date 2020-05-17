@@ -16,7 +16,7 @@ e.g. `npm run new "npm run new "[Leetcode 1037] Valid Boomerang"`
 `npm run deploy`
 
 #### copy leetcode question description
-copy Leetcode description to (summernote)[https://summernote.org/]
+copy Leetcode description to [summernote](https://summernote.org/)
 
 Then click "Code View" on the dashboard, copy the generated code into this blog. Done.
 
