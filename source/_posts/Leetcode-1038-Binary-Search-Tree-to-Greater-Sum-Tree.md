@@ -1,5 +1,5 @@
 ---
-title: Leetcode 1038 Binary Search Tree to Greater Sum Tree
+title: '[Leetcode 1038] Binary Search Tree to Greater Sum Tree'
 categories:
   - leetcode
 author: '大猩猩'
