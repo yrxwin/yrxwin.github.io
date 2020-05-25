@@ -57,8 +57,8 @@ favicon:
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
-# Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+# Set default keywords (Use a comma to separate) 
+keywords: "Leetcode, cpp, python, xingxingpark, interview, solution, 面试, system design, java, data structure, algorithm"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -316,7 +316,7 @@ reward:
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
-  enable: false
+  enable: true
   title: # custom header, leave empty to use the default one
   display_in_home: false
   params:
@@ -440,7 +440,7 @@ han: false
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: xingxingpark
   count: true
 
@@ -454,19 +454,22 @@ changyan:
   appkey:
 
 
-# Valine.
+# Valine
 # You can get your appid and appkey from https://leancloud.cn
-# more info please open https://valine.js.org
+# More info available at https://valine.js.org
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
-  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  appid:  Plr0FKFNcySjJcFDalrcHmBf-gzGzoHsz # your leancloud application appid
+  appkey: j9oflF3hH0BSWgavSer5WBEO # your leancloud application appkey
+  notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: Just go go # comment box placeholder
+  placeholder: 在猩猩的乐园留下你的足迹 # comment box placeholder
   avatar: mm # gravatar style
-  guest_info: nick,mail,link # custom comment header
+  guest_info: nick,mail # custom comment header
   pageSize: 10 # pagination size
+  language: # language, available values: en, zh-cn
+  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+  comment_count: true # if false, comment count will only be displayed in post page, not in home page
 
 
 # Support for youyan comments system.

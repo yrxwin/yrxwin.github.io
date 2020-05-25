@@ -6,7 +6,7 @@
 title: XingXing Park
 subtitle: 猩猩的乐园
 description: 技术面试问题详解
-keywords: Leetcode, cpp, python, xingxingpark, interview, solution, 面试, system design, 解答
+keywords: "Leetcode, cpp, python, xingxingpark, interview, solution, 面试, system design, java, data structure, algorithm"
 author: 猩猩的乐园
 language: en
 timezone:
@@ -125,20 +125,3 @@ popularPosts:
     viewId:  172387417                                       # View ID tied with google analytics
     dateRange:  30                                          # (Optional) Time period (days) to count PV number Default is 30
     expiresDate:  10                                        # (Option) Cache file expiration date Days) Default is 10
-
-# Valine
-# You can get your appid and appkey from https://leancloud.cn
-# More info available at https://valine.js.org
-valine:
-  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
-  appid:  Plr0FKFNcySjJcFDalrcHmBf-gzGzoHsz # your leancloud application appid
-  appkey: j9oflF3hH0BSWgavSer5WBEO # your leancloud application appkey
-  notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
-  placeholder: 在猩猩的乐园留下你的足迹 # comment box placeholder
-  avatar: mm # gravatar style
-  guest_info: nick,mail,link # custom comment header
-  pageSize: 10 # pagination size
-  language: # language, available values: en, zh-cn
-  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
-  comment_count: true # if false, comment count will only be displayed in post page, not in home page
