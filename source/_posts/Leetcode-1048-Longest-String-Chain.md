@@ -16,23 +16,72 @@ description:
 <!--more-->
 
 #### 解题思路
+这道题可以用动态规划的思路来解。
 
+先将给我们的词按长度从小到大排列，然后用一个哈希表记录能从小到大变化到一个词的最大长度。也就是说，`key`是一个词，`value`是从小到大能变换到这个词的最大长度。
+
+我们按词的长度从小到大遍历所有的词，对于每一个词`cur`，遍历这个词的每一个可能的前一个词`prev`，若存在在哈希表中，则`dp[cur] = max(dp[cur], dp[prev] + 1)`。这也就是我们的状态转移方程。
+
+最后我们查找哈希表中的最大值，就是我们要的答案。
 
 #### 示例代码 (cpp)
 ```cpp
+class Solution {
+private:
+    static bool compare(const string &s1, const string &s2) {
+        return s1.length() < s2.length();
+    }
+public:
+    int longestStrChain(vector<string>& words) {
+        sort(words.begin(), words.end(), compare);
+        unordered_map<string, int> dp;
+        int res = 0;
+        for (string& cur : words) {
+            for (int i = 0; i < cur.length(); i++) {
+                auto prev = cur.substr(0, i) + cur.substr(i + 1);
+                dp[cur] = max(dp[cur], dp[prev] + 1);
+            }
+            res = max(res, dp[cur]);
+        }
+        return res;
+    }
+};
 ```
 
 #### 示例代码 (java)
 ```java
+class Solution {
+    public int longestStrChain(String[] words) {
+        Map<String, Integer> dp = new HashMap<>();
+        Arrays.sort(words, (a, b)->a.length() - b.length());
+        int res = 0;
+        for (String word : words) {
+            int best = 0;
+            for (int i = 0; i < word.length(); ++i) {
+                String prev = word.substring(0, i) + word.substring(i + 1);
+                best = Math.max(best, dp.getOrDefault(prev, 0) + 1);
+            }
+            dp.put(word, best);
+            res = Math.max(res, best);
+        }
+        return res;
+    }
+}
 ```
 
 #### 示例代码 (python)
 ```python
+class Solution:
+    def longestStrChain(self, words):
+        dp = {}
+        for w in sorted(words, key=len):
+            dp[w] = max(dp.get(w[:i] + w[i + 1:], 0) + 1 for i in range(len(w)))
+        return max(dp.values())      
 ```
 
 #### 复杂度分析
-时间复杂度:
-空间复杂度:
+时间复杂度: 假设一共有`N`个词，词的平均长度是`L`，时间复杂度是 `O(NlogN + NL^2)`
+空间复杂度: `O(NL)`
 
 #### 归纳总结
 我们在**Youtube**上更新了[视频讲解](https://youtu.be/GSc-F_jlYWk)，欢迎关注！
