@@ -25,14 +25,53 @@ we combine 1 and 1 to get 0 so the array converts to [1] then that's the value o
 
 #### 示例代码 (cpp)
 ```cpp
+class Solution {
+public:
+    int lastStoneWeight(vector<int>& stones) {
+        priority_queue<int> pq;
+        for (auto& stone : stones) {
+            pq.push(stone);
+        }
+        while (pq.size() >= 2) {
+            int t1 = pq.top();
+            pq.pop();
+            int t2 = pq.top();
+            pq.pop();
+            if (t1 != t2) {
+                pq.push(t1 - t2);
+            }
+        }
+        if (pq.empty()) {
+            return 0;
+        }
+        return pq.top();
+    }
+};
 ```
 
 #### 示例代码 (java)
 ```java
+class Solution {
+    public int lastStoneWeight(int[] stones) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b)-> b - a);
+        for (int a : stones)
+            pq.offer(a);
+        while (pq.size() > 1)
+            pq.offer(pq.poll() - pq.poll());
+        return pq.poll();
+    }
+}
 ```
 
 #### 示例代码 (python)
 ```python
+class Solution:
+    def lastStoneWeight(self, stones):
+        h = [-x for x in stones]
+        heapq.heapify(h)
+        while len(h) > 1 and h[0] != 0:
+            heapq.heappush(h, heapq.heappop(h) - heapq.heappop(h))
+        return -h[0]
 ```
 
 #### 复杂度分析
