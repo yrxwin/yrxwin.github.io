@@ -28,15 +28,16 @@ description:
 ```cpp
 class Solution {
 private:
-    static bool compare(const string &s1, const string &s2) {
-        return s1.length() < s2.length();
-    }
+    // static bool compare(const string &s1, const string &s2) {
+    //     return s1.length() < s2.length();
+    // }
 public:
     int longestStrChain(vector<string>& words) {
-        sort(words.begin(), words.end(), compare);
+        sort(words.begin(), words.end(), [](const string& a, const string& b){return a.size() < b.size();});
+        // sort(words.begin(), words.end(), compare);
         unordered_map<string, int> dp;
         int res = 0;
-        for (string& cur : words) {
+        for (const string& cur : words) {
             for (int i = 0; i < cur.length(); i++) {
                 auto prev = cur.substr(0, i) + cur.substr(i + 1);
                 dp[cur] = max(dp[cur], dp[prev] + 1);
