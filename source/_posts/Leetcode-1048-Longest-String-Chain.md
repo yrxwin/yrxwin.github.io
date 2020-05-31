@@ -85,4 +85,4 @@ class Solution:
 空间复杂度: `O(NL)`
 
 #### 归纳总结
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/GSc-F_jlYWk)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://youtu.be/iIHqGV0UQug)，欢迎关注！
