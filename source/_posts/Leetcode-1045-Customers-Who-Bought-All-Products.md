@@ -58,8 +58,8 @@ The customers who bought all the products (5 and 6) are customers with id 1 and 
    2. foreign key我们默认是存在的
    3. 一般customer与product是多对多的关系，在实际应用中会有一张中间transaction的表
 
-#### 示例代码 (cpp)
-```mysql
+#### 示例代码 (mysql)
+```sql
 # Write your MySQL query statement below
 select customer_id 
 from Customer
