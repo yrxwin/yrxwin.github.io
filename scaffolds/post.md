@@ -32,5 +32,5 @@ description:
 时间复杂度:
 空间复杂度:
 
-#### 归纳总结
+#### 视频讲解
 我们在**Youtube**上更新了[视频讲解](https://youtu.be/GSc-F_jlYWk)，欢迎关注！
