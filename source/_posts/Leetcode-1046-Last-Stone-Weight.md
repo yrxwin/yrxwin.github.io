@@ -79,4 +79,4 @@ class Solution:
 空间复杂度: `O(N)`
 
 #### 归纳总结
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/NKuQEnB0P4I)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://youtu.be/jkjG2Xnn-i8)，欢迎关注！

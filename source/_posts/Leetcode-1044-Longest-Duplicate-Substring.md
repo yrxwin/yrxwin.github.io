@@ -190,4 +190,4 @@ class Solution(object):
 
 #### 归纳总结
 `Rahin-karp`的算法，不知道的人在做题时不会想到。同样，也不大可能在面试的时候自己想出来。非常正常。但我们了解后，还是比较简单的。同时，用哈希的方法转化的思想值得我们注意。
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/TC4lW8XDYbg)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://youtu.be/zzXFu9exKj8)，欢迎关注！

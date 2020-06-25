@@ -120,4 +120,4 @@ class Solution(object):
 空间复杂度: O(N)
 
 #### 归纳总结
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/vxIwuRSj730)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://youtu.be/bzr104qA5Js)，欢迎关注！
