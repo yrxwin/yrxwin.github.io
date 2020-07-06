@@ -78,11 +78,28 @@ private:
 
 #### 示例代码 (java)
 ```java
-
+class Solution {
+    public int assignBikes(int[][] workers, int[][] bikes) {
+        int[] dp = new int[1 << bikes.length];
+        return dfs(workers, bikes, 0, 0, dp);
+    }
+    private int dfs(int[][] w, int[][] b, int idx, int used, int[] dp) {
+        if (idx == w.length) return 0;
+        if (dp[used] > 0) return dp[used];
+        int res = Integer.MAX_VALUE;
+        for (int i = 0; i < b.length; i++) {
+            if ((used & (1 << i)) != 0) continue;
+            res = Math.min(res, Math.abs(w[idx][0] - b[i][0]) + Math.abs(w[idx][1] - b[i][1])
+                       + dfs(w,b,idx + 1, used | (1<<i), dp));
+        }
+        return dp[used] = res;
+    }
+}
 ```
 
 #### 示例代码 (python)
 ```python
+class Solution:
     def assignBikes(self, workers: List[List[int]], bikes: List[List[int]]) -> int:
         dic = {}
         
