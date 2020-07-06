@@ -77,4 +77,4 @@ JOIN Product AS p ON s.product_id = p.product_id
 ```
 
 #### 视频讲解 
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/GSc-F_jlYWk)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://youtu.be/mVY4FKKTp4A)，欢迎关注！

@@ -111,4 +111,4 @@ private:
 空间复杂度: 距离的`cache`可以忽略不计，主要开销在`memo`上，因此这里是O(2^N)
 
 #### 视频讲解 
-我们在**Youtube**上更新了[视频讲解](https://youtu.be/GSc-F_jlYWk)，欢迎关注！
+我们在**Youtube**上更新了[视频讲解](https://youtu.be/OG_ROut6Ou4)，欢迎关注！
