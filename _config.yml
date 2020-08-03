@@ -125,3 +125,9 @@ popularPosts:
     viewId:  172387417                                       # View ID tied with google analytics
     dateRange:  30                                          # (Optional) Time period (days) to count PV number Default is 30
     expiresDate:  10                                        # (Option) Cache file expiration date Days) Default is 10
+
+# Web notification
+webPushNotification:
+  webpushrKey: "gRETKyx7gDLDn0CqePD0KkdyidQEvV8d6jZ_7nPc90M"
+  webpushrAuthToken: "10902"
+  trackingCode: "BMay-TObCxWe72aJaxnU5gDKVI5VEW1IPWqQavtzXqkLkTyhYd6iBDIsPUY9FvBAuigv3OXgMOUbJsJeNVFIeQE"
