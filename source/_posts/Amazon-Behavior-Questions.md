@@ -2,7 +2,7 @@
 ---
 title: Amazon 行为面试解析
 categories:
-  - interview
+  - career
 author: '猩猩管理员'
 date: 2019-03-26 10:58:36
 tags: ['Amazon', 'Behavior Question', 'Leadership Principles']
@@ -264,3 +264,5 @@ If you don’t know an answer, say so. Say how have found similar answers before
 {% blockquote %}
 大家如果有疑问或是希望得到回答的Behavior Questions，可以在留言区评论，我们会一一解答。
 {% endblockquote %}
+
+想要发现更多求职信息请[点击这里](https://article.xingxingpark.com/category/career/):)

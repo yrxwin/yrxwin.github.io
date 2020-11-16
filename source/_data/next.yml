@@ -161,6 +161,7 @@ menu:
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
+  Job Info: https://article.xingxingpark.com/category/career || book
 
 # Enable/Disable menu icons.
 menu_icons:

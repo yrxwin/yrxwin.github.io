@@ -1,7 +1,7 @@
 ---
 title: 机械系PhD如何转行成为程序员
 categories:
-  - interview
+  - career
 author: '大猩猩'
 date: 2020-08-02 22:03:34
 tags: ['Mathworks']
@@ -71,3 +71,5 @@ PhD转行的原因有很多种，但总体来说要么自己不喜欢自己专�
 
 #### 总结
 这次求职，拿到了offer，也不算太坏。对这个结果，我给自⼰打个及格分吧。自身的实力还是不够，所以像Google、Bloomberg这样的公司，最终还是失败了了。有些遗憾，但也只能move on。未来的路还很长，不论是技术上还是别的方面，自己还有很多可以继续努力的空间。希望我分享的这些经验教训能给朋友们带来些许帮助，有想沟通交流的朋友欢迎留言。大家共勉~
+
+想要发现更多求职信息请[点击这里](https://article.xingxingpark.com/category/career/):)

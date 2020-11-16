@@ -34,3 +34,4 @@ description:
 
 #### 视频讲解 
 我们在**Youtube**上更新了[视频讲解](https://youtu.be/GSc-F_jlYWk)，欢迎关注！
+想要发现更多求职信息请[点击这里](https://article.xingxingpark.com/category/career/):)
